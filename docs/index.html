@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punpiti Piamsa-nga</title>
+  <meta name="description" content="เว็บไซต์สาธารณะสำหรับแนะนำตัวเบื้องต้นของ Punpiti Piamsa-nga">
+  <style>
+    :root {
+      --bg-top: #f7f1e8;
+      --bg-bottom: #e9e0d2;
+      --panel: rgba(255, 252, 247, 0.9);
+      --panel-strong: #fffdf9;
+      --ink: #1f2a2e;
+      --muted: #5d6b70;
+      --line: rgba(44, 75, 83, 0.14);
+      --brand: #1f5b4d;
+      --accent: #9f6032;
+      --shadow: 0 24px 70px rgba(32, 43, 48, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "IBM Plex Sans Thai", "Noto Sans Thai", "Sarabun", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(159, 96, 50, 0.18), transparent 26rem),
+        radial-gradient(circle at top right, rgba(31, 91, 77, 0.18), transparent 24rem),
+        linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+    }
+
+    .page {
+      width: min(1100px, calc(100vw - 32px));
+      margin: 24px auto 48px;
+    }
+
+    .hero {
+      padding: 40px 28px 32px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 91, 77, 0.18);
+      background: rgba(255, 255, 255, 0.55);
+      color: var(--brand);
+      font-size: 0.94rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 10ch;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: clamp(3.2rem, 10vw, 6rem);
+      line-height: 0.94;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 2.3vw, 1.18rem);
+      line-height: 1.8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+
+    .footer {
+      margin-top: 18px;
+      padding: 0 4px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .accent {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @media (max-width: 860px) {
+      .page {
+        width: min(1100px, calc(100vw - 20px));
+        margin-top: 10px;
+      }
+
+      .hero {
+        padding: 28px 20px 24px;
+        border-radius: 22px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="tag">Public Webpage Draft</div>
+      <h1>Punpiti Piamsa-nga</h1>
+      <p class="lead">
+        หน้าเริ่มต้นสำหรับเว็บไซต์สาธารณะ ใช้เป็นฐานพัฒนาเนื้อหาแนะนำตัวก่อนเติมประวัติ
+        วิสัยทัศน์ เอกสารประกอบ และข้อมูลสาธารณะอื่นในลำดับถัดไป
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Public Site Direction</h2>
+        <p>
+          หน้านี้ถูกแยกจากเว็บใน <span class="accent">vision/site</span> โดยตั้งใจให้เป็น public webpage
+          โดยเฉพาะ เพื่อไม่ปนกับพื้นที่ทำงานภายในหรือสื่อสำหรับนำเสนอวิสัยทัศน์แบบส่วนตัว
+        </p>
+      </article>
+
+      <aside class="card">
+        <h2>Planned Sections</h2>
+        <ul>
+          <li>แนะนำตัว</li>
+          <li>ประวัติและประสบการณ์</li>
+          <li>วิสัยทัศน์และแนวทางทำงาน</li>
+          <li>เอกสารสาธารณะและช่องทางติดต่อ</li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="footer">
+      โครงนี้เหมาะกับการ deploy บน GitHub Pages ผ่านโฟลเดอร์ <strong>docs/</strong>
+    </div>
+  </main>
+</body>
+</html>
