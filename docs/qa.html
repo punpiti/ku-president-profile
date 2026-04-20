@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ถาม/ตอบ</title>
+  <meta name="description" content="รวมคำถามและคำตอบเฉพาะประเด็นที่ อ.ปิยะ เคยถาม">
+  <link rel="canonical" href="https://punpiti.github.io/ku-president-profile/qa.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:site_name" content="Kasetsart University President Vision Archive">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ถาม/ตอบ">
+  <meta property="og:description" content="รวมคำถามและคำตอบเฉพาะประเด็นที่ อ.ปิยะ เคยถาม">
+  <meta property="og:url" content="https://punpiti.github.io/ku-president-profile/qa.html">
+  <meta property="og:image" content="https://punpiti.github.io/ku-president-profile/assets/portrait.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ถาม/ตอบ">
+  <meta name="twitter:description" content="รวมคำถามและคำตอบเฉพาะประเด็นที่ อ.ปิยะ เคยถาม">
+  <meta name="twitter:image" content="https://punpiti.github.io/ku-president-profile/assets/portrait.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"ถาม/ตอบ","description":"รวมคำถามและคำตอบเฉพาะประเด็นที่ อ.ปิยะ เคยถาม","url":"https://punpiti.github.io/ku-president-profile/qa.html","image":"https://punpiti.github.io/ku-president-profile/assets/portrait.jpg"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ku-green: #006664;
+      --ku-green-deep: #014846;
+      --blue-deep: #14335a;
+      --paper: #fffdf8;
+      --ink: #1c3134;
+      --muted: #617476;
+      --shadow: 0 26px 70px rgba(0, 68, 67, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Sarabun", "Noto Sans Thai", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(239, 200, 74, 0.16), transparent 24rem),
+        linear-gradient(180deg, #fffdf9 0%, #f5efe4 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1220px, calc(100vw - 28px));
+      margin: 20px auto 36px;
+    }
+
+    .frame {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 32px;
+      background: rgba(255, 253, 248, 0.84);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .inner {
+      padding: 24px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 4px 2px 24px;
+    }
+
+    .site-label {
+      color: var(--ku-green);
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .nav a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: 160ms ease;
+    }
+
+    .nav a:hover,
+    .nav a[aria-current="page"] {
+      background: rgba(0, 102, 100, 0.08);
+      color: var(--ku-green-deep);
+    }
+
+    .hero {
+      padding: 28px 2px 12px;
+    }
+
+    .hero-kicker {
+      color: var(--ku-green);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 14px 0 0;
+      color: var(--blue-deep);
+      font-size: clamp(2.6rem, 5.4vw, 4.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      margin-top: 18px;
+      max-width: 48rem;
+      color: #213032;
+      font-size: clamp(1.04rem, 1.36vw, 1.16rem);
+      line-height: 1.85;
+    }
+
+    .section-card {
+      margin-top: 22px;
+      padding: 24px;
+      border: 1px solid rgba(0, 102, 100, 0.1);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.56);
+    }
+
+    .section-title {
+      color: var(--ku-green-deep);
+      font-size: 1.16rem;
+      font-weight: 700;
+    }
+
+    .qa-item + .qa-item {
+      margin-top: 22px;
+    }
+
+    .qa-item {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .qa-item[open] {
+      border-color: rgba(0, 102, 100, 0.16);
+      box-shadow: 0 18px 34px rgba(0, 68, 67, 0.06);
+    }
+
+    .qa-summary {
+      display: block;
+      padding: 22px 24px;
+      cursor: pointer;
+      list-style: none;
+      transition: background-color 160ms ease;
+    }
+
+    .qa-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .qa-summary:hover {
+      background: rgba(0, 102, 100, 0.04);
+    }
+
+    .qa-summary-inner {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .qa-summary-copy {
+      min-width: 0;
+    }
+
+    .qa-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 14px;
+    }
+
+    .qa-toggle {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 112px;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid rgba(0, 102, 100, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--ku-green-deep);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .qa-item[open] .qa-toggle::before {
+      content: "ย่อคำตอบ";
+    }
+
+    .qa-item:not([open]) .qa-toggle::before {
+      content: "ดูคำตอบ";
+    }
+
+    .qa-label {
+      color: var(--ku-green);
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .qa-question {
+      margin-top: 10px;
+      color: var(--blue-deep);
+      font-size: clamp(1.28rem, 2vw, 1.64rem);
+      line-height: 1.5;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .qa-anchor {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 160ms ease;
+    }
+
+    .qa-anchor:hover {
+      color: var(--ku-green);
+    }
+
+    .qa-body {
+      padding: 0 24px 24px;
+      border-top: 1px solid rgba(0, 102, 100, 0.08);
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    .qa-answer {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+      color: #213032;
+      line-height: 1.9;
+    }
+
+    .qa-answer p {
+      margin: 0;
+    }
+
+    .key-term {
+      color: var(--ku-green-deep);
+      font-weight: 700;
+      background: linear-gradient(180deg, transparent 58%, rgba(0, 102, 100, 0.14) 58%);
+      transition: color 160ms ease, background-size 160ms ease;
+    }
+
+    .qa-item:hover .key-term {
+      color: var(--ku-green);
+      background: linear-gradient(180deg, transparent 52%, rgba(0, 102, 100, 0.18) 52%);
+    }
+
+    .qa-related {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .qa-related a {
+      color: var(--ku-green-deep);
+      font-weight: 600;
+    }
+
+    .qa-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .qa-link-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid rgba(0, 102, 100, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--ku-green-deep);
+      font-size: 0.93rem;
+      font-weight: 600;
+      transition: 160ms ease;
+    }
+
+    .qa-link-chip:hover {
+      background: rgba(0, 102, 100, 0.08);
+      border-color: rgba(0, 102, 100, 0.2);
+    }
+
+    .section-note {
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .qa-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .qa-toolbar-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid rgba(0, 102, 100, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--ku-green-deep);
+      font: inherit;
+      font-size: 0.94rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 160ms ease;
+    }
+
+    .qa-toolbar-button:hover {
+      background: rgba(0, 102, 100, 0.08);
+      border-color: rgba(0, 102, 100, 0.2);
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 0;
+      padding-left: 1.2rem;
+      color: #223335;
+    }
+
+    .bullet-list li {
+      padding-left: 4px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px 16px;
+      padding: 28px 2px 4px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(1220px, calc(100vw - 16px));
+        margin-top: 8px;
+      }
+
+      .frame {
+        border-radius: 22px;
+      }
+
+      .inner {
+        padding: 16px;
+      }
+
+      .topbar,
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-card {
+        padding: 18px;
+      }
+
+      .qa-item {
+        padding: 0;
+      }
+
+      .qa-summary,
+      .qa-body {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .qa-summary-inner {
+        flex-direction: column;
+      }
+
+      .qa-toggle {
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="frame">
+      <div class="inner">
+        <header class="topbar">
+          <div class="site-label">Kasetsart University -- The Life Systems University</div>
+          <nav class="nav">
+            <a href="context.html">บริบท</a>
+            <a href="roles.html">บทบาท</a>
+            <a href="goals.html">เป้าหมาย</a>
+            <a href="strategy.html">กลยุทธ์</a>
+            <a href="four-year-plan.html">แผนสี่ปี</a>
+            <a href="articles.html">บทความ</a>
+            <a href="qa.html" aria-current="page">ถาม/ตอบ</a>
+            <a href="about.html">แนะนำตัว</a>
+          </nav>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">ถาม/ตอบ</div>
+          <h1>ถาม/ตอบ</h1>
+          <div class="hero-subtitle">
+            หน้านี้รวบรวมคำถามและคำตอบจากเวทีสัมภาษณ์และประเด็นที่มีผู้ถามอย่างจริงจัง
+          </div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-title">หมายเหตุ:</div>
+          <div class="section-note">คำถามมาจากการสัมภาษณ์ในรายการ "มองโลก มองเกษตร" โดย ผศ.ดร.ปิยะ กิตติภาดากุล เป็นพิธีกร ผมเคยตอบในเทปไปแล้ว แต่เอามานำเสนอใหม่ที่นี่</div>
+          <div class="qa-toolbar" aria-label="QA controls">
+            <button class="qa-toolbar-button" type="button" data-qa-expand-all>เปิดทั้งหมด</button>
+            <button class="qa-toolbar-button" type="button" data-qa-collapse-all>ปิดทั้งหมด</button>
+          </div>
+        </section>
+
+        <details class="section-card qa-item" id="q1">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 1</div>
+                  <a class="qa-anchor" href="#q1" aria-label="ลิงก์ไปยังคำถามข้อ 1">#q1</a>
+                </div>
+                <div class="qa-question">การสัมภาษณ์ครั้งนี้ถือว่าเป็นครั้งแรกที่มีการสัมภาษณ์ผู้สมัครอธิการบดีของมหาวิทยาลัยเกษตรศาสตร์ในเวทีลักษณะนี้ ทำไมท่านถึงรับปากมาให้สัมภาษณ์ในครั้งนี้ครับ?</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>ผมรับปากมาสัมภาษณ์ครั้งนี้ เพราะผมเห็นว่าในช่วงที่มหาวิทยาลัยกำลังเผชิญ<span class="key-term">โจทย์สำคัญหลายด้าน</span> ผู้สมัครอธิการบดีก็ควรพร้อมอธิบาย<span class="key-term">วิธีคิด วิสัยทัศน์ และวิธีตัดสินใจ</span>ของตัวเองอย่างเปิดเผยครับ</p>
+              <p>วันนี้เราอยู่ในบริบทที่<span class="key-term">ความเปลี่ยนแปลงเกิดขึ้นเร็วมาก</span> ไม่ว่าจะเป็นโครงสร้างประชากรที่คนเกิดน้อยลง การแข่งขันที่เปลี่ยนไป หรือ <span class="key-term">AI disruption</span> ซึ่งเป็นเรื่องจริงที่มหาวิทยาลัยต้องเตรียมรับมือ แม้วันนี้หลายเรื่องอาจยังไม่เกิดเต็มรูปแบบเพราะมีข้อจำกัดอยู่ แต่ผมเชื่อว่าอีกไม่นานเราต้องเผชิญมันอย่างหลีกเลี่ยงไม่ได้</p>
+              <p>เพราะฉะนั้น สำหรับผม เวทีนี้ไม่ใช่เพียง<span class="key-term">เวทีของผู้สมัคร</span> แต่เป็น<span class="key-term">เวทีของมหาวิทยาลัย</span> ที่ช่วยให้ผู้มีส่วนเกี่ยวข้องได้ฟัง ได้เห็นโจทย์ร่วมกัน และได้ประเมินว่าผู้สมัครแต่ละคนมองอนาคตของมหาวิทยาลัยอย่างไร</p>
+              <p>ในมุมของกระบวนการสรรหา ผมคิดว่าเวทีลักษณะนี้มีคุณค่า เพราะช่วยให้การตัดสินใจเลือกผู้นำองค์กรขนาดใหญ่มีข้อมูลมากขึ้น มี <span class="key-term">transparency</span> มากขึ้น และสร้าง <span class="key-term">trust</span> กับประชาคมได้มากขึ้นด้วย</p>
+              <p>ดังนั้นเหตุผลที่ผมมาวันนี้จึงเรียบง่ายครับ คือเมื่อมหาวิทยาลัยกำลังอยู่ในช่วงที่ต้องตัดสินใจเรื่องสำคัญ ผู้สมัครก็ควรพร้อมออกมาอธิบายต่อสาธารณะอย่างตรงไปตรงมา และผมคิดว่านั่นสอดคล้องกับคุณค่าของมหาวิทยาลัยที่ควรเป็นพื้นที่ของ<span class="key-term">เหตุผล ความเปิดกว้าง และการรับฟัง</span>ครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="context.html">บริบท</a>
+              <a class="qa-link-chip" href="roles.html">บทบาท</a>
+            </div>
+            <div class="qa-related">อ่านประกอบได้ที่ <a href="articles/future-of-ku-interview-see-world-see-kaset.html">บทความสรุปบทสัมภาษณ์เรื่องอนาคตของมหาวิทยาลัยเกษตรศาสตร์</a></div>
+          </div>
+        </details>
+
+        <details class="section-card qa-item" id="q2">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 2</div>
+                  <a class="qa-anchor" href="#q2" aria-label="ลิงก์ไปยังคำถามข้อ 2">#q2</a>
+                </div>
+                <div class="qa-question">ที่มาที่ไปในการสมัครเพื่อเข้ารับการสรรหาอธิการบดีในครั้งนี้เป็นมาอย่างไรครับ ใช้เวลาในการตัดสินใจสมัครนานไหมครับ?</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>ผมคิดเรื่องนี้และเตรียมตัวมาค่อนข้างนานครับ โชคดีที่ช่วงหนึ่งได้ทำหน้าที่เกี่ยวข้องกับ<span class="key-term">สภามหาวิทยาลัย</span> จึงได้เห็นโจทย์ของมหาวิทยาลัยอย่างต่อเนื่อง ทั้งในมุม<span class="key-term">โครงสร้าง ข้อจำกัด และสิ่งที่ควรต้องเกิดขึ้นต่อไป</span> ทำให้การตัดสินใจครั้งนี้ไม่ได้เกิดขึ้นแบบฉับพลัน</p>
+              <p>ถึงอย่างนั้น ผมก็ตัดสินใจจริง ๆ ใน<span class="key-term">วันสุดท้ายของการสมัคร</span> เพราะผมชั่งน้ำหนักอยู่นานว่าเราควรใช้เวลาและพลังกับเรื่องนี้จริงหรือไม่ แต่สุดท้ายผมคิดว่า ถ้าเราเห็นปัญหาของมหาวิทยาลัยมามาก พูดถึงมันมามาก และเมื่อถึงเวลาที่มีโอกาสจะเข้าไปทำจริงกลับไม่ทำ ต่อไปก็คงวิจารณ์ได้ไม่เต็มปาก</p>
+              <p>ผมจึงตัดสินใจว่า ถ้ามีโอกาสก็ควรทำ และถ้าไม่ได้รับเลือก อย่างน้อยก็ถือว่าเราได้ทำหน้าที่ของตัวเองอย่างดีที่สุดแล้ว</p>
+              <p>อีกอย่างหนึ่ง ผมไม่ได้ลงสมัครเพราะยึดติดกับตำแหน่งครับ ถ้ามองในชีวิตส่วนตัว ผมใกล้เกษียณแล้ว และจริง ๆ ก็อยากมีชีวิตที่สงบขึ้นด้วยซ้ำ แต่ผมก็รู้ว่าถ้ายังเห็นว่ามหาวิทยาลัยมีสิ่งที่ควรช่วย และเราพอจะช่วยได้ ก็คงอยู่เฉยได้ยาก</p>
+              <p>ครอบครัวของผมก็มี<span class="key-term">ความผูกพันกับมหาวิทยาลัยเกษตรศาสตร์มาก</span> ดังนั้นเมื่อรวมทุกอย่างเข้าด้วยกัน เหตุผลของการลงสมัครครั้งนี้จึงไม่ใช่เรื่องความทะเยอทะยานส่วนตัวเป็นหลัก แต่เป็น <span class="key-term">sense of responsibility</span> ที่เกิดจากการคิดมานาน เห็นปัญหาจริง และรู้สึกว่าถ้าช่วยได้ ก็ควรลุกขึ้นมาช่วยครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="context.html">บริบท</a>
+              <a class="qa-link-chip" href="roles.html">บทบาท</a>
+              <a class="qa-link-chip" href="goals.html">เป้าหมาย</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="section-card qa-item" id="q3">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 3</div>
+                  <a class="qa-anchor" href="#q3" aria-label="ลิงก์ไปยังคำถามข้อ 3">#q3</a>
+                </div>
+                <div class="qa-question">อยากให้ชาว มก. รู้จักตัวอาจารย์มากขึ้น อยากให้อาจารย์แนะนำตัวแบบฟรีสไตล์เลยครับ แบบที่ไม่กั๊กเลยครับ</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>ผมชื่อพันธุ์ปิติ เปี่ยมสง่าครับ เป็นศิษย์เก่าวิศวกรรมไฟฟ้า KU45 จบปริญญาเอกด้านวิศวกรรมคอมพิวเตอร์จาก George Washington University ปัจจุบันเป็นหัวหน้าภาควิชาวิศวกรรมคอมพิวเตอร์ และเป็นกรรมการสภามหาวิทยาลัยเกษตรศาสตร์</p>
+              <p>ถ้าจะให้แนะนำตัวแบบไม่กั๊ก ผมคิดว่าตัวเองเป็นคนทำงานอยู่ <span class="key-term">3 เรื่องควบกันมาตลอด</span> ครับ คือ<span class="key-term">สร้างระบบ สร้างคน และสร้างของใหม่</span>ให้เกิดขึ้นจริงในมหาวิทยาลัย</p>
+              <p>ในด้านระบบ ผมมีโอกาสทำ<span class="key-term">ระบบสารสนเทศ</span>ให้มหาวิทยาลัยเกษตรศาสตร์หลายระบบที่ใช้งานต่อเนื่องมานานมาก ส่วนในด้านคน ผมทำงานกับการพัฒนา <span class="key-term">talent</span> มาอย่างยาวนานผ่านคอมพิวเตอร์โอลิมปิก และในด้านการสร้างของใหม่ ผมมีโอกาสริเริ่ม<span class="key-term">หลักสูตรจากศูนย์หลายหลักสูตร</span> รวมทั้งงานวิจัยด้าน AI ที่พยายามเชื่อมกับการประยุกต์ใช้จริง</p>
+              <p>สิ่งที่ผมเรียนรู้จากการทำงานทั้งหมดนี้คือ มหาวิทยาลัยจะเดินหน้าไม่ได้ถ้าคิดเป็นแต่เรื่องใดเรื่องหนึ่ง เราต้อง<span class="key-term">คิดเป็นระบบ</span> แต่ในขณะเดียวกันก็ต้อง<span class="key-term">เข้าใจคน</span> เพราะสุดท้ายไม่ว่าจะเป็นหลักสูตร ระบบงาน หรือโครงการใหม่ ๆ มันสำเร็จได้ก็ต่อเมื่อคนที่เกี่ยวข้องอยากร่วมกันทำให้มันสำเร็จ</p>
+              <p>ผมมาจากพื้นฐานวิศวกรครับ ก็เลยชอบมองว่าเรื่องต่าง ๆ เชื่อมกันอย่างไร และจะแก้ปัญหาอย่างไรให้ใช้ได้จริง แต่ผมไม่ได้มองมหาวิทยาลัยเป็นแค่ระบบเท่านั้น ผมมองว่า KU คือ<span class="key-term">ชุมชนของคนเก่งจำนวนมาก</span>ที่ต้องการทิศทางที่ชัด ระบบที่ดี และพื้นที่ให้เติบโต</p>
+              <p>ถ้าจะสรุปตัวตนของผมสั้น ๆ ผมคงเป็นคนที่จริงจังกับการทำ<span class="key-term">เรื่องยากให้เดินได้จริง</span> และอยากใช้ประสบการณ์ทั้งหมดที่มี ทั้งเรื่องระบบ งานวิจัย การพัฒนาคน และความร่วมมือกับต่างประเทศ มาช่วยให้มหาวิทยาลัยเกษตรศาสตร์แข็งแรงขึ้นทั้งในวันนี้และในอนาคตครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="about.html">แนะนำตัว</a>
+              <a class="qa-link-chip" href="roles.html">บทบาท</a>
+              <a class="qa-link-chip" href="goals.html">เป้าหมาย</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="section-card qa-item" id="q4">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 4</div>
+                  <a class="qa-anchor" href="#q4" aria-label="ลิงก์ไปยังคำถามข้อ 4">#q4</a>
+                </div>
+                <div class="qa-question">ปัญหาใหญ่ที่มหาวิทยาลัยเกษตรศาสตร์ประสบอยู่ปัจจุบัน หากให้เลือก 1 เรื่อง ที่ท่านต้องการให้มีการแก้ปัญหาโดยด่วนที่สุดคือเรื่องใดครับ?</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>ถ้าให้เลือก 1 เรื่องที่อยากแก้โดยด่วนที่สุด ผมจะเลือกเรื่อง<span class="key-term">ความล่าช้าและความซับซ้อนของการบริหารจัดการ</span>ครับ เพราะปัญหานี้กระทบงานแทบทุกเรื่อง ไม่ว่าจะเป็นหลักสูตร งานวิจัย การใช้ทรัพยากร หรือการตัดสินใจข้ามหน่วย</p>
+              <p>ทุกวันนี้เราไม่ได้ทำงานช้าเพราะคนไม่ตั้งใจทำงาน แต่ช้าจากการที่<span class="key-term">กระบวนการมีหลายชั้นเกินไป</span> อำนาจตัดสินใจไม่ได้อยู่ในจุดที่เหมาะสม และหลายเรื่องยังใช้วิธีทำงานแบบเดิมทั้งที่บริบทเปลี่ยนไปแล้ว ผลก็คืออาจารย์ นักวิจัย และหน่วยงานหน้างานต้องใช้พลังไปกับการรอ การประสาน และการส่งเรื่อง มากกว่าการสร้างงานที่มีคุณค่าโดยตรง</p>
+              <p>ถ้ายกตัวอย่างให้เห็นภาพ ผมคิดถึงเรื่องการปรับปรุงหลักสูตรครับ คนที่รู้ดีที่สุดว่าหลักสูตรควรเปลี่ยนอย่างไรคือคนทำหลักสูตรเอง แต่ระบบของเรากลับทำให้เรื่องแบบนี้ต้องผ่านลำดับชั้นจำนวนมาก ทั้งที่หน่วยงานตรงกลางจริง ๆ ไม่ได้ลงไปออกแบบเนื้อหาวิชาการแทนคนหน้างานอยู่แล้ว สิ่งที่ควรทำมากกว่าคือกำหนด<span class="key-term">กติกากลางที่ชัด โปร่งใส ตรวจสอบได้</span> และทำให้กระบวนการสั้นลง</p>
+              <p>แต่ถ้ามองให้ลึกกว่านั้น เรื่องที่ต้องรีบแก้วันนี้คือ <span class="key-term">management ที่ติดคอขวด</span> ส่วนสิ่งที่ต้องสร้างไปพร้อมกันในระยะยาวคือ <span class="key-term">governance ที่ดี</span> ครับ คือกระจายอำนาจให้เหมาะสม ทำให้การตัดสินใจตรวจสอบได้ และใช้ข้อมูลชุดเดียวกันมากขึ้น เพราะเมื่อกรอบชัด คนหน้างานจะขยับได้เร็วขึ้นโดยยังอยู่ในระบบที่รับผิดชอบได้</p>
+              <p>เพราะฉะนั้น ถ้าถามว่าด่วนที่สุดคืออะไร ผมจะตอบว่าเราต้องทำให้มหาวิทยาลัย<span class="key-term">ทำงานได้เร็วขึ้น ง่ายขึ้น และชัดขึ้น</span>ก่อน โดยเริ่มจากการลดคอขวดของ management และใช้ <span class="key-term">data governance</span> เป็นเครื่องมือค่อย ๆ ปรับระบบให้ไปสู่ governance ที่ดีกว่าในระยะยาวครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="context.html">บริบท</a>
+              <a class="qa-link-chip" href="goals.html">เป้าหมาย</a>
+              <a class="qa-link-chip" href="strategy.html">กลยุทธ์</a>
+              <a class="qa-link-chip" href="four-year-plan.html">แผนสี่ปี</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="section-card qa-item" id="q5">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 5</div>
+                  <a class="qa-anchor" href="#q5" aria-label="ลิงก์ไปยังคำถามข้อ 5">#q5</a>
+                </div>
+                <div class="qa-question">เป็นที่ทราบกันทั่วไปว่ามหาวิทยาลัยเกษตรศาสตร์เป็นที่คาดหวังของสังคมในเรื่องของงานวิจัยที่เข้มแข็งด้านเกษตร ในการนำของท่าน จะทำให้ศาสตร์ทางด้านเกษตรของ มก. โดดเด่นกว่าที่ผ่านมาได้อย่างไร</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>ถ้าจะทำให้ศาสตร์ด้านการเกษตรของมหาวิทยาลัยเกษตรศาสตร์โดดเด่นกว่าที่ผ่านมา ผมคิดว่าเราต้องเริ่มจากการถามให้ชัดก่อนว่า วันนี้<span class="key-term">ภาคเกษตรและสังคมต้องการอะไรจริง ๆ</span> ไม่ใช่เริ่มจากคำถามว่าเราสะดวกจะสอนหรือวิจัยอะไร</p>
+              <p>ในโลกความเป็นจริง เกษตรไม่ได้มีแค่เรื่อง<span class="key-term">วิทยาศาสตร์การเกษตรแบบแยกส่วน</span>อีกต่อไป แต่เชื่อมกับเศรษฐศาสตร์ เทคโนโลยีชีวภาพ จุลินทรีย์ ปุ๋ย การค้า การตลาด โดรน กฎหมาย และการถ่ายทอดเทคโนโลยี เรื่องเหล่านี้คือชีวิตจริงของเกษตรกร ผู้ประกอบการ และภาคผลิต เพราะฉะนั้นถ้า KU อยากโดดเด่น เราต้องทำให้<span class="key-term">ความรู้ของเราเชื่อมกันตลอดตั้งแต่ต้นน้ำถึงปลายน้ำ</span> และตอบโจทย์คนที่อยู่ในระบบนั้นจริง ๆ</p>
+              <p>ในมุมการสร้างคนก็เช่นกัน เราต้องคิดให้ชัดว่าเรากำลังสร้างคนแบบไหน บางเรื่องต้องการคนที่<span class="key-term">รู้ลึกมาก</span> บางเรื่องต้องการคนที่<span class="key-term">เชื่อมหลายศาสตร์ได้ดี</span> มหาวิทยาลัยทำได้ทั้งสองแบบ แต่ต้องมี <span class="key-term">flexibility</span> สูงพอที่จะบูรณาการความรู้ข้ามสาขา ไม่เช่นนั้นเราจะผลิตคนเก่งเฉพาะทาง แต่ไม่สามารถแก้ปัญหาจริงที่ซับซ้อนขึ้นทุกวันได้</p>
+              <p>ในการนำของผม สิ่งที่อยากทำให้ชัดขึ้นคือทำให้<span class="key-term">หลักสูตร งานวิจัย และความร่วมมือกับภาคผลิตเชื่อมกันมากขึ้น</span> ไม่ใช่เดินแยกกันคนละทาง เพื่อให้ความรู้จากมหาวิทยาลัยไปถึงการใช้จริงได้เร็วขึ้น และเพื่อให้นิสิตเรียนแล้วเห็นเส้นทางว่าความรู้นั้นจะไปสร้างคุณค่าอะไรในโลกจริง</p>
+              <p>สำหรับผม KU ไม่ควรทำให้เกษตรโดดเด่นด้วยวิธีคิดแบบ<span class="key-term">ย้อนกลับไปหาอดีตอย่างเดียว</span> แต่ต้องยกระดับจุดแข็งเดิมให้ร่วมสมัย และขยายจากเกษตรไปสู่เรื่องอาหาร สุขภาพ สิ่งแวดล้อม เทคโนโลยี และสังคม</p>
+              <p>ถ้าทำได้แบบนี้ ความโดดเด่นของ KU ด้านเกษตรจะไม่ใช่แค่ชื่อเสียงหรือความทรงจำในอดีต แต่จะแปลออกมาเป็น<span class="key-term">คนที่มีคุณภาพ งานวิจัยที่ใช้ได้จริง หลักสูตรที่ตอบอนาคต และผลกระทบที่จับต้องได้</span>ต่อประเทศ ภาคผลิต และคนรุ่นใหม่ครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="goals.html">เป้าหมาย</a>
+              <a class="qa-link-chip" href="strategy.html">กลยุทธ์</a>
+              <a class="qa-link-chip" href="four-year-plan.html">แผนสี่ปี</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="section-card qa-item" id="q6">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 6</div>
+                  <a class="qa-anchor" href="#q6" aria-label="ลิงก์ไปยังคำถามข้อ 6">#q6</a>
+                </div>
+                <div class="qa-question">ในการจัดลำดับมหาวิทยาลัย ทั้งระดับชาติ และนานาชาติ มก. ที่ผ่านมา เราไม่ค่อยประสบความสำเร็จเท่าไร ท่านคิดว่าการจัดอันดับสำคัญกับ มก. ไหม หากสำคัญ มก. ควรมีวิธีการอย่างไรให้มี ranking ที่ดีขึ้น</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>ผมคิดว่าการจัดอันดับมีความสำคัญครับ แต่สำคัญในฐานะ<span class="key-term">ผลสะท้อน</span> ไม่ใช่<span class="key-term">เป้าหมายปลายทาง</span>อย่างเดียว</p>
+              <p>เหตุผลคือเวลาคนภายนอกยังไม่รู้จักเรา เขาก็มักใช้ <span class="key-term">ranking</span> เป็นข้อมูลตั้งต้นในการมองมหาวิทยาลัย ไม่ว่าจะเป็นนักศึกษา นักวิจัย คู่ความร่วมมือ หรือหน่วยงานต่างประเทศ เพราะฉะนั้นเราปฏิเสธ ranking ไม่ได้ โดยเฉพาะในโลกที่การแข่งขันสูงขึ้นและทุกคนมีตัวเลือกมากขึ้น</p>
+              <p>แต่ในอีกด้านหนึ่ง ถ้าเรามัวแต่วิ่งตามตัวชี้วัดโดยไม่ยกระดับ <span class="key-term">substance</span> จริง สุดท้าย ranking ก็จะไม่ยั่งยืน สำหรับผม สิ่งที่สำคัญกว่าคือ <span class="key-term">reputation</span>, <span class="key-term">คุณภาพงานวิจัย</span>, <span class="key-term">ผลลัพธ์ของบัณฑิต</span> และการมองเห็นในระดับนานาชาติ เพราะเมื่อสิ่งเหล่านี้ดีขึ้น ranking ก็มักจะดีขึ้นตามมา</p>
+              <p>ถ้าถามว่าจะทำอย่างไร ผมคิดว่าต้องทำหลายเรื่องควบกันครับ เรื่องแรกคือสร้างความพร้อมให้กับนักวิจัยและหน่วยงานวิชาการให้มากขึ้น ไม่ใช่ปล่อยให้แต่ละคนดิ้นกันเอง เราต้องเข้าใจสภาพการทำวิจัยจริงของแต่ละสาขา เพราะกว่าจะได้ผลงานตีพิมพ์ ทุน และโอกาสในแต่ละสาขาไม่เท่ากัน ถ้าเราไม่เข้าใจความต่างเหล่านี้ เราก็จะประเมินผิด และสนับสนุนไม่ตรงจุด</p>
+              <p>เรื่องที่สองคือ<span class="key-term">ผลลัพธ์ของบัณฑิต</span> เราต้องทำให้คนภายนอกเห็นชัดขึ้นว่า บัณฑิตของ KU มีคุณภาพอย่างไร ทำงานได้จริงแค่ไหน และตอบโจทย์โลกใหม่ได้อย่างไร เพราะชื่อเสียงของมหาวิทยาลัยไม่ได้เกิดจากงานวิจัยอย่างเดียว แต่เกิดจากคนที่เราส่งออกไปด้วย</p>
+              <p>เรื่องที่สามคือ<span class="key-term">การมองเห็นในระดับนานาชาติ</span> เราอาจมีของดีอยู่แล้วหลายอย่าง แต่ถ้าไม่ถูกเล่า ไม่ถูกเชื่อมกับเครือข่ายนานาชาติ และไม่ถูกนำเสนออย่างเป็นระบบ คนภายนอกก็ไม่เห็น เพราะฉะนั้นเราต้องทำให้ผลงาน ความร่วมมือ และจุดแข็งของ KU ถูกมองเห็นมากขึ้นในเวทีที่เกี่ยวข้อง</p>
+              <p>ดังนั้น มหาวิทยาลัยต้องมี<span class="key-term">ข้อมูลที่ดีพอจะเห็นภาพตามสาขา</span> เห็นศักยภาพ เห็นคอขวด และออกแบบการสนับสนุนที่เหมาะสม ทั้งเรื่องทุน โครงสร้างพื้นฐาน คุณภาพบัณฑิต ความร่วมมือระหว่างประเทศ และการลดภาระที่ไม่จำเป็น เพื่อให้อาจารย์ นักวิจัย และนิสิตสร้างผลงานที่สะท้อนความเข้มแข็งของมหาวิทยาลัยได้จริง</p>
+              <p>สรุปคือ สำหรับผม ranking สำคัญ แต่ไม่ควรเป็นสิ่งที่เราวิ่งไล่โดยตรง สิ่งที่เราควรทำคือยกระดับ<span class="key-term">ความเข้มแข็งจริงของมหาวิทยาลัย</span>ให้เห็นได้จากงานวิจัย คุณภาพบัณฑิต และชื่อเสียงในสายตาคนภายนอก แล้ว ranking จะค่อย ๆ ตามมาอย่างมีความหมายครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="goals.html">เป้าหมาย</a>
+              <a class="qa-link-chip" href="strategy.html">กลยุทธ์</a>
+              <a class="qa-link-chip" href="four-year-plan.html">แผนสี่ปี</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="section-card qa-item" id="q7">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 7</div>
+                  <a class="qa-anchor" href="#q7" aria-label="ลิงก์ไปยังคำถามข้อ 7">#q7</a>
+                </div>
+                <div class="qa-question">เครือข่ายหรือ connection ของมหาวิทยาลัยเกษตรศาสตร์กับหน่วยงานต่างประเทศมักเริ่มจากความสัมพันธ์จากตัวบุคคล ท่านมีวิธีพัฒนาให้เครือข่ายจากปัจเจกเป็นเครือข่ายที่เข้มแข็งและมี impact ให้กับ มก. ได้อย่างไร</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>ผมคิดว่าความร่วมมือระหว่างประเทศจำนวนมากเริ่มจาก<span class="key-term">ตัวบุคคล</span>เป็นเรื่องปกติครับ เพราะสุดท้ายคนจะทำงานด้วยกันได้ก็มักเริ่มจาก<span class="key-term">ความไว้ใจ</span> แต่ถ้าเราหยุดอยู่แค่นั้น ความร่วมมือก็จะเป็นกิจกรรมเฉพาะครั้ง พอคนย้ายงาน พอโปรเจคจบ หรือพอไม่มีงบ มันก็จบตามไปด้วย</p>
+              <p>เพราะฉะนั้นโจทย์สำคัญไม่ใช่การทำให้ความสัมพันธ์แบบปัจเจกหายไป แต่คือการต่อยอดจากความสัมพันธ์นั้นให้กลายเป็น<span class="key-term">ความร่วมมือระดับสถาบัน</span>ที่มีความต่อเนื่องมากขึ้น</p>
+              <p>สำหรับผม สิ่งที่ควรทำคือเลือกสร้าง <span class="key-term">trusted partner policy</span> ให้ชัดขึ้น ไม่ใช่ทำ MOU กว้าง ๆ ไปทั่ว แต่คัดเลือก partner ที่มีศักยภาพจะทำงานร่วมกันระยะยาวจริง แล้วต่อยอดให้เกิดกิจกรรมที่มี <span class="key-term">substance</span> เช่น <span class="key-term">double degree</span>, <span class="key-term">joint research</span>, <span class="key-term">co-supervision</span>, หรือ platform การทำงานร่วมที่ต่อเนื่อง ไม่ใช่จบแค่การเยี่ยมเยือนหรือจัดงานครั้งเดียว</p>
+              <p>อีกเรื่องหนึ่งคือมหาวิทยาลัยต้องมี<span class="key-term">ระบบ support ที่ดีขึ้น</span> เพราะทุกวันนี้คนที่อยากทำงานต่างประเทศมักต้องเสียเวลาไปกับงานเอกสาร วีซ่า ที่พัก การประสานงาน และเรื่องจุกจิกจำนวนมาก ถ้าเราไม่ช่วยลดภาระตรงนี้ ความร่วมมือก็จะโตยากมาก ต่อให้คนอยากทำก็หมดแรงก่อน</p>
+              <p>ผมคิดด้วยว่ารูปแบบความร่วมมือควร<span class="key-term">ยืดหยุ่นขึ้น</span> การเดินทางมีต้นทุนสูง ถ้าเราออกแบบให้ทำงานออนไลน์เป็นฐาน และใช้ออนไซต์เท่าที่จำเป็น ความร่วมมือจะไม่ขึ้นอยู่กับงบเดินทางอย่างเดียว ทำให้ขยายจำนวนคู่ร่วมงานได้มากขึ้น และที่สำคัญคือทำให้ความร่วมมือมีความต่อเนื่อง ไม่ใช่เจอกันครั้งเดียวแล้วเงียบไป</p>
+              <p>สุดท้าย สิ่งที่สำคัญมากคือเราต้องวัด <span class="key-term">impact</span> ให้ชัด ไม่ใช่นับแค่จำนวน MOU หรือจำนวนกิจกรรม แต่ต้องดูว่ามีหลักสูตรร่วมเกิดขึ้นไหม มีงานวิจัยร่วมไหม มีนิสิตหรืออาจารย์ได้ประโยชน์จริงแค่ไหน และความร่วมมือนั้นสร้างชื่อเสียงหรือโอกาสใหม่ให้ KU อย่างไร ถ้าทำแบบนี้ได้ เครือข่ายจากปัจเจกก็จะค่อย ๆ กลายเป็นเครือข่ายของมหาวิทยาลัยที่แข็งแรง มีผลกระทบจริง และเดินต่อได้ในระยะยาวครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="roles.html">บทบาท</a>
+              <a class="qa-link-chip" href="strategy.html">กลยุทธ์</a>
+              <a class="qa-link-chip" href="four-year-plan.html">แผนสี่ปี</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="section-card qa-item" id="q8">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 8</div>
+                  <a class="qa-anchor" href="#q8" aria-label="ลิงก์ไปยังคำถามข้อ 8">#q8</a>
+                </div>
+                <div class="qa-question">“เรื่องความก้าวหน้า รายได้ และคุณค่าในงาน” เป็นเรื่องขวัญและกำลังใจของคนทำงาน ท่านมีแนวคิดอย่างไรที่จะทำให้ ‘คนเก่งอยากอยู่ คนทำงานอยากทุ่มเท’ ให้มหาวิทยาลัยเกษตรศาสตร์มากขึ้น</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>สำหรับผม ถ้าอยากให้<span class="key-term">คนเก่งอยากอยู่</span> และ<span class="key-term">คนทำงานอยากทุ่มเท</span> เราต้องทำให้เขารู้สึกว่าการทำหน้าที่อย่างเต็มที่ไม่ใช่การเสียสละเกินจำเป็น แต่เป็นสิ่งที่องค์กร<span class="key-term">เห็นคุณค่า ตอบแทนอย่างเป็นธรรม และเปิดทางให้เติบโตได้</span></p>
+              <p>เรื่องนี้จึงไม่ใช่แค่เรื่องรายได้อย่างเดียว แม้รายได้และสวัสดิการจะสำคัญมาก แต่ถ้าระบบไม่เป็นธรรม คนก็หมดกำลังใจอยู่ดี ผมคิดว่ามีอย่างน้อย 4 เรื่องที่ต้องเดินไปพร้อมกัน คือ <span class="key-term">fairness</span>, <span class="key-term">growth</span>, <span class="key-term">meaning</span>, และ <span class="key-term">work environment</span></p>
+              <p>เรื่องแรกคือ<span class="key-term">ความเป็นธรรม</span> คนทำงานต้องรู้สึกว่าระบบประเมินและระบบความก้าวหน้าโปร่งใส มีธรรมาภิบาล ตรวจสอบได้ และสะท้อนภารกิจจริงของมหาวิทยาลัย ไม่ใช่ใช้เกณฑ์แบบเดียวกับทุกคนจนบางกลุ่มรู้สึกว่าไม่ว่าจะทำดีอย่างไรก็เสียเปรียบ</p>
+              <p>ทุกวันนี้เรามีแนวโน้มให้คุณค่ากับบางงานมากกว่าอีกบางงาน เช่น งานวิจัยบางประเภทอาจถูกมองเห็นง่ายกว่า ขณะที่งานสอน งานพัฒนานิสิต หรืองานสร้างระบบกลับไม่ได้รับการยอมรับในสัดส่วนที่ควร ถ้าการวัดผลไม่ตรงกับ<span class="key-term">ปรัชญาของมหาวิทยาลัย</span> คนก็จะรู้สึกว่าองค์กรไม่ได้เห็นคุณค่าของงานที่เขาทำจริง</p>
+              <p>เรื่องที่สองคือ<span class="key-term">การเติบโต</span> คนเก่งจะอยู่ต่อเมื่อเห็นเส้นทางว่าตัวเองพัฒนาได้ ไม่ใช่ทำงานหนักไปเรื่อย ๆ แต่ไม่เห็นอนาคต เรื่องที่สามคือ<span class="key-term">ความหมายของงาน</span> เราต้องทำให้คนเห็นว่างานของเขาเชื่อมกับภารกิจใหญ่ของมหาวิทยาลัยอย่างไร และเรื่องที่สี่คือ<span class="key-term">สภาพแวดล้อมในการทำงาน</span> ถ้าระบบเต็มไปด้วย friction คนก็หมดแรงก่อนจะได้สร้างผลงาน</p>
+              <p>เพราะฉะนั้น ถ้าถามว่าทำอย่างไร ผมคิดว่าเราต้องปรับทั้ง<span class="key-term">ระบบประเมินให้เป็นธรรมและโปร่งใส</span> ปรับ <span class="key-term">incentive</span> ให้เหมาะกับงานที่หลากหลาย ดูแลสวัสดิการให้สมเหตุสมผล และลดอุปสรรคที่ทำให้คนใช้พลังไปกับเรื่องที่ไม่จำเป็น ถ้าทำได้ คนเก่งก็จะอยากอยู่ และคนที่อยู่ก็จะอยากทุ่มเทมากขึ้นครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="roles.html">บทบาท</a>
+              <a class="qa-link-chip" href="goals.html">เป้าหมาย</a>
+              <a class="qa-link-chip" href="strategy.html">กลยุทธ์</a>
+              <a class="qa-link-chip" href="four-year-plan.html">แผนสี่ปี</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="section-card qa-item" id="q9">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 9</div>
+                  <a class="qa-anchor" href="#q9" aria-label="ลิงก์ไปยังคำถามข้อ 9">#q9</a>
+                </div>
+                <div class="qa-question">หากเป็นอธิการบดี ท่านเป็นคนเข้าถึงได้ยากไหม และอะไรเป็นสิ่งแรกที่อยู่ในใจที่จะแก้ปัญหาหรือช่วยชาว KU ในเรื่องของความเป็นอยู่และบรรยากาศในการทำงานใน มก. มากที่สุด</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>ถ้าถามว่าผมเป็นคนเข้าถึงได้ยากไหม ผมคิดว่าคำตอบที่ตรงที่สุดคือ <span class="key-term">ผมพร้อมช่วย</span> ครับ แต่ผมไม่คิดว่าการเป็นอธิการบดีที่ดีจะวัดจากการที่ทุกคนต้องเข้ามาพบผมได้ง่ายด้วยตัวเองเสมอไป</p>
+              <p>เหตุผลคือมหาวิทยาลัยมีคนจำนวนมากมาก อธิการบดีคงไม่สามารถแก้ปัญหาให้คนเป็นหมื่นคนแบบรายกรณีได้ทั้งหมดอยู่แล้ว เพราะฉะนั้นสิ่งที่สำคัญกว่าบุคลิกส่วนตัวของอธิการบดี คือการมี<span class="key-term">ระบบรับฟัง</span>และ<span class="key-term">ระบบส่งต่อปัญหา</span>ที่ชัดเจน ทำให้คนรู้ว่าถ้ามีปัญหาแล้วจะไปที่ไหน ใครรับผิดชอบ และเรื่องจะไม่เงียบหายไปกลางทาง</p>
+              <p>ผมเองไม่ใช่คนสาย party และคงไม่ได้เป็นผู้นำแบบที่ใช้ความคึกคักส่วนตัวเข้าหาคนทุกวัน ผมค่อนข้างเป็น <span class="key-term">introvert</span> ด้วยซ้ำ แต่ผมคิดว่าความเข้าถึงได้ที่สำคัญกว่าคือคนต้องรู้สึกว่าองค์กร<span class="key-term">รับฟังจริง</span> ปัญหาถูกเห็นจริง และเมื่อสะท้อนออกมาแล้วจะมีการติดตามอย่างจริงจัง</p>
+              <p>สำหรับเรื่องความเป็นอยู่และบรรยากาศในการทำงาน สิ่งแรกที่อยู่ในใจผมคือทำให้ที่ทำงานเป็นพื้นที่ที่<span class="key-term">ปลอดภัยและสบายใจมากขึ้น</span> ทั้งในด้านสุขภาพกาย สุขภาพใจ และความสัมพันธ์ในการทำงาน คนควรทำงานได้โดยไม่ต้องแบกความกังวลเกินจำเป็นหรือรู้สึกว่าตัวเองไม่มีที่พึ่งในระบบ</p>
+              <p>อีกเรื่องหนึ่งคือความเป็นอยู่ต้องมี<span class="key-term">ความชัดเจนจากมหาวิทยาลัย</span>เป็นหลัก เราต้องทำให้สิทธิ สวัสดิการ ช่องทางช่วยเหลือ และวิธีจัดการปัญหาต่าง ๆ ชัดขึ้นที่สุดเท่าที่จะทำได้ แม้เราคงไม่สามารถทำให้ทุกคนพอใจได้ทั้งหมด แต่ความชัดเจน ความเป็นธรรม และการตอบสนองที่สม่ำเสมอ จะทำให้คนรู้สึกมั่นคงขึ้นมาก</p>
+              <p>เพราะฉะนั้น ถ้าถามว่าผมจะช่วยอะไรชาว KU มากที่สุด ผมคิดว่าไม่ใช่การบอกว่าใครก็เข้ามาหาผมได้เสมอ แต่คือการทำให้มหาวิทยาลัยมี<span class="key-term">ระบบรับฟังที่ทำงานจริง</span> ลดภาระงานที่ไม่จำเป็น สร้างวัฒนธรรมที่เคารพกัน และทำให้คนรู้สึกว่าปัญหาของเขาถูกเห็นและได้รับการจัดการอย่างจริงจังครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="roles.html">บทบาท</a>
+              <a class="qa-link-chip" href="goals.html">เป้าหมาย</a>
+              <a class="qa-link-chip" href="strategy.html">กลยุทธ์</a>
+              <a class="qa-link-chip" href="four-year-plan.html">แผนสี่ปี</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="section-card qa-item" id="q10">
+          <summary class="qa-summary">
+            <div class="qa-summary-inner">
+              <div class="qa-summary-copy">
+                <div class="qa-meta-row">
+                  <div class="qa-label">Question 10</div>
+                  <a class="qa-anchor" href="#q10" aria-label="ลิงก์ไปยังคำถามข้อ 10">#q10</a>
+                </div>
+                <div class="qa-question">ทำไมชาว มก. ส่วนใหญ่ควรมีท่านเป็นอธิการบดีคนต่อไป</div>
+              </div>
+              <div class="qa-toggle" aria-hidden="true"></div>
+            </div>
+          </summary>
+          <div class="qa-body">
+            <div class="qa-answer">
+              <p>ผมคิดว่าถ้าชาว มก. ส่วนใหญ่จะเห็นว่าผมเหมาะสมกับการเป็นอธิการบดีคนต่อไป เหตุผลสำคัญคงไม่ใช่เพราะผมเป็นตัวแทนของคนกลุ่มใดกลุ่มหนึ่ง แต่เพราะมหาวิทยาลัยกำลังอยู่ในช่วงที่ต้องการ<span class="key-term">การปรับตัวอย่างจริงจัง</span> และผมคิดว่าตัวเองมี<span class="key-term">วิธีคิดกับวิธีทำงาน</span>ที่เหมาะกับช่วงเปลี่ยนผ่านนี้</p>
+              <p>มหาวิทยาลัยไม่ได้อ่อนแอเพราะไม่มีของ แต่จะอ่อนแอเมื่อยังใช้<span class="key-term">วิธีคิดเดิมกับโลกที่เปลี่ยนไปแล้ว</span> ถ้าปรับทิศทางไม่ถูก ปรับระบบไม่ทัน และไม่กล้าทบทวนสิ่งที่ไม่ตอบโจทย์ เราก็จะค่อย ๆ เสียความสามารถในการแข่งขันโดยไม่รู้ตัว</p>
+              <p>วันนี้เรากำลังเผชิญเรื่องจริงหลายอย่างพร้อมกัน ไม่ว่าจะเป็น<span class="key-term">คนเกิดน้อย</span>, <span class="key-term">AI disruption</span>, การแข่งขันจากการเรียนออนไลน์, สถานการณ์เศรษฐกิจและภูมิรัฐศาสตร์ รวมทั้งการแข่งขันจากมหาวิทยาลัยอื่นที่ขยับตัวเร็วขึ้น ถ้าเรายังใช้วิธีคิดเดิม แนวทางเดิม และหวังว่าทุกอย่างจะค่อย ๆ ดีขึ้นเอง เราอาจอยู่ได้อีกพักหนึ่ง แต่จะค่อย ๆ เสียความสามารถในการแข่งขันโดยไม่รู้ตัว</p>
+              <p>สำหรับผม สิ่งที่คนส่วนใหญ่ควรได้จากอธิการบดีคนใหม่ คือคนที่มองเห็น<span class="key-term">แรงกดดันเหล่านี้ตรงไปตรงมา</span> กล้าปรับระบบที่ไม่ตอบโจทย์แล้ว และพยายามทำให้มหาวิทยาลัยเดินไปในทิศทางที่<span class="key-term">ชัดขึ้น เป็นธรรมขึ้น และพร้อมกับอนาคตมากขึ้น</span> ไม่ใช่ปล่อยให้แต่ละหน่วยอยู่กันไปวัน ๆ โดยไม่มีภาพรวมร่วมกัน</p>
+              <p>ผมไม่ได้เสนอการเปลี่ยนแปลงแบบหวือหวาเพื่อให้ดูใหม่ แต่เสนอการเปลี่ยนแปลงที่ทำให้<span class="key-term">ระบบโดยรวมทำงานดีขึ้นจริง</span> ทั้งเรื่องธรรมาภิบาล ความเป็นธรรมในการประเมิน ความคล่องตัวในการหารายได้ การตัดสินใจบนข้อมูล และการรักษาจุดแข็งสำคัญของ KU โดยเฉพาะบทบาทนำด้านการเกษตร</p>
+              <p>เพราะฉะนั้น ถ้าชาว มก. ส่วนใหญ่ต้องการผู้นำที่พร้อมพามหาวิทยาลัย<span class="key-term">ปรับตัวก่อนที่แรงกดดันจะหนักกว่านี้</span> และทำให้การเปลี่ยนแปลงนั้นเกิดประโยชน์กับระบบโดยรวม ไม่ใช่เฉพาะบางกลุ่ม ผมคิดว่านั่นคือเหตุผลที่ผมอาจเป็นทางเลือกที่เหมาะสมครับ</p>
+            </div>
+            <div class="qa-links" aria-label="หน้าที่เกี่ยวข้อง">
+              <a class="qa-link-chip" href="context.html">บริบท</a>
+              <a class="qa-link-chip" href="roles.html">บทบาท</a>
+              <a class="qa-link-chip" href="goals.html">เป้าหมาย</a>
+              <a class="qa-link-chip" href="strategy.html">กลยุทธ์</a>
+              <a class="qa-link-chip" href="four-year-plan.html">แผนสี่ปี</a>
+            </div>
+          </div>
+        </details>
+
+        <footer class="footer">
+          <div>Q&amp;A</div>
+          <div>พื้นที่สำหรับรวบรวมคำถามและคำตอบจากเวทีสัมภาษณ์และประเด็นสาธารณะ</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+  <script src="assets/release-gate.js" defer></script>
+  <script src="assets/site-analytics.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const items = Array.from(document.querySelectorAll(".qa-item"));
+      const expandAll = document.querySelector("[data-qa-expand-all]");
+      const collapseAll = document.querySelector("[data-qa-collapse-all]");
+
+      if (expandAll) {
+        expandAll.addEventListener("click", function () {
+          items.forEach((item) => {
+            item.open = true;
+          });
+        });
+      }
+
+      if (collapseAll) {
+        collapseAll.addEventListener("click", function () {
+          items.forEach((item) => {
+            item.open = false;
+          });
+        });
+      }
+
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target && target.classList.contains("qa-item")) {
+          target.open = true;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

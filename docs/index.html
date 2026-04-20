@@ -3,171 +3,462 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Punpiti Piamsa-nga</title>
-  <meta name="description" content="เว็บไซต์สาธารณะสำหรับแนะนำตัวเบื้องต้นของ Punpiti Piamsa-nga">
+  <title>วิสัยทัศน์เพื่อมหาวิทยาลัยเกษตรศาสตร์</title>
+  <meta name="description" content="พื้นที่นำเสนอวิสัยทัศน์ของ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า สำหรับการสรรหาอธิการบดีมหาวิทยาลัยเกษตรศาสตร์ พร้อมบทความและถาม/ตอบประกอบ">
+  <link rel="canonical" href="https://punpiti.github.io/ku-president-profile/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:site_name" content="Kasetsart University President Vision Archive">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="วิสัยทัศน์เพื่อมหาวิทยาลัยเกษตรศาสตร์">
+  <meta property="og:description" content="พื้นที่นำเสนอวิสัยทัศน์ของ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า สำหรับการสรรหาอธิการบดีมหาวิทยาลัยเกษตรศาสตร์ พร้อมบทความและถาม/ตอบประกอบ">
+  <meta property="og:url" content="https://punpiti.github.io/ku-president-profile/index.html">
+  <meta property="og:image" content="https://punpiti.github.io/ku-president-profile/assets/portrait.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="วิสัยทัศน์เพื่อมหาวิทยาลัยเกษตรศาสตร์">
+  <meta name="twitter:description" content="พื้นที่นำเสนอวิสัยทัศน์ของ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า สำหรับการสรรหาอธิการบดีมหาวิทยาลัยเกษตรศาสตร์ พร้อมบทความและถาม/ตอบประกอบ">
+  <meta name="twitter:image" content="https://punpiti.github.io/ku-president-profile/assets/portrait.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"วิสัยทัศน์เพื่อมหาวิทยาลัยเกษตรศาสตร์","description":"พื้นที่นำเสนอวิสัยทัศน์ของ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า สำหรับการสรรหาอธิการบดีมหาวิทยาลัยเกษตรศาสตร์ พร้อมบทความและถาม/ตอบประกอบ","url":"https://punpiti.github.io/ku-president-profile/index.html","image":"https://punpiti.github.io/ku-president-profile/assets/portrait.jpg"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-top: #f7f1e8;
-      --bg-bottom: #e9e0d2;
-      --panel: rgba(255, 252, 247, 0.9);
-      --panel-strong: #fffdf9;
-      --ink: #1f2a2e;
-      --muted: #5d6b70;
-      --line: rgba(44, 75, 83, 0.14);
-      --brand: #1f5b4d;
-      --accent: #9f6032;
-      --shadow: 0 24px 70px rgba(32, 43, 48, 0.10);
+      --ku-green: #006664;
+      --ku-green-deep: #014846;
+      --blue-deep: #14335a;
+      --gold: #efc84a;
+      --paper: #fffdf8;
+      --ink: #1c3134;
+      --muted: #617476;
+      --shadow: 0 26px 70px rgba(0, 68, 67, 0.1);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: "IBM Plex Sans Thai", "Noto Sans Thai", "Sarabun", sans-serif;
+      font-family: "Sarabun", "Noto Sans Thai", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(159, 96, 50, 0.18), transparent 26rem),
-        radial-gradient(circle at top right, rgba(31, 91, 77, 0.18), transparent 24rem),
-        linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+        radial-gradient(circle at top left, rgba(239, 200, 74, 0.18), transparent 22rem),
+        linear-gradient(180deg, #fffdf9 0%, #f5efe4 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .page {
-      width: min(1100px, calc(100vw - 32px));
-      margin: 24px auto 48px;
+      width: min(1220px, calc(100vw - 28px));
+      margin: 20px auto 36px;
     }
 
-    .hero {
-      padding: 40px 28px 32px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: var(--panel);
+    .frame {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 32px;
+      background: rgba(255, 253, 248, 0.88);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
-    .tag {
-      display: inline-block;
+    .inner {
+      padding: 24px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 4px 2px 24px;
+    }
+
+    .site-label {
+      color: var(--ku-green);
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .nav a {
       padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(31, 91, 77, 0.18);
-      background: rgba(255, 255, 255, 0.55);
-      color: var(--brand);
-      font-size: 0.94rem;
-      margin-bottom: 18px;
+      color: var(--muted);
+      transition: 160ms ease;
+    }
+
+    .nav a:hover,
+    .nav a[aria-current="page"] {
+      background: rgba(0, 102, 100, 0.08);
+      color: var(--ku-green-deep);
+    }
+
+    .landing {
+      position: relative;
+      padding: 20px 2px 8px;
+    }
+
+    .landing::before {
+      content: "";
+      position: absolute;
+      inset: 1rem 6% auto auto;
+      width: 18rem;
+      height: 18rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(239, 200, 74, 0.16), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-card {
+      position: relative;
+      padding: clamp(24px, 4vw, 48px);
+      border: 1px solid rgba(0, 102, 100, 0.08);
+      border-radius: 36px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 243, 235, 0.9));
+      box-shadow: 0 28px 70px rgba(0, 68, 67, 0.12);
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto auto -6rem -6rem;
+      width: 16rem;
+      height: 16rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 102, 100, 0.1), transparent 72%);
+      pointer-events: none;
+    }
+
+    .hero-kicker {
+      color: var(--ku-green);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      text-transform: uppercase;
     }
 
     h1 {
-      margin: 0;
-      max-width: 10ch;
-      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-      font-size: clamp(3.2rem, 10vw, 6rem);
-      line-height: 0.94;
-      letter-spacing: -0.04em;
+      max-width: 12ch;
+      margin: 16px 0 0;
+      color: var(--blue-deep);
+      font-size: clamp(2.7rem, 5vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      font-weight: 700;
     }
 
-    .lead {
-      max-width: 760px;
-      margin: 18px 0 0;
-      color: var(--muted);
-      font-size: clamp(1.02rem, 2.3vw, 1.18rem);
-      line-height: 1.8;
+    .hero-lead {
+      max-width: 48rem;
+      margin-top: 22px;
+      color: #223536;
+      font-size: clamp(1rem, 1.24vw, 1.08rem);
+      line-height: 1.85;
     }
 
-    .grid {
+    .event-card {
       display: grid;
-      grid-template-columns: 1.2fr 0.9fr;
-      gap: 18px;
-      margin-top: 18px;
+      grid-template-columns: 120px 1fr;
+      gap: 22px;
+      align-items: center;
+      margin-top: 28px;
+      padding: 18px;
+      border: 1px solid rgba(0, 102, 100, 0.08);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.64);
     }
 
-    .card {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: var(--panel-strong);
-      box-shadow: var(--shadow);
+    .event-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #e7dfd1;
     }
 
-    .card h2 {
-      margin: 0 0 10px;
-      font-size: 1.08rem;
+    .event-title {
+      color: var(--ku-green-deep);
+      font-size: 1.4rem;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      font-weight: 700;
     }
 
-    .card p,
-    .card li {
+    .event-copy {
+      margin-top: 10px;
+      color: #2d393b;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .event-meta {
+      display: grid;
+      gap: 6px;
+      margin-top: 12px;
       color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .event-meta strong {
+      color: var(--ku-green-deep);
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .primary-button,
+    .secondary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+    }
+
+    .primary-button {
+      border: 0;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ku-green), var(--ku-green-deep));
+      cursor: pointer;
+      box-shadow: 0 18px 34px rgba(0, 68, 67, 0.16);
+    }
+
+    .secondary-button {
+      border: 1px solid rgba(0, 102, 100, 0.14);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ku-green-deep);
+    }
+
+    .primary-button:hover,
+    .secondary-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .entry-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.96rem;
       line-height: 1.75;
     }
 
-    ul {
-      margin: 12px 0 0;
-      padding-left: 18px;
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .quick-link {
+      padding: 20px;
+      border: 1px solid rgba(0, 102, 100, 0.08);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.54);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .quick-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0, 102, 100, 0.16);
+      box-shadow: 0 18px 38px rgba(0, 68, 67, 0.08);
+    }
+
+    .quick-link__kicker {
+      color: var(--ku-green);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .quick-link__title {
+      margin-top: 10px;
+      color: var(--blue-deep);
+      font-size: 1.22rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .quick-link__body {
+      margin-top: 10px;
+      color: #2d393b;
+      line-height: 1.75;
+      font-size: 0.98rem;
     }
 
     .footer {
-      margin-top: 18px;
-      padding: 0 4px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px 16px;
+      padding: 26px 2px 4px;
       color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .accent {
-      color: var(--accent);
-      font-weight: 600;
+      font-size: 0.92rem;
     }
 
     @media (max-width: 860px) {
-      .page {
-        width: min(1100px, calc(100vw - 20px));
-        margin-top: 10px;
+      .quick-links {
+        grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding: 28px 20px 24px;
+      .event-card {
+        grid-template-columns: 88px 1fr;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(1220px, calc(100vw - 16px));
+        margin-top: 8px;
+      }
+
+      .frame {
         border-radius: 22px;
       }
 
-      .grid {
+      .inner {
+        padding: 16px;
+      }
+
+      .topbar,
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .event-card {
         grid-template-columns: 1fr;
+      }
+
+      .event-card img {
+        width: 104px;
+      }
+
+      .primary-button,
+      .secondary-button {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="hero">
-      <div class="tag">Public Webpage Draft</div>
-      <h1>Punpiti Piamsa-nga</h1>
-      <p class="lead">
-        หน้าเริ่มต้นสำหรับเว็บไซต์สาธารณะ ใช้เป็นฐานพัฒนาเนื้อหาแนะนำตัวก่อนเติมประวัติ
-        วิสัยทัศน์ เอกสารประกอบ และข้อมูลสาธารณะอื่นในลำดับถัดไป
-      </p>
+    <section class="frame">
+      <div class="inner">
+        <header class="topbar">
+          <div class="site-label">Kasetsart University -- The Life Systems University</div>
+          <nav class="nav">
+            <a href="index.html" aria-current="page">หน้าแรก</a>
+            <a href="context.html">บริบท</a>
+            <a href="roles.html">บทบาท</a>
+            <a href="goals.html">เป้าหมาย</a>
+            <a href="strategy.html">กลยุทธ์</a>
+            <a href="four-year-plan.html">แผนสี่ปี</a>
+            <a href="articles.html">บทความ</a>
+            <a href="qa.html">ถาม/ตอบ</a>
+            <a href="about.html">แนะนำตัว</a>
+          </nav>
+        </header>
+
+        <section class="landing">
+          <div class="hero-card">
+            <div class="hero-kicker">Vision Presentation</div>
+            <h1>วิสัยทัศน์เพื่อมหาวิทยาลัยเกษตรศาสตร์</h1>
+            <div class="hero-lead">
+              เว็บไซต์นี้รวบรวมบทความ คำถาม-คำตอบ และเนื้อหาประกอบการนำเสนอวิสัยทัศน์ของ
+              <strong>รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า</strong> สำหรับการสรรหาอธิการบดีมหาวิทยาลัยเกษตรศาสตร์
+              โดยก่อนวันนำเสนอ เนื้อหาบางส่วนจะยังไม่เปิดทั้งหมด และจะทยอยแสดงอย่างครบถ้วนหลังวันนำเสนอ
+            </div>
+
+            <div class="event-card">
+              <img src="assets/portrait.jpg" alt="รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า">
+              <div>
+                <div class="event-title">ขอเชิญติดตามการนำเสนอวิสัยทัศน์</div>
+                <div class="event-copy">
+                  หากยังไม่ถึงวันนำเสนอ เมนูที่เกี่ยวข้องกับวิสัยทัศน์หลักจะเปิดให้ชมหลังการนำเสนอ
+                  ระหว่างนี้สามารถติดตามบทความและคำถาม-คำตอบประกอบได้ก่อน
+                </div>
+                <div class="event-meta">
+                  <div><strong>ผู้เสนอวิสัยทัศน์:</strong> รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า</div>
+                  <div><strong>วันที่:</strong> 29 เมษายน 2026</div>
+                  <div><strong>สถานที่:</strong> มหาวิทยาลัยเกษตรศาสตร์</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="primary-button" id="enterContent" type="button">เข้าสู่เนื้อหา</button>
+              <a class="secondary-button" href="qa.html">ดูหน้า ถาม/ตอบ</a>
+            </div>
+            <div class="entry-note" id="entryNote">
+              ก่อนวันที่ 29 เมษายน 2026 ปุ่มนี้จะพาไปหน้า Articles เพื่ออ่านบทความและเนื้อหาประกอบก่อน
+            </div>
+
+            <section class="quick-links" aria-label="Quick access">
+              <a class="quick-link" href="articles.html">
+                <div class="quick-link__kicker">Articles</div>
+                <div class="quick-link__title">บทความและข้อเขียน</div>
+                <div class="quick-link__body">รวบรวมบทความด้านการศึกษา วิจัย และ AI ที่เผยแพร่ผ่าน Facebook และนำมาจัดระเบียบใหม่เพื่ออ่านต่อเนื่อง</div>
+              </a>
+              <a class="quick-link" href="qa.html">
+                <div class="quick-link__kicker">Q&A</div>
+                <div class="quick-link__title">คำถามและคำตอบ</div>
+                <div class="quick-link__body">รวมคำถามจากการสัมภาษณ์และคำตอบที่เรียบเรียงใหม่ให้อ่านสะดวก พร้อมขยายประเด็นสำคัญเป็นรายข้อ</div>
+              </a>
+              <a class="quick-link" href="about.html">
+                <div class="quick-link__kicker">Profile</div>
+                <div class="quick-link__title">แนะนำตัว</div>
+                <div class="quick-link__body">ข้อมูลประวัติ ประสบการณ์ งานวิจัย งานบริหาร และบทบาททางวิชาการของผู้สมัคร</div>
+              </a>
+            </section>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>Vision Presentation Hub</div>
+          <div>วิสัยทัศน์ของ รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า สำหรับการสรรหาอธิการบดีมหาวิทยาลัยเกษตรศาสตร์</div>
+        </footer>
+      </div>
     </section>
-
-    <section class="grid">
-      <article class="card">
-        <h2>Public Site Direction</h2>
-        <p>
-          หน้านี้ถูกแยกจากเว็บใน <span class="accent">vision/site</span> โดยตั้งใจให้เป็น public webpage
-          โดยเฉพาะ เพื่อไม่ปนกับพื้นที่ทำงานภายในหรือสื่อสำหรับนำเสนอวิสัยทัศน์แบบส่วนตัว
-        </p>
-      </article>
-
-      <aside class="card">
-        <h2>Planned Sections</h2>
-        <ul>
-          <li>แนะนำตัว</li>
-          <li>ประวัติและประสบการณ์</li>
-          <li>วิสัยทัศน์และแนวทางทำงาน</li>
-          <li>เอกสารสาธารณะและช่องทางติดต่อ</li>
-        </ul>
-      </aside>
-    </section>
-
-    <div class="footer">
-      โครงนี้เหมาะกับการ deploy บน GitHub Pages ผ่านโฟลเดอร์ <strong>docs/</strong>
-    </div>
   </main>
+  <script src="assets/release-gate.js" defer></script>
+  <script src="assets/site-analytics.js" defer></script>
+  <script>
+    (() => {
+      const releaseAt = new Date("2026-04-29T00:00:00+07:00");
+      const now = new Date();
+      const released = now >= releaseAt;
+      const button = document.getElementById("enterContent");
+      const note = document.getElementById("entryNote");
+      const target = released ? "context.html" : "articles.html";
+
+      if (released && note) {
+        note.textContent = "หลังวันที่ 29 เมษายน 2026 ปุ่มนี้จะพาไปหน้า บริบท เพื่อเข้าสู่เนื้อหาหลักของวิสัยทัศน์โดยตรง";
+      }
+
+      button?.addEventListener("click", () => {
+        window.location.href = target;
+      });
+    })();
+  </script>
 </body>
 </html>

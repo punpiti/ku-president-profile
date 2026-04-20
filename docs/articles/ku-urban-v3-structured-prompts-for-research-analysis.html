@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>แทนที่จะยิง AI ตรง ๆ ผมเลือกสร้าง prompt ขนาดใหญ่จากข้อมูลที่จัดโครงแล้ว</title>
+  <meta name="description" content="Archive บทความว่าด้วยการดึงข้อมูลจาก KURDI API มาจัดโครงเป็น prompt ขนาดใหญ่ เพื่อให้ AI วิเคราะห์ข้อมูลทุนวิจัยและผลงานได้มีบริบทมากขึ้น">
+  <link rel="canonical" href="https://punpiti.github.io/ku-president-profile/articles/ku-urban-v3-structured-prompts-for-research-analysis.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:site_name" content="Kasetsart University President Vision Archive">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="แทนที่จะยิง AI ตรง ๆ ผมเลือกสร้าง prompt ขนาดใหญ่จากข้อมูลที่จัดโครงแล้ว">
+  <meta property="og:description" content="Archive บทความว่าด้วยการดึงข้อมูลจาก KURDI API มาจัดโครงเป็น prompt ขนาดใหญ่ เพื่อให้ AI วิเคราะห์ข้อมูลทุนวิจัยและผลงานได้มีบริบทมากขึ้น">
+  <meta property="og:url" content="https://punpiti.github.io/ku-president-profile/articles/ku-urban-v3-structured-prompts-for-research-analysis.html">
+  <meta property="og:image" content="https://punpiti.github.io/ku-president-profile/assets/ku-urban-v3-structured-prompts-for-research-analysis.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="แทนที่จะยิง AI ตรง ๆ ผมเลือกสร้าง prompt ขนาดใหญ่จากข้อมูลที่จัดโครงแล้ว">
+  <meta name="twitter:description" content="Archive บทความว่าด้วยการดึงข้อมูลจาก KURDI API มาจัดโครงเป็น prompt ขนาดใหญ่ เพื่อให้ AI วิเคราะห์ข้อมูลทุนวิจัยและผลงานได้มีบริบทมากขึ้น">
+  <meta name="twitter:image" content="https://punpiti.github.io/ku-president-profile/assets/ku-urban-v3-structured-prompts-for-research-analysis.jpg">
+  <meta property="article:published_time" content="2026-04-06">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "เมื่อข้อมูลวิจัยและทุนถูกจัดโครงก่อนส่งให้ AI การวิเคราะห์ก็มีคุณภาพขึ้น", "description": "Archive บทความว่าด้วยการดึงข้อมูลจาก KURDI API มาจัดโครงเป็น prompt ขนาดใหญ่ เพื่อให้ AI วิเคราะห์ข้อมูลทุนวิจัยและผลงานได้มีบริบทมากขึ้น", "datePublished": "2026-04-06", "dateModified": "2026-04-06", "mainEntityOfPage": "https://punpiti.github.io/ku-president-profile/articles/ku-urban-v3-structured-prompts-for-research-analysis.html", "image": ["https://punpiti.github.io/ku-president-profile/assets/ku-urban-v3-structured-prompts-for-research-analysis.jpg"], "author": {"@type": "Person", "name": "รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า"}, "publisher": {"@type": "Organization", "name": "Kasetsart University President Vision Archive"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/archive-article.css">
+  <style>
+    :root {
+      --hero-title-max: 16ch;
+      --hero-subtitle-max: 62rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="frame">
+      <div class="inner">
+        <header class="topbar">
+          <div class="site-label">Kasetsart University -- The Life Systems University</div>
+          <nav class="nav">
+            <a href="../context.html">บริบท</a>
+            <a href="../roles.html">บทบาท</a>
+            <a href="../goals.html">เป้าหมาย</a>
+            <a href="../strategy.html">กลยุทธ์</a>
+            <a href="../four-year-plan.html">แผนสี่ปี</a>
+            <a href="../articles.html" aria-current="page">บทความ</a>
+            <a href="../qa.html">ถาม/ตอบ</a>
+            <a href="../about.html">แนะนำตัว</a>
+          </nav>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">Archive</div>
+          <h1>เมื่อข้อมูลวิจัยและทุนถูกจัดโครงก่อนส่งให้ AI การวิเคราะห์ก็มีคุณภาพขึ้น</h1>
+          <div class="hero-subtitle">
+            ข้อเขียนนี้สะท้อนวิธีคิดเชิงระบบในการใช้ AI กับข้อมูลวิจัย โดยชี้ว่าโจทย์สำคัญไม่ใช่แค่มีโมเดลเก่ง แต่คือการจัดโครงข้อมูลและบริบทให้ครบพอ เพื่อให้ AI วิเคราะห์ได้แม่นขึ้นและลดการหลงทางจากข้อมูลที่ซับซ้อน
+          </div>
+          <div class="meta-row">
+            <div class="pill">หมวด: วิจัยและนวัตกรรม</div>
+            <div class="pill">วันที่โพสต์: 06 April 2026</div>
+            <div class="pill">ที่มา: Facebook post archive</div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">ai</span>
+            <span class="tag">research-analytics</span>
+            <span class="tag">data-infrastructure</span>
+            <span class="tag">prompt-engineering</span>
+            <span class="tag">ku</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Rewritten Post</div>
+          <div class="content-panel is-interactive">
+            <div class="rewrite-title">แทนที่จะยิง AI ตรง ๆ ผมเลือกสร้าง prompt ขนาดใหญ่จากข้อมูลที่จัดโครงแล้ว</div>
+            <div class="lead-split">
+              <figure class="lead-figure">
+                <a class="figure-link" href="../assets/ku-urban-v3-structured-prompts-for-research-analysis.jpg" data-lightbox-image="../assets/ku-urban-v3-structured-prompts-for-research-analysis.jpg">
+                  <img class="post-image" src="../assets/ku-urban-v3-structured-prompts-for-research-analysis.jpg" alt="ภาพประกอบบทความเรื่องการใช้ KURDI API และ prompt ขนาดใหญ่เพื่อวิเคราะห์ข้อมูลวิจัย">
+                </a>
+                <figcaption class="figure-caption">คลิกรูปเพื่อดูภาพขยายใหญ่</figcaption>
+              </figure>
+              <div class="intro-copy">
+                <p>บทความนี้เริ่มจากการทดลองเล่นกับข้อมูลจาก <span class="key-term">KURDI API</span> แต่กลายเป็นกรณีศึกษาจริงของการใช้ <span class="key-term">AI</span> กับข้อมูลวิจัย โดยโฟกัสที่ข้อมูล<span class="key-term">ทุนวิจัย</span>และ<span class="key-term">ผลงาน</span>ซึ่งมีตัวแปรจำนวนมากและเงื่อนไขซับซ้อนเกินกว่าจะโยนเข้าโมเดลแบบตรง ๆ แล้วหวังผลวิเคราะห์ที่ดีได้</p>
+                <p>ข้อค้นพบสำคัญคือ ถ้าต้องการให้ AI วิเคราะห์ดีพอ เราต้อง<span class="key-term">ป้อนบริบทให้ครบ</span> จึงเกิดแนวทางที่เปลี่ยนจากการยิง AI ตรง ๆ ไปเป็นการสร้าง<span class="key-term">prompt ขนาดใหญ่</span>จากข้อมูลที่ถูกจัดโครงเรียบร้อยแล้ว แล้วค่อยส่งต่อให้โมเดลวิเคราะห์อีกที</p>
+              </div>
+            </div>
+            <p>วิธีคิดนี้ชี้ว่าคุณค่าของ AI ไม่ได้อยู่ที่การปล่อยให้โมเดลเดาเองจากข้อมูลดิบ แต่ขึ้นกับการออกแบบ<span class="key-term">data pipeline</span>และ<span class="key-term">context</span> ที่เหมาะสมเสียก่อน เมื่อข้อมูลถูกเรียบเรียงในรูปที่ช่วยให้โมเดลเข้าใจความสัมพันธ์ระหว่างตัวแปรได้ดีขึ้น ผลลัพธ์เชิงวิเคราะห์ก็มีแนวโน้มจะลึกและใช้งานได้จริงมากกว่า</p>
+            <h2>Large prompt อาจบ้าน ๆ แต่ตอบโจทย์การวิเคราะห์ที่มีบริบท</h2>
+            <p>แม้ทางเทคนิคจะสามารถต่อระบบให้ AI ตอบกลับในเว็บได้โดยตรง แต่โพสต์นี้ชี้ให้เห็นทางเลือกที่<span class="key-term">pragmatic</span>กว่า คือใช้วิธีแบบบ้าน ๆ ก่อน ด้วยการให้ผู้ใช้<span class="key-term">copy prompt</span>ไปวางใน ChatGPT หรือ Gemini เอง วิธีนี้อาจไม่หรู แต่ช่วยทดสอบแนวคิดได้เร็วและไม่เพิ่มต้นทุนโดยไม่จำเป็น</p>
+            <p>ในแง่นี้ งานชิ้นนี้จึงไม่ใช่แค่เดโมสนุก ๆ แต่เป็นตัวอย่างของการค่อย ๆ สร้าง<span class="key-term">AI-enabled workflow</span> ที่เริ่มจากของง่าย ใช้ได้จริง และเปิดให้ผู้ใช้ช่วยสะท้อนว่า insight ที่ได้มีคุณค่ามากพอจะต่อยอดเป็นระบบเต็มรูปแบบหรือไม่</p>
+            <h2>หัวใจไม่ใช่แค่ AI เก่ง แต่คือการทำให้ AI เห็นข้อมูลในโครงที่ถูกต้อง</h2>
+            <p>สารสำคัญของบทความนี้จึงอยู่ที่การเตือนว่า ถ้าจะใช้ AI กับงานวิเคราะห์ข้อมูลวิจัยอย่างจริงจัง เราไม่ควรถามแค่ว่าโมเดลตอบอะไรได้ แต่ต้องถามก่อนว่าเราออกแบบ<span class="key-term">บริบท</span>ให้มันมองเห็นข้อมูลอย่างถูกต้องแล้วหรือยัง</p>
+            <p>เมื่อมองเช่นนี้ ความก้าวหน้าของระบบวิเคราะห์ไม่ได้อยู่ที่ตัว AI เพียงอย่างเดียว แต่อยู่ที่ความสามารถในการจัดโครงข้อมูล สร้าง prompt ที่ดี และออกแบบระบบให้คนสามารถใช้ AI เพื่อค้นหา<span class="key-term">insight</span> ที่มีความหมายกับงานของตัวเองได้จริง</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Original</div>
+          <div class="reference-panel">
+            <div class="reference-list">
+              <div>ลิงก์อ้างอิง:</div>
+              <a class="reference-link" href="https://www.facebook.com/share/p/1ihVjqVHJK/" target="_blank" rel="noopener noreferrer" aria-label="เปิดโพสต์บน Facebook">f</a>
+            </div>
+            <details class="original-toggle">
+              <summary>Original Facebook Post</summary>
+              <div class="original-text">โพสต์ของ พันธุ์ปิติ เปี่ยมสง่า
+พันธุ์ปิติ เปี่ยมสง่า  รู้สึกภูมิใจที่ Department of Computer Engineering - Kasetsart University
+6 เมษายน เวลา 09:28 น.
+ ·
+กรุงเทพมหานคร ประเทศไทย
+ ·
+แชร์กับ สาธารณะ
+กิจกรรมวันหยุด…ก็คงประมาณนี้ครับ 😄
+3 วัน 3 เวอร์ชัน
+day 1: Output Only
+day 2: Output + Grant
+day 3: Output + Grant + Analysis
+เขียนโปรแกรมเล่นแก้เบื่อ
+แล้วก็เผลอเอามาใช้ประโยชน์กับตัวเองจริงจัง
+งานนี้ลองไปแกะข้อมูลจาก KURDI API
+โฟกัสหลักคือ “ทุนวิจัย” กับ “ผลงาน”
+ปัญหาคือ
+ตัวแปรมันเยอะมาก
+เงื่อนไขก็ซับซ้อน
+ถ้าจะให้ AI วิเคราะห์ดีๆ ต้อง “ป้อนบริบทให้ครบ”
+สุดท้ายเลยกลายเป็นว่า
+แทนที่จะยิง AI ตรงๆ
+ผมสร้าง “prompt ขนาดใหญ่” ขึ้นมาแทน
+เพื่อให้เอาข้อมูลที่จัดโครงแล้วไปให้ AI วิเคราะห์ต่อ
+จริงๆ จะต่อระบบให้ AI ตอบกลับมาในเว็บเลยก็ได้
+สะดวกกว่าด้วย
+แต่…มันเสียตังค์ 😅
+ก็เลยขอแบบบ้านๆ ก่อน
+ใครสนใจ ลองกด copy prompt ไปแปะใน ChatGPT / Gemini เล่นกันได้ครับ
+ถ้าลองแล้ว “โดนใจ” หรือได้ insight อะไรแปลกๆ
+เล่าให้ฟังหน่อยก็ดีครับ
+อยากรู้ว่า AI มันมองเราออกไปแบบไหนบ้าง
+หรือถ้าอยากให้กำลังใจคนเขียน
+คอมเมนต์ทิ้งไว้สักนิด ก็ขอบคุณมากครับ ☕️
+ลิงก์อยู่ในคอมเมนต์แรก ขออภัยใช้ได้เฉพาะคนในเกษตร แต่เรียนเชิญเข้ามาดูแนวคิดกันได้ครับ</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">บทความอื่นที่เกี่ยวข้อง</div>
+          <div class="reference-panel">
+            <div class="related-grid" data-related-articles data-current-slug="ku-urban-v3-structured-prompts-for-research-analysis" data-current-tags="ai,research-analytics,data-infrastructure,prompt-engineering,ku"></div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>Articles Archive</div>
+          <div>วิสัยทัศน์ของ รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า สำหรับการสรรหาอธิการบดีมหาวิทยาลัยเกษตรศาสตร์</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="ภาพขยายใหญ่">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="ปิดภาพขยาย">×</button>
+      <img class="lightbox-image" id="lightboxImage" src="" alt="">
+    </div>
+  </div>
+  <script src="../assets/release-gate.js" defer></script>
+  <script src="../assets/site-analytics.js" defer></script>
+  <script src="../assets/articles-data.js" defer></script>
+  <script src="../assets/related-articles.js" defer></script>
+  <script src="../assets/archive-lightbox.js" defer></script>
+</body>
+</html>
