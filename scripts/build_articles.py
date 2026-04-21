@@ -17,6 +17,8 @@ SITE_CONFIG_FILE = ROOT / "site_config.json"
 DOCS_DIR = ROOT / "docs"
 ARTICLES_DIR = DOCS_DIR / "articles"
 ASSETS_DIR = DOCS_DIR / "assets"
+PRIMARY_SITEMAP_FILENAME = "sitemap-pages.xml"
+LEGACY_SITEMAP_FILENAME = "sitemap.xml"
 
 # Architecture note:
 # This builder intentionally does a full rebuild on every run.
@@ -302,7 +304,7 @@ def get_sitemap_priority(path: str) -> str:
 
 
 def build_robots_txt(site_config: dict) -> str:
-    sitemap_url = join_site_url(site_config["site_url"], "sitemap.xml")
+    sitemap_url = join_site_url(site_config["site_url"], PRIMARY_SITEMAP_FILENAME)
     return f"User-agent: *\nAllow: /\n\nSitemap: {sitemap_url}\n"
 
 
@@ -896,7 +898,9 @@ def main() -> None:
     (DOCS_DIR / "article-browsing.html").write_text(render_article_browsing_page(articles, site_config), encoding="utf-8")
     (ASSETS_DIR / "articles-data.js").write_text(build_related_data(articles), encoding="utf-8")
     (ASSETS_DIR / "site-analytics.js").write_text(build_site_analytics(site_config), encoding="utf-8")
-    (DOCS_DIR / "sitemap.xml").write_text(build_sitemap(articles, site_config), encoding="utf-8")
+    sitemap_xml = build_sitemap(articles, site_config)
+    (DOCS_DIR / PRIMARY_SITEMAP_FILENAME).write_text(sitemap_xml, encoding="utf-8")
+    (DOCS_DIR / LEGACY_SITEMAP_FILENAME).write_text(sitemap_xml, encoding="utf-8")
     (DOCS_DIR / "robots.txt").write_text(build_robots_txt(site_config), encoding="utf-8")
 
 
