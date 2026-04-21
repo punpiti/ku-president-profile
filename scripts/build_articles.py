@@ -199,6 +199,8 @@ def build_sitemap(articles: list[dict], site_config: dict) -> str:
         (
             f"  <url><loc>{html.escape(urls_by_path[path])}</loc>"
             f"{f'<lastmod>{html.escape(lastmod_by_path[path])}</lastmod>' if path in lastmod_by_path else ''}"
+            f"<changefreq>{html.escape(get_sitemap_changefreq(path))}</changefreq>"
+            f"<priority>{html.escape(get_sitemap_priority(path))}</priority>"
             "</url>"
         )
         for path in ordered_paths
@@ -239,6 +241,48 @@ def get_git_lastmods(urls_by_path: dict[str, str]) -> dict[str, str]:
         relative_path = line.removeprefix("docs/")
         lastmod_by_path.setdefault(relative_path, current_date)
     return lastmod_by_path
+
+
+def get_sitemap_changefreq(path: str) -> str:
+    if path == "index.html":
+        return "daily"
+    if path in {
+        "context.html",
+        "roles.html",
+        "goals.html",
+        "four-year-plan.html",
+        "qa.html",
+        "about.html",
+        "articles.html",
+        "article-browsing.html",
+    }:
+        return "weekly"
+    if path.startswith("articles/"):
+        return "monthly"
+    if path.startswith("questionnaire_viz_plotly/"):
+        return "monthly"
+    return "monthly"
+
+
+def get_sitemap_priority(path: str) -> str:
+    if path == "index.html":
+        return "1.0"
+    if path in {
+        "context.html",
+        "roles.html",
+        "goals.html",
+        "four-year-plan.html",
+        "qa.html",
+        "about.html",
+        "articles.html",
+        "article-browsing.html",
+    }:
+        return "0.8"
+    if path.startswith("articles/"):
+        return "0.7"
+    if path.startswith("questionnaire_viz_plotly/"):
+        return "0.5"
+    return "0.6"
 
 
 def build_robots_txt(site_config: dict) -> str:
