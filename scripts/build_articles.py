@@ -179,11 +179,14 @@ def build_sitemap(articles: list[dict], site_config: dict) -> str:
         "article-browsing.html",
     ]
     urls_by_path: dict[str, str] = {}
+    tracked_html_paths = get_git_tracked_html_paths()
 
     for html_path in DOCS_DIR.rglob("*.html"):
         if "assets" in html_path.parts:
             continue
         relative_path = html_path.relative_to(DOCS_DIR).as_posix()
+        if relative_path not in tracked_html_paths:
+            continue
         text = html_path.read_text(encoding="utf-8")
         if noindex_pattern.search(text):
             continue
@@ -241,6 +244,23 @@ def get_git_lastmods(urls_by_path: dict[str, str]) -> dict[str, str]:
         relative_path = line.removeprefix("docs/")
         lastmod_by_path.setdefault(relative_path, current_date)
     return lastmod_by_path
+
+
+def get_git_tracked_html_paths() -> set[str]:
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(ROOT), "ls-files", "docs"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except subprocess.CalledProcessError:
+        return set()
+    return {
+        line.removeprefix("docs/")
+        for line in result.stdout.splitlines()
+        if line.startswith("docs/") and line.endswith(".html")
+    }
 
 
 def get_sitemap_changefreq(path: str) -> str:
