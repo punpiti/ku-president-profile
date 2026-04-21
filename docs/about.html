@@ -169,10 +169,23 @@
     h1 {
       margin: 14px 0 0;
       color: var(--blue-deep);
-      font-size: clamp(2.6rem, 5.4vw, 4.8rem);
-      line-height: 0.96;
+      line-height: 1;
       letter-spacing: -0.05em;
       font-weight: 700;
+    }
+
+    .hero-title-role {
+      display: block;
+      font-size: clamp(1.3rem, 2.6vw, 2.35rem);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-title-name {
+      display: block;
+      margin-top: 12px;
+      font-size: clamp(2.7rem, 5.5vw, 4.95rem);
+      line-height: 0.94;
     }
 
     .hero-subtitle {
@@ -220,21 +233,38 @@
       border: 1px solid rgba(0, 102, 100, 0.14);
       background: rgba(255, 255, 255, 0.7);
       color: var(--ku-green-deep);
+      gap: 10px;
+      padding: 0 16px 0 12px;
+      font-weight: 600;
       transition: 160ms ease;
     }
 
     .jump-link:hover {
       background: rgba(0, 102, 100, 0.08);
+      border-color: rgba(0, 102, 100, 0.24);
+      transform: translateY(-1px);
     }
 
-    .jump-link.primary {
-      color: #fff;
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--ku-green), var(--ku-green-deep));
+    .jump-link-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(0, 102, 100, 0.1);
+      color: var(--ku-green-deep);
+      font-size: 0.78rem;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      font-weight: 700;
     }
 
-    .jump-link.primary:hover {
-      background: linear-gradient(135deg, var(--ku-green-deep), var(--ku-green));
+    .jump-link-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
     }
 
     .section {
@@ -440,14 +470,16 @@
 
           <div class="hero-copy">
             <div class="hero-kicker">แนะนำตัว</div>
-            <h1>รองศาสตราจารย์<br>ดร.พันธุ์ปิติ เปี่ยมสง่า</h1>
+            <h1><span class="hero-title-role">รองศาสตราจารย์</span><span class="hero-title-name">ดร.พันธุ์ปิติ เปี่ยมสง่า</span></h1>
             <div class="hero-subtitle">
               รองศาสตราจารย์ สาขาวิชาวิศวกรรมคอมพิวเตอร์. กรรมการสภามหาวิทยาลัยเกษตรศาสตร์ประเภทคณาจารย์ประจำ. ผู้ทำงานต่อเนื่องทั้งในมิติของวิชาการ วิจัย เทคโนโลยี หลักสูตร การบริหารมหาวิทยาลัย และการพัฒนาคน
             </div>
             <div class="link-row">
-              <a class="jump-link primary" href="https://research.ku.ac.th/forest/Person.aspx?id=360009" target="_blank" rel="noopener noreferrer">KU Forest</a>
-              <a class="jump-link" href="https://urban.cpe.ku.ac.th/?person_id=360009&amp;lang=th&amp;mode=user_profile" target="_blank" rel="noopener noreferrer">KU Urban</a>
-              <a class="jump-link" href="https://cpe.ku.ac.th/index.php/teacher-information/?id=213" target="_blank" rel="noopener noreferrer">CPE</a>
+              <a class="jump-link" href="https://urban.cpe.ku.ac.th/?person_id=360009&amp;lang=th&amp;mode=user_profile" target="_blank" rel="noopener noreferrer"><span class="jump-link-icon">KU</span><span class="jump-link-label">KU Urban</span></a>
+              <a class="jump-link" href="https://research.ku.ac.th/forest/Person.aspx?id=360009" target="_blank" rel="noopener noreferrer"><span class="jump-link-icon">KF</span><span class="jump-link-label">KU Forest</span></a>
+              <a class="jump-link" href="https://dblp.org/pid/22/3282.html" target="_blank" rel="noopener noreferrer"><span class="jump-link-icon">DB</span><span class="jump-link-label">DBLP</span></a>
+              <a class="jump-link" href="https://www.scopus.com/authid/detail.uri?authorId=55663804300" target="_blank" rel="noopener noreferrer"><span class="jump-link-icon">SC</span><span class="jump-link-label">Scopus</span></a>
+              <a class="jump-link" href="https://scholar.google.com/citations?hl=th&amp;user=GIFTtB4AAAAJ" target="_blank" rel="noopener noreferrer"><span class="jump-link-icon">GS</span><span class="jump-link-label">Google Scholar</span></a>
             </div>
           </div>
         </section>
