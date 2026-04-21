@@ -49,7 +49,7 @@
   <text x="430" y="230" class="thai-semibold" font-size="24" fill="#315987">as the</text>
   <text x="528" y="230" class="thai-xbold" font-size="46" fill="#1f4271" textLength="562" lengthAdjust="spacingAndGlyphs">Life Systems University</text>
 
-  <text x="430" y="318" class="thai-regular" font-size="28" fill="#6a7478">รองศาสตราจารย์</text>
-  <text x="430" y="376" class="thai-semibold" font-size="55" fill="#43525c">ดร.พันธุ์ปิติ เปี่ยมสง่า</text>
-  <text x="1088" y="548" text-anchor="end" class="thai-regular" font-size="24" fill="#8b948f">Rethink. Reframe. Realize.</text>
+  <text x="430" y="312" class="thai-regular" font-size="28" fill="#6a7478">รองศาสตราจารย์</text>
+  <text x="430" y="382" class="thai-semibold" font-size="55" fill="#43525c">ดร.พันธุ์ปิติ เปี่ยมสง่า</text>
+  <text x="1088" y="548" text-anchor="end" class="thai-regular" font-size="27" fill="#646d68">Rethink. Reframe. Realize.</text>
 </svg>
