@@ -279,8 +279,6 @@ def get_sitemap_changefreq(path: str) -> str:
         return "weekly"
     if path.startswith("articles/"):
         return "monthly"
-    if path.startswith("questionnaire_viz_plotly/"):
-        return "monthly"
     return "monthly"
 
 
@@ -300,8 +298,6 @@ def get_sitemap_priority(path: str) -> str:
         return "0.8"
     if path.startswith("articles/"):
         return "0.7"
-    if path.startswith("questionnaire_viz_plotly/"):
-        return "0.5"
     return "0.6"
 
 
