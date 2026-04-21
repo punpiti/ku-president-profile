@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import subprocess
 from datetime import date
 from pathlib import Path
 
@@ -191,10 +192,15 @@ def build_sitemap(articles: list[dict], site_config: dict) -> str:
             continue
         urls_by_path[relative_path] = match.group(1)
 
+    lastmod_by_path = get_git_lastmods(urls_by_path)
     ordered_paths = [path for path in priority_paths if path in urls_by_path]
     ordered_paths.extend(sorted(path for path in urls_by_path if path not in priority_paths))
     body = "\n".join(
-        f"  <url><loc>{html.escape(urls_by_path[path])}</loc></url>"
+        (
+            f"  <url><loc>{html.escape(urls_by_path[path])}</loc>"
+            f"{f'<lastmod>{html.escape(lastmod_by_path[path])}</lastmod>' if path in lastmod_by_path else ''}"
+            "</url>"
+        )
         for path in ordered_paths
     )
     return (
@@ -203,6 +209,36 @@ def build_sitemap(articles: list[dict], site_config: dict) -> str:
         f"{body}\n"
         "</urlset>\n"
     )
+
+
+def get_git_lastmods(urls_by_path: dict[str, str]) -> dict[str, str]:
+    tracked_html_paths = [f"docs/{path}" for path in sorted(urls_by_path)]
+    if not tracked_html_paths:
+        return {}
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(ROOT), "log", "--format=%cs", "--name-only", "--", *tracked_html_paths],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except subprocess.CalledProcessError:
+        return {}
+
+    lastmod_by_path: dict[str, str] = {}
+    current_date: str | None = None
+    for raw_line in result.stdout.splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", line):
+            current_date = line
+            continue
+        if not current_date or not line.startswith("docs/") or not line.endswith(".html"):
+            continue
+        relative_path = line.removeprefix("docs/")
+        lastmod_by_path.setdefault(relative_path, current_date)
+    return lastmod_by_path
 
 
 def build_robots_txt(site_config: dict) -> str:
