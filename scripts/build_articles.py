@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 from datetime import date
 from pathlib import Path
 
@@ -162,24 +163,39 @@ def build_site_analytics(site_config: dict) -> str:
 
 
 def build_sitemap(articles: list[dict], site_config: dict) -> str:
-    static_paths = [
+    del articles, site_config
+    canonical_pattern = re.compile(r'<link rel="canonical" href="([^"]+)"', re.IGNORECASE)
+    noindex_pattern = re.compile(r'<meta[^>]+name="robots"[^>]+content="[^"]*noindex', re.IGNORECASE)
+    priority_paths = [
         "index.html",
+        "context.html",
         "roles.html",
         "goals.html",
         "four-year-plan.html",
+        "qa.html",
         "about.html",
         "articles.html",
         "article-browsing.html",
     ]
-    urls: list[str] = []
-    for path in static_paths:
-        if (DOCS_DIR / path).exists():
-            urls.append(join_site_url(site_config["site_url"], path))
-    for article in sorted(articles, key=lambda item: item["date"], reverse=True):
-        urls.append(join_site_url(site_config["site_url"], f"articles/{article['slug']}.html"))
+    urls_by_path: dict[str, str] = {}
+
+    for html_path in DOCS_DIR.rglob("*.html"):
+        if "assets" in html_path.parts:
+            continue
+        relative_path = html_path.relative_to(DOCS_DIR).as_posix()
+        text = html_path.read_text(encoding="utf-8")
+        if noindex_pattern.search(text):
+            continue
+        match = canonical_pattern.search(text)
+        if not match:
+            continue
+        urls_by_path[relative_path] = match.group(1)
+
+    ordered_paths = [path for path in priority_paths if path in urls_by_path]
+    ordered_paths.extend(sorted(path for path in urls_by_path if path not in priority_paths))
     body = "\n".join(
-        f"  <url><loc>{html.escape(url)}</loc></url>"
-        for url in urls
+        f"  <url><loc>{html.escape(urls_by_path[path])}</loc></url>"
+        for path in ordered_paths
     )
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
