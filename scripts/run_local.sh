@@ -2,32 +2,62 @@
 
 set -euo pipefail
 
+usage() {
+  cat <<'EOF'
+Usage:
+  bash scripts/run_local.sh <project> [port]
+  PORT=9000 HOST=0.0.0.0 bash scripts/run_local.sh <project>
+
+Projects:
+  public   public website from docs/
+  vision   vision Q&A workspace from vision/qna/
+  award    research_award standalone site
+
+Aliases:
+  public-site, site, docs -> public
+  vision-qna, qna, question_bank -> vision
+  research-award, research_award -> award
+
+Examples:
+  bash scripts/run_local.sh public
+  bash scripts/run_local.sh vision 9000
+  bash scripts/run_local.sh award
+EOF
+}
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 HOST="${HOST:-127.0.0.1}"
-DEFAULT_TARGET="site"
 DEFAULT_PORT="${PORT:-8000}"
 
 TARGET_ARG="${1:-}"
 PORT_ARG="${2:-}"
 
 if [[ -z "${TARGET_ARG}" ]]; then
-  TARGET="${DEFAULT_TARGET}"
-  PORT="${DEFAULT_PORT}"
+  usage
+  exit 0
+elif [[ "${TARGET_ARG}" == "-h" || "${TARGET_ARG}" == "--help" ]]; then
+  usage
+  exit 0
 elif [[ "${TARGET_ARG}" =~ ^[0-9]+$ ]]; then
-  TARGET="${DEFAULT_TARGET}"
-  PORT="${TARGET_ARG}"
+  echo "error: missing project name before port: ${TARGET_ARG}" >&2
+  echo >&2
+  usage >&2
+  exit 1
 else
   TARGET="${TARGET_ARG}"
   PORT="${PORT_ARG:-${DEFAULT_PORT}}"
 fi
 
 case "${TARGET}" in
-  site)
+  site|public|public-site|docs)
     SITE_DIR="${REPO_ROOT}/docs"
     ;;
-  qna|question_bank)
-    SITE_DIR="${REPO_ROOT}/vision/qna/question_bank"
+  vision|vision-qna|qna|question_bank)
+    SITE_DIR="${REPO_ROOT}/vision/qna"
+    ;;
+  award|research-award|research_award)
+    SITE_DIR="${REPO_ROOT}/research_award"
     ;;
   /*)
     SITE_DIR="${TARGET}"

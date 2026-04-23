@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์</title>
-  <meta name="description" content="เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์ผ่านภาพสไลด์ประกอบ 3 ส่วนหลัก">
+  <meta name="description" content="เป้าหมายหลัก 3 ด้านของมหาวิทยาลัยเกษตรศาสตร์: คุณภาพบัณฑิต ความยั่งยืนของคน และความเชื่อมั่นของสถาบัน">
   <link rel="canonical" href="https://punpiti.github.io/ku-president-profile/goals.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/convergence.png">
   <meta name="robots" content="index,follow">
   <meta property="og:site_name" content="Kasetsart University President Vision Archive">
   <meta property="og:type" content="website">
   <meta property="og:title" content="เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์">
-  <meta property="og:description" content="เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์ผ่านภาพสไลด์ประกอบ 3 ส่วนหลัก">
+  <meta property="og:description" content="เป้าหมายหลัก 3 ด้านของมหาวิทยาลัยเกษตรศาสตร์: คุณภาพบัณฑิต ความยั่งยืนของคน และความเชื่อมั่นของสถาบัน">
   <meta property="og:url" content="https://punpiti.github.io/ku-president-profile/goals.html">
   <meta property="og:image" content="https://punpiti.github.io/ku-president-profile/assets/goal-1-slide.JPG">
   <meta property="og:image:secure_url" content="https://punpiti.github.io/ku-president-profile/assets/goal-1-slide.JPG">
@@ -20,10 +22,10 @@
   <meta property="og:image:alt" content="สไลด์เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์">
-  <meta name="twitter:description" content="เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์ผ่านภาพสไลด์ประกอบ 3 ส่วนหลัก">
+  <meta name="twitter:description" content="เป้าหมายหลัก 3 ด้านของมหาวิทยาลัยเกษตรศาสตร์: คุณภาพบัณฑิต ความยั่งยืนของคน และความเชื่อมั่นของสถาบัน">
   <meta name="twitter:image" content="https://punpiti.github.io/ku-president-profile/assets/goal-1-slide.JPG">
   <meta name="twitter:image:alt" content="สไลด์เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์","description":"เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์ผ่านภาพสไลด์ประกอบ 3 ส่วนหลัก","url":"https://punpiti.github.io/ku-president-profile/goals.html","image":"https://punpiti.github.io/ku-president-profile/assets/goal-1-slide.JPG"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"เป้าหมายเชิงยุทธศาสตร์ของมหาวิทยาลัยเกษตรศาสตร์","description":"เป้าหมายหลัก 3 ด้านของมหาวิทยาลัยเกษตรศาสตร์: คุณภาพบัณฑิต ความยั่งยืนของคน และความเชื่อมั่นของสถาบัน","url":"https://punpiti.github.io/ku-president-profile/goals.html","image":"https://punpiti.github.io/ku-president-profile/assets/goal-1-slide.JPG"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -158,7 +160,7 @@
     }
 
     .goal-card {
-      padding: 22px;
+      padding: 24px;
       border: 1px solid rgba(0, 102, 100, 0.1);
       border-radius: 28px;
       background: rgba(255, 255, 255, 0.52);
@@ -180,9 +182,16 @@
       font-weight: 700;
     }
 
-    .goal-slide {
+    .goal-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 22px;
+      align-items: start;
       margin-top: 18px;
-      padding: 14px;
+    }
+
+    .goal-slide {
+      padding: 12px;
       border: 1px solid rgba(0, 102, 100, 0.1);
       border-radius: 24px;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(223, 238, 234, 0.34));
@@ -193,6 +202,70 @@
       width: 100%;
       height: auto;
       border-radius: 16px;
+      cursor: zoom-in;
+    }
+
+    .goal-slide figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .goal-copy {
+      display: grid;
+      gap: 14px;
+    }
+
+    .goal-lead {
+      color: #203032;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .goal-points {
+      display: grid;
+      gap: 12px;
+    }
+
+    .goal-point {
+      padding: 14px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 102, 100, 0.1);
+      background: rgba(255, 255, 255, 0.64);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .goal-point:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0, 102, 100, 0.24);
+      background: rgba(223, 238, 234, 0.54);
+      box-shadow: 0 16px 30px rgba(0, 68, 67, 0.08);
+    }
+
+    .goal-point:hover .key-term,
+    .goal-point:hover strong {
+      color: var(--ku-green);
+      font-weight: 700;
+    }
+
+    .key-term {
+      display: inline;
+      color: inherit;
+      font-weight: 400;
+      transition: color 180ms ease, font-weight 180ms ease;
+    }
+
+    .goal-point strong {
+      color: inherit;
+      font-weight: 400;
+      transition: color 180ms ease, font-weight 180ms ease;
+    }
+
+    .goal-note {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
     }
 
     .footer {
@@ -203,6 +276,63 @@
       padding: 28px 2px 4px;
       color: var(--muted);
       font-size: 0.92rem;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(11, 23, 27, 0.78);
+      z-index: 1000;
+    }
+
+    .lightbox[aria-hidden="false"] {
+      display: flex;
+    }
+
+    .lightbox-dialog {
+      width: min(1120px, calc(100vw - 32px));
+      max-height: calc(100vh - 32px);
+      padding: 16px;
+      border-radius: 24px;
+      background: rgba(255, 253, 248, 0.98);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .lightbox-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .lightbox-title {
+      color: var(--ku-green-deep);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .lightbox-close {
+      border: 1px solid rgba(0, 102, 100, 0.14);
+      background: #fff;
+      color: var(--ku-green-deep);
+      border-radius: 999px;
+      min-width: 40px;
+      height: 40px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .lightbox-image {
+      display: block;
+      width: 100%;
+      max-height: calc(100vh - 150px);
+      object-fit: contain;
+      border-radius: 16px;
     }
 
     @media (max-width: 720px) {
@@ -223,6 +353,10 @@
       .footer {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .goal-layout {
+        grid-template-columns: 1fr;
       }
 
       h1 {
@@ -253,22 +387,66 @@
           <div class="hero-kicker">เป้าหมายเชิงยุทธศาสตร์</div>
           <h1>Goals</h1>
           <div class="hero-subtitle">
-            หน้านี้ใช้แสดงภาพสไลด์ขนาดใหญ่ของเป้าหมาย 3 ส่วนหลัก เพื่อให้อ่านได้ต่อเนื่องชัดเจน
-            โดยไม่ต้องย่ออยู่ในหน้า `บทบาท`
+            เป้าหมายของมหาวิทยาลัยในช่วงต่อไปไม่ใช่การมีโครงการเพิ่มขึ้นเฉย ๆ
+            แต่คือการยกระดับคุณภาพบัณฑิต ความยั่งยืนของผู้คนในมหาวิทยาลัย
+            และความเชื่อมั่นของสถาบันให้เกิดขึ้นพร้อมกันอย่างเป็นระบบ
           </div>
           <div class="hero-links">
-            <a href="#goal-1">Goal 1</a>
-            <a href="#goal-2">Goal 2</a>
-            <a href="#goal-3">Goal 3</a>
+            <a href="#goal-1">เป้าหมาย 1</a>
+            <a href="#goal-2">เป้าหมาย 2</a>
+            <a href="#goal-3">เป้าหมาย 3</a>
           </div>
         </section>
 
         <section class="section">
           <article id="goal-1" class="goal-card">
             <div class="goal-index">Goal 1</div>
-            <div class="goal-title">เป้าหมายที่ 1</div>
-            <div class="goal-slide">
-              <img src="assets/goal-1-slide.JPG" alt="สไลด์เป้าหมายที่ 1">
+            <div class="goal-title">บัณฑิตต้องทำงานได้จริง ไม่ใช่แค่จบการศึกษา</div>
+            <div class="goal-layout">
+              <figure class="goal-slide">
+                <img src="assets/goal-1-slide.JPG" alt="สไลด์เป้าหมายที่ 1 เรื่อง Outcome-Driven Education" data-lightbox-trigger data-lightbox-title="Goal 1 — Outcome-Driven Education">
+                <figcaption>คลิกรูปเพื่อดูภาพขยาย</figcaption>
+              </figure>
+              <div class="goal-copy">
+                <div class="goal-lead">
+                  เป้าหมายแรกเริ่มจากภาพของบัณฑิตที่มหาวิทยาลัยอยากเห็นก่อนเสมอ:
+                  ต้อง <span class="key-term">ทำงานได้จริง</span>, <span class="key-term">เรียนรู้ต่อเนื่อง</span>,
+                  และ <span class="key-term">สร้างคุณค่าให้สังคม</span> ได้ ไม่ใช่เพียงสำเร็จการศึกษาตามเกณฑ์
+                </div>
+                <div class="goal-points">
+                  <div class="goal-point">
+                    <strong>ภาควิชายังเป็นเจ้าของการออกแบบการเรียนรู้</strong><br>
+                    ผู้ที่ใกล้กับสาระวิชาการและผู้เรียนที่สุดยังคงต้องมีเสรีภาพทางวิชาการในการออกแบบหลักสูตร
+                    แต่เสรีภาพนั้นต้องเชื่อมกับ <span class="key-term">พันธกิจของมหาวิทยาลัย</span> และ <span class="key-term">ผลลัพธ์ของผู้เรียนในโลกจริง</span>
+                    ด้วย หมายความว่า ภาควิชาต้องไม่ถูกลดบทบาทลงเป็นเพียงผู้ปฏิบัติตามคำสั่งจากส่วนกลาง
+                    แต่ก็ไม่ควรออกแบบหลักสูตรแบบแยกขาดจากบริบทการเปลี่ยนแปลงของประเทศ เศรษฐกิจ และโลกการทำงาน
+                  </div>
+                  <div class="goal-point">
+                    <strong>มหาวิทยาลัยต้องสร้างระบบสนับสนุน</strong><br>
+                    คุณภาพบัณฑิตไม่ใช่ภาระของภาควิชาลำพัง มหาวิทยาลัยต้องทำให้
+                    <span class="key-term">internship เชิงเป้าหมาย</span>, <span class="key-term">career tracking</span>, <span class="key-term">data feedback</span>,
+                    และ <span class="key-term">funding support</span> เกิดขึ้นจริง เพื่อให้การออกแบบหลักสูตรเชื่อมกับผลลัพธ์
+                    ไม่ใช่ปล่อยให้ภาควิชาต้องไปหา partner เอง ติดตามผลเอง และแบกต้นทุนเองทุกขั้นตอน
+                  </div>
+                  <div class="goal-point">
+                    <strong>โลกจริงสะท้อนสมรรถนะ แต่ไม่กำหนดเนื้อหา</strong><br>
+                    ภาคอุตสาหกรรมและสังคมควรช่วยสะท้อนว่า <span class="key-term">สมรรถนะใดจำเป็นในระบบจริง</span>
+                    โดยไม่เข้ามากำหนดเนื้อหาทางวิชาการแทนมหาวิทยาลัย ความสัมพันธ์แบบนี้ทำให้มหาวิทยาลัยยังรักษา
+                    ความเข้มข้นทางวิชาการไว้ได้ ขณะเดียวกันก็ไม่หลุดจากโลกจริงที่บัณฑิตต้องไปเผชิญหลังเรียนจบ
+                  </div>
+                  <div class="goal-point">
+                    <strong>การประเมินต้องวัดความสามารถจริง ไม่ใช่แค่การผ่านรายวิชา</strong><br>
+                    ถ้าเป้าหมายคือบัณฑิตที่ <span class="key-term">ทำงานได้จริง</span> การประเมินก็ต้องขยับจากการดูเพียงคะแนนปลายภาค
+                    ไปสู่การดู <span class="key-term">portfolio</span>, <span class="key-term">project-based work</span>,
+                    การอธิบายเหตุผล และความสามารถในการนำความรู้ไปใช้กับโจทย์จริง เพื่อให้มหาวิทยาลัยมั่นใจได้ว่าผู้เรียนไม่ได้เพียงจบหลักสูตร แต่พร้อมต่อโลกจริง
+                  </div>
+                </div>
+                <div class="goal-note">
+                  เป้าหมายนี้จึงไม่ใช่เรื่อง employability แบบแคบ ๆ แต่คือการยกระดับคุณภาพบัณฑิต
+                  ให้พร้อมต่อโลกจริงในฐานะ <span class="key-term">ผลลัพธ์ของทั้งระบบมหาวิทยาลัย</span>
+                  ตั้งแต่การออกแบบหลักสูตร การสนับสนุนจากส่วนกลาง ไปจนถึงการรับฟัง feedback จากสังคมและภาคการทำงาน
+                </div>
+              </div>
             </div>
           </article>
         </section>
@@ -276,9 +454,49 @@
         <section class="section">
           <article id="goal-2" class="goal-card">
             <div class="goal-index">Goal 2</div>
-            <div class="goal-title">เป้าหมายที่ 2</div>
-            <div class="goal-slide">
-              <img src="assets/goal-2-slide.JPG" alt="สไลด์เป้าหมายที่ 2">
+            <div class="goal-title">ผู้คนอยู่สุข มหาวิทยาลัยจึงยั่งยืนได้</div>
+            <div class="goal-layout">
+              <figure class="goal-slide">
+                <img src="assets/goal-2-slide.JPG" alt="สไลด์เป้าหมายที่ 2 เรื่อง Human Sustainability" data-lightbox-trigger data-lightbox-title="Goal 2 — Human Sustainability">
+                <figcaption>คลิกรูปเพื่อดูภาพขยาย</figcaption>
+              </figure>
+              <div class="goal-copy">
+                <div class="goal-lead">
+                  ความยั่งยืนของมหาวิทยาลัยเริ่มจากความยั่งยืนของคนทำงานและผู้เรียน
+                  ถ้าระบบยังต้องใช้ <span class="key-term">ความเสียสละเป็นเชื้อเพลิงหลัก</span> มหาวิทยาลัยก็จะยืนระยะไม่ได้จริง
+                </div>
+                <div class="goal-points">
+                  <div class="goal-point">
+                    <strong>Human Sustainability เป็นเรื่องโครงสร้าง ไม่ใช่สวัสดิการปลายทางอย่างเดียว</strong><br>
+                    ปัญหาไม่ได้อยู่แค่คนเหนื่อย แต่คือระบบให้รางวัลกับสิ่งหนึ่ง
+                    ขณะที่งานหลักอย่าง <span class="key-term">การสอน</span>, <span class="key-term">การดูแลนิสิต</span>, และ <span class="key-term">การสร้างคน</span> กลับถูกทำให้กลายเป็นเรื่องเสียสละ
+                    ถ้าระบบยังเป็นแบบนี้ต่อไป คนที่แบกภารกิจหลักของมหาวิทยาลัยจะหมดแรงก่อนที่องค์กรจะเรียกตัวเองว่ายั่งยืนได้จริง
+                  </div>
+                  <div class="goal-point">
+                    <strong>เส้นทางความก้าวหน้าต้องสะท้อนภารกิจจริง</strong><br>
+                    การประเมิน แรงจูงใจ และความมั่นคงในการทำงานต้องสอดคล้องกับ <span class="key-term">บทบาทที่มหาวิทยาลัยต้องการจริง</span>
+                    ไม่ใช่ผลักให้คนเก่งต้องออกจากงานหลักเพื่อไปหาความมั่นคงจากเส้นทางอื่น
+                    ถ้าเส้นทางความก้าวหน้าไม่สอดคล้องกับงานที่มหาวิทยาลัยบอกว่าสำคัญ คนทำงานก็จะเรียนรู้ว่าคำประกาศกับระบบจริงไม่ใช่เรื่องเดียวกัน
+                  </div>
+                  <div class="goal-point">
+                    <strong>หน่วยย่อยคือหัวใจของมหาวิทยาลัย</strong><br>
+                    ระบบที่ดีต้องยืนอยู่บนความจริงของคณะและภาควิชา ไม่ใช่ออกแบบจากศูนย์กลางอย่างเดียว
+                    โดยไม่เข้าใจ <span class="key-term">ภาระและบริบทของคนทำงานหน้างาน</span>
+                    เพราะสุดท้ายมหาวิทยาลัยไม่ได้ทำงานจากประกาศส่วนกลาง แต่ทำงานจากคนที่อยู่ในคณะ ภาควิชา ห้องเรียน ห้องปฏิบัติการ และหน่วยสนับสนุนจริง ๆ
+                  </div>
+                  <div class="goal-point">
+                    <strong>ระบบต้องทำงานได้โดยไม่ใช้ความเสียสละเป็นกลไกหลัก</strong><br>
+                    เป้าหมายนี้จึงรวมถึงเรื่อง <span class="key-term">fairness</span>, <span class="key-term">workload</span>,
+                    <span class="key-term">work environment</span>, และ <span class="key-term">sense of meaning</span>
+                    ของคนทำงาน เพราะถ้าระบบยืนได้ด้วยการให้คนบางกลุ่มทุ่มเทเกินขอบเขตอยู่ตลอด
+                    ความยั่งยืนที่เห็นก็จะเป็นเพียงภาพชั่วคราว ไม่ใช่ความมั่นคงของสถาบันจริง
+                  </div>
+                </div>
+                <div class="goal-note">
+                  เป้าหมายนี้จึงไม่ใช่เรื่อง soft หรือเรื่องปลอบใจ แต่เป็น <span class="key-term">โครงสร้างพื้นฐานของความยั่งยืนสถาบัน</span> โดยตรง
+                  เพราะถ้าคนในมหาวิทยาลัยอยู่ไม่ไหว มหาวิทยาลัยก็ไม่มีทางยั่งยืนได้จริง
+                </div>
+              </div>
             </div>
           </article>
         </section>
@@ -286,9 +504,52 @@
         <section class="section">
           <article id="goal-3" class="goal-card">
             <div class="goal-index">Goal 3</div>
-            <div class="goal-title">เป้าหมายที่ 3</div>
-            <div class="goal-slide">
-              <img src="assets/goal-3-slide.JPG" alt="สไลด์เป้าหมายที่ 3">
+            <div class="goal-title">ระบบที่ดี ไม่ต้องพึ่งคนดีเป็นพิเศษ</div>
+            <div class="goal-layout">
+              <figure class="goal-slide">
+                <img src="assets/goal-3-slide.JPG" alt="สไลด์เป้าหมายที่ 3 เรื่อง Institutional Trust by Design" data-lightbox-trigger data-lightbox-title="Goal 3 — Institutional Trust by Design">
+                <figcaption>คลิกรูปเพื่อดูภาพขยาย</figcaption>
+              </figure>
+              <div class="goal-copy">
+                <div class="goal-lead">
+                  ความเชื่อมั่นของสถาบันต้องถูกออกแบบไว้ในระบบ
+                  ไม่ใช่ผูกไว้กับการลุ้นว่าแต่ละรอบเราจะได้ <span class="key-term">คนแบบไหน</span> มาถืออำนาจหรือใช้ดุลยพินิจ
+                </div>
+                <div class="goal-points">
+                  <div class="goal-point">
+                    <strong>ลดการใช้ดุลยพินิจโดยไม่จำเป็น</strong><br>
+                    ระบบที่ดีต้องทำให้กติกา บทบาท ขั้นตอน และข้อมูลชัดพอ
+                    จนการตัดสินใจมีความ <span class="key-term">สม่ำเสมอ</span>, <span class="key-term">โปร่งใส</span>, และ <span class="key-term">ตรวจสอบได้</span> แม้ตัวคนจะเปลี่ยน
+                    โดยไม่ต้องฝากคุณภาพของระบบไว้กับการลุ้นว่าแต่ละรอบจะได้คนที่มีสไตล์หรือคุณธรรมแบบใดมาถืออำนาจ
+                  </div>
+                  <div class="goal-point">
+                    <strong>บทบาทของ “กรรมการ” ต้องชัด</strong><br>
+                    บางคนมาทำหน้าที่ตัดสิน บางคนเป็นผู้แทน บางคนให้คำปรึกษา
+                    ถ้าบทบาทไม่ชัด อำนาจหน้าที่และความรับผิดชอบก็พร่าไป
+                    และ <span class="key-term">ดุลยพินิจก็จะไหลเข้าไปแทนระบบ</span>
+                    เมื่อคนในองค์กรไม่แน่ใจว่าใครตัดสินใจ ในฐานะอะไร และด้วยเกณฑ์ใด ความเชื่อมั่นต่อสถาบันก็จะค่อย ๆ สึกกร่อนจากภายใน
+                  </div>
+                  <div class="goal-point">
+                    <strong>Governance ต้องมีทั้ง workflow, evaluation, และ dashboard</strong><br>
+                    มหาวิทยาลัยต้องมี <span class="key-term">workflow ที่เป็นมาตรฐาน</span>,
+                    <span class="key-term">ระบบประเมินที่โปร่งใสและปลอดภัยจริง</span>,
+                    และ <span class="key-term">dashboard เชิงระบบ</span> สำหรับการกำกับเชิงนโยบาย
+                    ไม่ใช่ใช้ข้อมูลเพื่อแทรกแซงรายกรณี เป้าหมายคือให้สภาและฝ่ายบริหารเห็นภาพรวม ความเสี่ยง และความคืบหน้าร่วมกัน
+                    โดยไม่ต้องลงไปจัดการเรื่องจุกจิกในระดับปฏิบัติการ
+                  </div>
+                  <div class="goal-point">
+                    <strong>ความเชื่อมั่นต้องเกิดจากการออกแบบ ไม่ใช่การขอให้เชื่อกันเอง</strong><br>
+                    ข้อมูลชุดเดียวกัน, เกณฑ์ที่อธิบายได้, การประเมินที่ปลอดภัย, และกระบวนการที่มี <span class="key-term">audit trail</span>
+                    คือสิ่งที่ทำให้คนในองค์กรและคนนอกองค์กรเชื่อว่ามหาวิทยาลัยใช้หลักการเดียวกันกับทุกฝ่าย
+                    และทำให้ <span class="key-term">institutional trust</span> เกิดจากระบบ ไม่ใช่จากภาพลักษณ์เฉพาะบุคคล
+                  </div>
+                </div>
+                <div class="goal-note">
+                  เป้าหมายนี้ทำให้ความเป็นธรรม ความต่อเนื่อง และความไว้วางใจต่อสถาบัน
+                  ไม่ต้องขึ้นกับ <span class="key-term">อุปนิสัยเฉพาะของคนบางคน</span> อีกต่อไป
+                  แต่ถูกฝังไว้ในกติกา ข้อมูล และกระบวนการของมหาวิทยาลัยเอง
+                </div>
+              </div>
             </div>
           </article>
         </section>
@@ -300,7 +561,53 @@
       </div>
     </section>
   </main>
+  <div class="lightbox" id="goal-lightbox" aria-hidden="true">
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="goal-lightbox-title">
+      <div class="lightbox-topbar">
+        <div class="lightbox-title" id="goal-lightbox-title">ภาพสไลด์</div>
+        <button class="lightbox-close" type="button" aria-label="ปิดภาพขยาย">ปิด</button>
+      </div>
+      <img class="lightbox-image" id="goal-lightbox-image" alt="">
+    </div>
+  </div>
   <script src="assets/release-gate.js" defer></script>
   <script src="assets/site-analytics.js" defer></script>
+  <script>
+    (() => {
+      const lightbox = document.getElementById('goal-lightbox');
+      const lightboxImage = document.getElementById('goal-lightbox-image');
+      const lightboxTitle = document.getElementById('goal-lightbox-title');
+      const closeButton = lightbox.querySelector('.lightbox-close');
+      const triggers = document.querySelectorAll('[data-lightbox-trigger]');
+
+      const openLightbox = (img) => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightboxTitle.textContent = img.dataset.lightboxTitle || img.alt || 'ภาพสไลด์';
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+      };
+
+      triggers.forEach((img) => {
+        img.addEventListener('click', () => openLightbox(img));
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

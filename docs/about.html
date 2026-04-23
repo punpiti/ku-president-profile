@@ -6,6 +6,8 @@
   <title>แนะนำตัว</title>
   <meta name="description" content="ประวัติ คุณวุฒิ ประสบการณ์การทำงาน ประวัติการบริหาร ผลงานทางวิชาการ และบทบาทของ รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า">
   <link rel="canonical" href="https://punpiti.github.io/ku-president-profile/about.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/convergence.png">
   <meta name="robots" content="index,follow">
   <meta property="og:site_name" content="Kasetsart University President Vision Archive">
   <meta property="og:type" content="profile">
@@ -297,6 +299,62 @@
       padding: 22px;
     }
 
+    .leadership-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .leadership-card {
+      padding: 16px 18px;
+      border: 1px solid rgba(0, 102, 100, 0.1);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.66);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .leadership-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0, 102, 100, 0.24);
+      background: rgba(223, 238, 234, 0.54);
+      box-shadow: 0 16px 30px rgba(0, 68, 67, 0.08);
+    }
+
+    .leadership-card:hover strong,
+    .leadership-card:hover .key-term {
+      color: var(--ku-green);
+      font-weight: 700;
+    }
+
+    .leadership-label {
+      color: var(--ku-green);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .leadership-title {
+      margin-top: 8px;
+      color: var(--blue-deep);
+      font-size: 1.18rem;
+      line-height: 1.45;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .leadership-body {
+      margin-top: 8px;
+      color: #223335;
+      font-size: 1rem;
+      line-height: 1.82;
+    }
+
+    .key-term {
+      color: inherit;
+      font-weight: 400;
+      transition: color 180ms ease, font-weight 180ms ease;
+    }
+
     .subsection-title {
       color: var(--blue-deep);
       font-size: 1.2rem;
@@ -480,8 +538,55 @@
               <a class="jump-link" href="https://dblp.org/pid/22/3282.html" target="_blank" rel="noopener noreferrer"><span class="jump-link-icon">DB</span><span class="jump-link-label">DBLP</span></a>
               <a class="jump-link" href="https://www.scopus.com/authid/detail.uri?authorId=55663804300" target="_blank" rel="noopener noreferrer"><span class="jump-link-icon">SC</span><span class="jump-link-label">Scopus</span></a>
               <a class="jump-link" href="https://scholar.google.com/citations?hl=th&amp;user=GIFTtB4AAAAJ" target="_blank" rel="noopener noreferrer"><span class="jump-link-icon">GS</span><span class="jump-link-label">Google Scholar</span></a>
+              <a class="jump-link" href="#leadership"><span class="jump-link-icon">LD</span><span class="jump-link-label">บทบาทผู้นำ</span></a>
             </div>
           </div>
+        </section>
+
+        <section class="section" id="leadership">
+          <div class="section-header">
+            <div class="section-title">ภาวะผู้นำที่ผมเสนอ</div>
+            <div class="section-note">ไม่ใช่ CV ย่อ แต่เป็นคำตอบว่าประสบการณ์แบบไหนทำให้พร้อมต่อบทบาทอธิการบดี</div>
+          </div>
+          <article class="section-card">
+            <div class="subsection-title">ผู้นำที่สร้างระบบ สร้างคน และทำให้ความร่วมมือเกิดผลจริง</div>
+            <div class="subsection-body">
+              <p class="subsection-lead">แกนของ section นี้มาจาก logic ใน slide “บทบาทผู้นำ” แต่เขียนใหม่ให้เป็น leadership narrative แทนการไล่ตำแหน่งหรือผลงานแบบ CV</p>
+              <p>
+                ถ้าถามว่าทำไมผมจึงเหมาะกับบทบาทอธิการบดีในช่วงนี้ คำตอบของผมไม่ใช่การมีตำแหน่งหลายตำแหน่ง แต่คือประสบการณ์ที่ครอบพร้อมกันทั้ง <strong>system</strong>, <strong>talent development</strong>, <strong>international collaboration</strong>, และ <strong>institution building</strong> ซึ่งเป็นชุดความสามารถที่อธิการบดีต้องใช้พร้อมกันจริง
+              </p>
+            </div>
+            <div class="leadership-grid">
+              <div class="leadership-card">
+                <div class="leadership-label">SYSTEM-LEVEL LEADER</div>
+                <div class="leadership-title">มองทั้งระบบ ไม่ได้เห็นแค่ภาควิชาหรือปัญหาเฉพาะจุด</div>
+                <div class="leadership-body">
+                  ผมทำงานทั้งในระดับภาควิชา ส่วนกลาง สภามหาวิทยาลัย และสถาบันของมหาวิทยาลัยมาอย่างต่อเนื่อง จึงเข้าใจ <span class="key-term">โครงสร้าง อำนาจ ข้อจำกัด และกลไกเชิงระบบ</span> ของ KU จริง ไม่ได้มองมหาวิทยาลัยจากมุมใดมุมหนึ่งเท่านั้น
+                </div>
+              </div>
+              <div class="leadership-card">
+                <div class="leadership-label">TALENT DEVELOPMENT</div>
+                <div class="leadership-title">เข้าใจมหาวิทยาลัยในฐานะที่สร้างคน ไม่ใช่เพียงองค์กรที่ต้องบริหาร</div>
+                <div class="leadership-body">
+                  จุดต่างสำคัญของผมคือผมทำงานเรื่อง <span class="key-term">การพัฒนาคน</span> มาอย่างยาวนาน ตั้งแต่งานโอลิมปิกวิชาการ การดูแลคนเก่ง การพัฒนาหลักสูตร ไปจนถึงการออกแบบการเรียนรู้สำหรับนิสิตในมหาวิทยาลัย เพราะฉะนั้นเวลาพูดเรื่องอนาคตของมหาวิทยาลัย ผมไม่ได้มองแค่โครงสร้าง แต่เห็นเรื่องคนเป็นแกนกลางจริง
+                </div>
+              </div>
+              <div class="leadership-card">
+                <div class="leadership-label">GLOBAL CONNECTOR</div>
+                <div class="leadership-title">เชื่อมเครือข่ายต่างประเทศให้กลับมาเป็นผลลัพธ์จริง</div>
+                <div class="leadership-body">
+                  งาน inter ของผมไม่ได้อยู่ในระดับพิธีการหรือ MOU เท่านั้น แต่เชื่อมกลับมาที่ <span class="key-term">หลักสูตรนานาชาติ</span>, <span class="key-term">Double Degree</span>, งานวิจัย และโอกาสของนิสิตได้จริง นี่สำคัญเพราะมหาวิทยาลัยต้องมีเครือข่ายสากลที่สร้างของจริง ไม่ใช่เพียงภาพลักษณ์
+                </div>
+              </div>
+              <div class="leadership-card">
+                <div class="leadership-label">INSTITUTION BUILDER</div>
+                <div class="leadership-title">สร้างของใหม่ที่อยู่ต่อได้ แม้ผู้นำเปลี่ยน</div>
+                <div class="leadership-body">
+                  ไม่ว่าจะเป็นระบบอย่าง <strong>KU-Work</strong> และ <strong>KU-Forest</strong>, หลักสูตรใหม่, วิชาพื้นฐาน AI สำหรับนิสิตทั้งมหาวิทยาลัย, หรือ initiative อย่าง <strong>AIEP</strong> สิ่งที่ผมพยายามทำเสมอคือสร้าง <span class="key-term">โครงสร้างที่ทำงานต่อได้</span> ไม่ใช่ของที่อยู่ได้แค่ตอนเจ้าของเรื่องยังอยู่ตรงนั้น
+                </div>
+              </div>
+            </div>
+          </article>
         </section>
 
         <section class="section">

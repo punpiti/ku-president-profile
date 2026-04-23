@@ -1,5 +1,5 @@
 (() => {
-  const releaseAt = new Date("2026-04-29T00:00:00+07:00");
+  const releaseAt = new Date("2026-04-29T08:00:00+07:00");
   const gatedPaths = new Set([
     "context.html",
     "roles.html",
@@ -97,7 +97,8 @@
       <div class="release-gate-title" id="release-gate-title">เนื้อหาส่วนนี้จะแสดงหลังการนำเสนอวิสัยทัศน์</div>
       <div class="release-gate-body">
         ขอเชิญติดตามการนำเสนอวิสัยทัศน์ของ <strong>รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า</strong><br>
-        วันที่ <strong>29 เมษายน 2026</strong> ณ <strong>มหาวิทยาลัยเกษตรศาสตร์</strong>
+        เปิดเวลา <strong>08:00 น. วันที่ 29 เมษายน 2026</strong><br>
+        ณ <strong>มหาวิทยาลัยเกษตรศาสตร์</strong>
       </div>
       <div class="release-gate-actions">
         <button class="release-gate-button" type="button">รับทราบ</button>

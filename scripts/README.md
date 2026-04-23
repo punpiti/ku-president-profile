@@ -1,6 +1,16 @@
 # Scripts
 
-สคริปต์ในโฟลเดอร์นี้ใช้สำหรับรัน static web ใน repo นี้ โดยค่า default ยังเป็น public webpage จาก `docs/`
+สคริปต์ในโฟลเดอร์นี้ใช้เป็น repo-level entry point สำหรับหลาย workspace ใน repo นี้
+
+- `docs/` = public website
+- `vision/` = vision workspace
+- `research_award/` = standalone site อีกก้อน
+
+ถ้าต้องการดูรายการโปรเจคแบบย่อ:
+
+```bash
+bash scripts/list_projects.sh
+```
 
 ## Local development
 
@@ -34,16 +44,30 @@ python3 scripts/migrate_article_images.py --apply --copy
 - `image` และ `image_index` ต้องชี้ไปยัง asset เดียวกัน
 - ถ้าเป็นรูป shared image สามารถคงชื่อกลางไว้ได้
 
-รัน local web server เพื่อดูเว็บจาก `docs/`
+รัน local web server
+
+public website จาก `docs/`
+
+```bash
+bash scripts/run_local.sh public
+```
+
+vision Q&A portal:
+
+```bash
+bash scripts/run_local.sh vision
+```
+
+research award site:
+
+```bash
+bash scripts/run_local.sh award
+```
+
+ถ้าไม่ใส่ target สคริปต์จะขึ้น help และลิสต์โปรเจคที่เลือกได้:
 
 ```bash
 bash scripts/run_local.sh
-```
-
-ถ้าต้องการเปิด question bank:
-
-```bash
-bash scripts/run_local.sh qna
 ```
 
 กำหนดพอร์ตเองได้:
@@ -55,7 +79,7 @@ bash scripts/run_local.sh 9000
 หรือระบุ target กับ port พร้อมกัน:
 
 ```bash
-bash scripts/run_local.sh qna 9000
+bash scripts/run_local.sh vision 9000
 ```
 
 หรือใช้ environment variable:
@@ -66,8 +90,9 @@ PORT=9000 HOST=0.0.0.0 bash scripts/run_local.sh
 
 target ที่รองรับตอนนี้:
 
-- `site` -> `docs/`
-- `qna` หรือ `question_bank` -> `vision/qna/question_bank/`
+- `public`, `public-site`, `site`, `docs` -> `docs/`
+- `vision`, `vision-qna`, `qna`, `question_bank` -> `vision/qna/`
+- `award`, `research-award` -> `research_award/`
 - relative path หรือ absolute path ของ directory ที่มี `index.html`
 
 ## GitHub Pages deployment
