@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Python: create .venv",
+      "type": "shell",
+      "command": "python3 -m venv .venv",
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: install requirements",
+      "type": "shell",
+      "command": "python3 -m pip install -r requirements.txt",
+      "problemMatcher": []
+    },
+    {
+      "label": "Site: serve public docs",
+      "type": "shell",
+      "command": "bash scripts/run_local.sh public",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Site: serve vision Q&A",
+      "type": "shell",
+      "command": "bash scripts/run_local.sh vision",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Site: serve research award",
+      "type": "shell",
+      "command": "bash scripts/run_local.sh award",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: articles",
+      "type": "shell",
+      "command": "python3 scripts/build_articles.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: vision site",
+      "type": "shell",
+      "command": "python3 vision/tools/build_site.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: Q&A bank",
+      "type": "shell",
+      "command": "python3 vision/tools/build_qna_bank.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Deploy: GitHub Pages dry run",
+      "type": "shell",
+      "command": "bash scripts/deploy_github_pages.sh",
+      "problemMatcher": []
+    }
+  ]
+}
