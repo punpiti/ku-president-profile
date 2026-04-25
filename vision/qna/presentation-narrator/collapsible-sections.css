@@ -1,0 +1,46 @@
+.collapsible-section {
+  overflow: hidden;
+}
+
+.collapsible-section summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.collapsible-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapsible-section summary::before {
+  content: "\25B8";
+  font-size: 0.95rem;
+  line-height: 1;
+  color: #6b5a34;
+  transition: transform 0.16s ease;
+}
+
+.collapsible-section[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.collapsible-section.note summary {
+  margin: -16px -18px 0;
+  padding: 16px 18px 12px;
+}
+
+.collapsible-section.thought-box summary {
+  margin: -16px -16px 0;
+  padding: 16px 16px 12px;
+}
+
+.collapsible-content > :first-child {
+  margin-top: 0;
+}
+
+.collapsible-content > :last-child {
+  margin-bottom: 0;
+}

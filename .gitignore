@@ -5,6 +5,13 @@
 .python-version
 .codex
 .backup/
+/README.md
+articles_data/
+selection/
+vision/sources/
+vision/tools/
+/vision/README.md
+research_award/.git/
 __pycache__/
 *.py[cod]
 .pytest_cache/

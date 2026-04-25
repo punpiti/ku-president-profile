@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q&A Question Bank</title>
+  <style>
+    body { margin: 0; font-family: "Anuphan", "IBM Plex Sans Thai", "Noto Sans Thai", "Inter", "Segoe UI", sans-serif; font-size: 18px; line-height: 1.65; background: linear-gradient(180deg, #f5f1e8, #ede3d1); color: #1f2520; }
+    .page { width: min(1180px, calc(100vw - 32px)); margin: 24px auto 48px; }
+    .hero, .group { background: rgba(255, 252, 246, 0.94); border: 1px solid #d8cdb7; border-radius: 22px; padding: 22px; box-shadow: 0 10px 24px rgba(74, 58, 22, 0.08); }
+    .hero { margin-bottom: 18px; }
+    h1 { margin: 0 0 8px; font-size: 2.4rem; }
+    p { color: #5d665e; }
+    .group + .group { margin-top: 18px; }
+    .priority-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .priority-card { background: #fffdf8; border: 1px solid #e2d6bc; border-radius: 16px; padding: 16px; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
+    .priority-card:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 58, 22, 0.08); }
+    .priority-top { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+    .priority-badge, .status-badge { border-radius: 999px; padding: 4px 10px; font-size: .82rem; }
+    .priority-badge { background: #ece7d8; color: #5c5031; }
+    .priority-badge.p1 { background: #f5d9c7; color: #8a3c1e; }
+    .priority-badge.p2 { background: #e8ecd1; color: #53612a; }
+    .priority-badge.p3 { background: #e4ebef; color: #3f5966; }
+    .status-badge { background: #edf5ef; color: #245d44; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+    .card { background: #fffdf8; border: 1px solid #e2d6bc; border-radius: 16px; padding: 16px; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
+    .card h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 58, 22, 0.08); }
+    .card-meta { color: #5d665e; margin-bottom: 10px; font-size: 0.92rem; }
+    .card a { display: inline-block; margin-right: 12px; color: #245d44; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <h1>Q&A Question Bank</h1>
+      <p>แยกคำถามสัมภาษณ์เป็นรายข้อ จัดหมวด และเปิดอ่าน/แก้ทีละคำถามได้ง่าย โดยยึด submitted application เป็นแกนหลัก</p>
+      <p><a href="./index.md">Open markdown index</a></p>
+    </section>
+    <section class="group">
+      <h2>Priority Queue</h2>
+      <div class="priority-grid">
+            <article class="priority-card" onclick="window.location.href='./01-first-year-priorities.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>หากท่านได้รับเลือก อะไรคือ 3 เรื่องเร่งด่วนใน 1 ปีแรก? | (เขาวัดความสามารถในการจัดลำดับความสำคัญและความเป็นผู้นำเชิงปฏิบัติ)</h3>
+              <p>Strategy &amp; Positioning</p>
+              <a href="./01-first-year-priorities.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./04-change-resistance.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">มี draft ตั้งต้น</span>
+              </div>
+              <h3>ท่านมีแนวคิดเปลี่ยนแปลงหลายเรื่อง จะทำอย่างไรไม่ให้เกิดแรงต้านในปีแรก?</h3>
+              <p>Leadership &amp; Change</p>
+              <a href="./04-change-resistance.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./07-not-a-dean-system-leadership.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>ท่านไม่เคยเป็นคณบดี ท่านจะบริหารมหาวิทยาลัยทั้งระบบได้อย่างไร?</h3>
+              <p>Governance &amp; Administration</p>
+              <a href="./07-not-a-dean-system-leadership.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./08-faculty-level-understanding.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">มี draft ตั้งต้น</span>
+              </div>
+              <h3>แล้วท่านจะเข้าใจปัญหาระดับคณะได้อย่างไร ถ้าไม่เคยบริหารคณะ?</h3>
+              <p>Governance &amp; Administration</p>
+              <a href="./08-faculty-level-understanding.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./09-why-you-over-others.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>ทำไมสภาควรเลือกท่าน มากกว่าผู้สมัครอีก 2 คน?</h3>
+              <p>Strategy &amp; Positioning</p>
+              <a href="./09-why-you-over-others.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./12-ku-ranking-under-constraints.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>ท่านจะทำให้ KU ขยับ ranking ได้อย่างไร ภายใต้ทรัพยากรจำกัด?</h3>
+              <p>Strategy &amp; Positioning</p>
+              <a href="./12-ku-ranking-under-constraints.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./14-new-revenue-sources.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>ถ้ารายได้จากการศึกษาไม่เพิ่ม ท่านจะหารายได้จากไหน?</h3>
+              <p>Finance &amp; Partnerships</p>
+              <a href="./14-new-revenue-sources.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./15-deficit-and-workforce.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>ท่านจะจัดการงบขาดดุลหรือภาระบุคลากรอย่างไร?</h3>
+              <p>Finance &amp; Partnerships</p>
+              <a href="./15-deficit-and-workforce.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./19-board-strategic-governance.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>ท่านจะบริหารสภามหาวิทยาลัยอย่างไรให้ทำงานเชิงยุทธศาสตร์ ไม่ใช่เชิงจุกจิก?</h3>
+              <p>Governance &amp; Administration</p>
+              <a href="./19-board-strategic-governance.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./24-personal-weakness.html'">
+              <div class="priority-top">
+                <span class="priority-badge p1">P1</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>จุดอ่อนของท่านคืออะไร?</h3>
+              <p>Personal Fit</p>
+              <a href="./24-personal-weakness.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./03-shared-data-trust.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">มี draft ตั้งต้น</span>
+              </div>
+              <h3>ถ้าอาจารย์บางส่วนไม่ต้องการให้มีระบบข้อมูลกลาง เพราะกลัวถูกตรวจสอบ ท่านจะทำอย่างไรให้เกิดความไว้วางใจ?</h3>
+              <p>AI, Data &amp; Digital</p>
+              <a href="./03-shared-data-trust.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./05-quick-win-vs-big-move.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">มี draft ตั้งต้น</span>
+              </div>
+              <h3>ถ้าในปีแรกท่านทำ Quick Win ได้ แต่โครงการใหญ่ยังไม่คืบหน้า จะถูกมองว่าทำเรื่องเล็ก ๆ แต่ไม่กล้าแตะเรื่องยาก ท่านจะตอบอย่างไร?</h3>
+              <p>Leadership &amp; Change</p>
+              <a href="./05-quick-win-vs-big-move.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./06-too-tech-not-people.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">มี draft ตั้งต้น</span>
+              </div>
+              <h3>ถ้า 6 เดือนแรกเกิดกระแสว่า ‘ผู้บริหารใหม่คิดเชิงเทคโนโลยีเกินไป ไม่เข้าใจบริบทคน’ ท่านจะทำอย่างไร?</h3>
+              <p>Leadership &amp; Change</p>
+              <a href="./06-too-tech-not-people.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./11-top-league-vs-division-3.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>เราอยากไปส่งบางคนไป top league หรือ ทุกคนไป division 3</h3>
+              <p>Strategy &amp; Positioning</p>
+              <a href="./11-top-league-vs-division-3.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./13-digital-university-in-four-years.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>Digital University ภายใน 4 ปี จะทำจริงอย่างไร?</h3>
+              <p>Strategy &amp; Positioning</p>
+              <a href="./13-digital-university-in-four-years.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./16-fundraising-100m.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>จะระดมทุน 100 ล้านบาท/ปี ทำอย่างไรให้เป็นรูปธรรม?</h3>
+              <p>Finance &amp; Partnerships</p>
+              <a href="./16-fundraising-100m.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./17-dean-disagreement.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">มี draft ตั้งต้น</span>
+              </div>
+              <h3>หากคณบดีไม่เห็นด้วยกับนโยบายท่าน จะทำอย่างไร?</h3>
+              <p>Governance &amp; Administration</p>
+              <a href="./17-dean-disagreement.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./18-ai-digital-shift-resistance.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">มี draft ตั้งต้น</span>
+              </div>
+              <h3>ถ้าอาจารย์ต่อต้าน AI / Digital shift จะจัดการอย่างไร?</h3>
+              <p>AI, Data &amp; Digital</p>
+              <a href="./18-ai-digital-shift-resistance.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./20-fair-executive-evaluation.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>ท่านจะสร้างระบบประเมินผู้บริหารที่เป็นธรรมและปลอดภัยได้อย่างไร?</h3>
+              <p>Governance &amp; Administration</p>
+              <a href="./20-fair-executive-evaluation.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./21-senior-complaint-handling.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>ถ้ามีประเด็นร้องเรียนผู้บริหารระดับสูง ท่านจะจัดการอย่างไร?</h3>
+              <p>Governance &amp; Administration</p>
+              <a href="./21-senior-complaint-handling.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./22-medical-park-opinion.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>ความเห็นต่อโครงการอุทยานการแพทย์ / โรงพยาบาล?</h3>
+              <p>Medicine &amp; Expansion</p>
+              <a href="./22-medical-park-opinion.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./23-should-ku-open-med-school.html'">
+              <div class="priority-top">
+                <span class="priority-badge p2">P2</span>
+                <span class="status-badge">พร้อมปรับ</span>
+              </div>
+              <h3>KU ควรเปิดคณะแพทย์หรือไม่? มีความเสี่ยงอะไร?</h3>
+              <p>Medicine &amp; Expansion</p>
+              <a href="./23-should-ku-open-med-school.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./02-ai-governance-speed.html'">
+              <div class="priority-top">
+                <span class="priority-badge p3">P3</span>
+                <span class="status-badge">มี draft ตั้งต้น</span>
+              </div>
+              <h3>การตั้งกลไกกำกับดูแล AI จะทำให้การทำงานช้าลงหรือไม่? และจะเพิ่มภาระบุคลากรหรือไม่?</h3>
+              <p>AI, Data &amp; Digital</p>
+              <a href="./02-ai-governance-speed.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+
+            <article class="priority-card" onclick="window.location.href='./10-four-year-legacy.html'">
+              <div class="priority-top">
+                <span class="priority-badge p3">P3</span>
+                <span class="status-badge">มี draft ตั้งต้น</span>
+              </div>
+              <h3>หากดำรงตำแหน่งครบ 4 ปี สิ่งที่ท่านภาคภูมิใจที่สุดและอยากให้คนจำได้คือผลงานด้านใดที่ถือเป็นรากฐานสำคัญที่สุดของมหาวิทยาลัยต่อไป?</h3>
+              <p>Strategy &amp; Positioning</p>
+              <a href="./10-four-year-legacy.md" onclick="event.stopPropagation()">Open editable note</a>
+            </article>
+            </div>
+    </section>
+
+            <section class="group">
+              <h2>AI, Data &amp; Digital</h2>
+              <div class="grid">
+                <article class="card" onclick="window.location.href='./02-ai-governance-speed.html'">
+                  <h3>การตั้งกลไกกำกับดูแล AI จะทำให้การทำงานช้าลงหรือไม่? และจะเพิ่มภาระบุคลากรหรือไม่?</h3>
+                  <p>AI, Data &amp; Digital | P3 | มี draft ตั้งต้น</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./02-ai-governance-speed.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./03-shared-data-trust.html'">
+                  <h3>ถ้าอาจารย์บางส่วนไม่ต้องการให้มีระบบข้อมูลกลาง เพราะกลัวถูกตรวจสอบ ท่านจะทำอย่างไรให้เกิดความไว้วางใจ?</h3>
+                  <p>AI, Data &amp; Digital | P2 | มี draft ตั้งต้น</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./03-shared-data-trust.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./18-ai-digital-shift-resistance.html'">
+                  <h3>ถ้าอาจารย์ต่อต้าน AI / Digital shift จะจัดการอย่างไร?</h3>
+                  <p>AI, Data &amp; Digital | P2 | มี draft ตั้งต้น</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./18-ai-digital-shift-resistance.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+                </div>
+            </section>
+
+            <section class="group">
+              <h2>Finance &amp; Partnerships</h2>
+              <div class="grid">
+                <article class="card" onclick="window.location.href='./14-new-revenue-sources.html'">
+                  <h3>ถ้ารายได้จากการศึกษาไม่เพิ่ม ท่านจะหารายได้จากไหน?</h3>
+                  <p>Finance &amp; Partnerships | P1 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./14-new-revenue-sources.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./15-deficit-and-workforce.html'">
+                  <h3>ท่านจะจัดการงบขาดดุลหรือภาระบุคลากรอย่างไร?</h3>
+                  <p>Finance &amp; Partnerships | P1 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./15-deficit-and-workforce.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./16-fundraising-100m.html'">
+                  <h3>จะระดมทุน 100 ล้านบาท/ปี ทำอย่างไรให้เป็นรูปธรรม?</h3>
+                  <p>Finance &amp; Partnerships | P2 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./16-fundraising-100m.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+                </div>
+            </section>
+
+            <section class="group">
+              <h2>Governance &amp; Administration</h2>
+              <div class="grid">
+                <article class="card" onclick="window.location.href='./07-not-a-dean-system-leadership.html'">
+                  <h3>ท่านไม่เคยเป็นคณบดี ท่านจะบริหารมหาวิทยาลัยทั้งระบบได้อย่างไร?</h3>
+                  <p>Governance &amp; Administration | P1 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./07-not-a-dean-system-leadership.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./08-faculty-level-understanding.html'">
+                  <h3>แล้วท่านจะเข้าใจปัญหาระดับคณะได้อย่างไร ถ้าไม่เคยบริหารคณะ?</h3>
+                  <p>Governance &amp; Administration | P1 | มี draft ตั้งต้น</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./08-faculty-level-understanding.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./17-dean-disagreement.html'">
+                  <h3>หากคณบดีไม่เห็นด้วยกับนโยบายท่าน จะทำอย่างไร?</h3>
+                  <p>Governance &amp; Administration | P2 | มี draft ตั้งต้น</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./17-dean-disagreement.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./19-board-strategic-governance.html'">
+                  <h3>ท่านจะบริหารสภามหาวิทยาลัยอย่างไรให้ทำงานเชิงยุทธศาสตร์ ไม่ใช่เชิงจุกจิก?</h3>
+                  <p>Governance &amp; Administration | P1 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./19-board-strategic-governance.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./20-fair-executive-evaluation.html'">
+                  <h3>ท่านจะสร้างระบบประเมินผู้บริหารที่เป็นธรรมและปลอดภัยได้อย่างไร?</h3>
+                  <p>Governance &amp; Administration | P2 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./20-fair-executive-evaluation.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./21-senior-complaint-handling.html'">
+                  <h3>ถ้ามีประเด็นร้องเรียนผู้บริหารระดับสูง ท่านจะจัดการอย่างไร?</h3>
+                  <p>Governance &amp; Administration | P2 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./21-senior-complaint-handling.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+                </div>
+            </section>
+
+            <section class="group">
+              <h2>Leadership &amp; Change</h2>
+              <div class="grid">
+                <article class="card" onclick="window.location.href='./04-change-resistance.html'">
+                  <h3>ท่านมีแนวคิดเปลี่ยนแปลงหลายเรื่อง จะทำอย่างไรไม่ให้เกิดแรงต้านในปีแรก?</h3>
+                  <p>Leadership &amp; Change | P1 | มี draft ตั้งต้น</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./04-change-resistance.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./05-quick-win-vs-big-move.html'">
+                  <h3>ถ้าในปีแรกท่านทำ Quick Win ได้ แต่โครงการใหญ่ยังไม่คืบหน้า จะถูกมองว่าทำเรื่องเล็ก ๆ แต่ไม่กล้าแตะเรื่องยาก ท่านจะตอบอย่างไร?</h3>
+                  <p>Leadership &amp; Change | P2 | มี draft ตั้งต้น</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./05-quick-win-vs-big-move.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./06-too-tech-not-people.html'">
+                  <h3>ถ้า 6 เดือนแรกเกิดกระแสว่า ‘ผู้บริหารใหม่คิดเชิงเทคโนโลยีเกินไป ไม่เข้าใจบริบทคน’ ท่านจะทำอย่างไร?</h3>
+                  <p>Leadership &amp; Change | P2 | มี draft ตั้งต้น</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./06-too-tech-not-people.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+                </div>
+            </section>
+
+            <section class="group">
+              <h2>Medicine &amp; Expansion</h2>
+              <div class="grid">
+                <article class="card" onclick="window.location.href='./22-medical-park-opinion.html'">
+                  <h3>ความเห็นต่อโครงการอุทยานการแพทย์ / โรงพยาบาล?</h3>
+                  <p>Medicine &amp; Expansion | P2 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./22-medical-park-opinion.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./23-should-ku-open-med-school.html'">
+                  <h3>KU ควรเปิดคณะแพทย์หรือไม่? มีความเสี่ยงอะไร?</h3>
+                  <p>Medicine &amp; Expansion | P2 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./23-should-ku-open-med-school.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+                </div>
+            </section>
+
+            <section class="group">
+              <h2>Personal Fit</h2>
+              <div class="grid">
+                <article class="card" onclick="window.location.href='./24-personal-weakness.html'">
+                  <h3>จุดอ่อนของท่านคืออะไร?</h3>
+                  <p>Personal Fit | P1 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./24-personal-weakness.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+                </div>
+            </section>
+
+            <section class="group">
+              <h2>Strategy &amp; Positioning</h2>
+              <div class="grid">
+                <article class="card" onclick="window.location.href='./01-first-year-priorities.html'">
+                  <h3>หากท่านได้รับเลือก อะไรคือ 3 เรื่องเร่งด่วนใน 1 ปีแรก? | (เขาวัดความสามารถในการจัดลำดับความสำคัญและความเป็นผู้นำเชิงปฏิบัติ)</h3>
+                  <p>Strategy &amp; Positioning | P1 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./01-first-year-priorities.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./09-why-you-over-others.html'">
+                  <h3>ทำไมสภาควรเลือกท่าน มากกว่าผู้สมัครอีก 2 คน?</h3>
+                  <p>Strategy &amp; Positioning | P1 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./09-why-you-over-others.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./10-four-year-legacy.html'">
+                  <h3>หากดำรงตำแหน่งครบ 4 ปี สิ่งที่ท่านภาคภูมิใจที่สุดและอยากให้คนจำได้คือผลงานด้านใดที่ถือเป็นรากฐานสำคัญที่สุดของมหาวิทยาลัยต่อไป?</h3>
+                  <p>Strategy &amp; Positioning | P3 | มี draft ตั้งต้น</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./10-four-year-legacy.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./11-top-league-vs-division-3.html'">
+                  <h3>เราอยากไปส่งบางคนไป top league หรือ ทุกคนไป division 3</h3>
+                  <p>Strategy &amp; Positioning | P2 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./11-top-league-vs-division-3.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./12-ku-ranking-under-constraints.html'">
+                  <h3>ท่านจะทำให้ KU ขยับ ranking ได้อย่างไร ภายใต้ทรัพยากรจำกัด?</h3>
+                  <p>Strategy &amp; Positioning | P1 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./12-ku-ranking-under-constraints.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+
+                <article class="card" onclick="window.location.href='./13-digital-university-in-four-years.html'">
+                  <h3>Digital University ภายใน 4 ปี จะทำจริงอย่างไร?</h3>
+                  <p>Strategy &amp; Positioning | P2 | พร้อมปรับ</p>
+                  <div class="card-meta">Click card to open static page</div>
+                  <a href="./13-digital-university-in-four-years.md" onclick="event.stopPropagation()">Open editable note</a>
+                </article>
+                </div>
+            </section>
+
+  </div>
+  <script>window.__QNA_BANK__ = [{"question": "หากท่านได้รับเลือก อะไรคือ 3 เรื่องเร่งด่วนใน 1 ปีแรก? | (เขาวัดความสามารถในการจัดลำดับความสำคัญและความเป็นผู้นำเชิงปฏิบัติ)", "category": "Strategy & Positioning", "slug": "01-first-year-priorities"}, {"question": "การตั้งกลไกกำกับดูแล AI จะทำให้การทำงานช้าลงหรือไม่? และจะเพิ่มภาระบุคลากรหรือไม่?", "category": "AI, Data & Digital", "slug": "02-ai-governance-speed"}, {"question": "ถ้าอาจารย์บางส่วนไม่ต้องการให้มีระบบข้อมูลกลาง เพราะกลัวถูกตรวจสอบ ท่านจะทำอย่างไรให้เกิดความไว้วางใจ?", "category": "AI, Data & Digital", "slug": "03-shared-data-trust"}, {"question": "ท่านมีแนวคิดเปลี่ยนแปลงหลายเรื่อง จะทำอย่างไรไม่ให้เกิดแรงต้านในปีแรก?", "category": "Leadership & Change", "slug": "04-change-resistance"}, {"question": "ถ้าในปีแรกท่านทำ Quick Win ได้ แต่โครงการใหญ่ยังไม่คืบหน้า จะถูกมองว่าทำเรื่องเล็ก ๆ แต่ไม่กล้าแตะเรื่องยาก ท่านจะตอบอย่างไร?", "category": "Leadership & Change", "slug": "05-quick-win-vs-big-move"}, {"question": "ถ้า 6 เดือนแรกเกิดกระแสว่า ‘ผู้บริหารใหม่คิดเชิงเทคโนโลยีเกินไป ไม่เข้าใจบริบทคน’ ท่านจะทำอย่างไร?", "category": "Leadership & Change", "slug": "06-too-tech-not-people"}, {"question": "ท่านไม่เคยเป็นคณบดี ท่านจะบริหารมหาวิทยาลัยทั้งระบบได้อย่างไร?", "category": "Governance & Administration", "slug": "07-not-a-dean-system-leadership"}, {"question": "แล้วท่านจะเข้าใจปัญหาระดับคณะได้อย่างไร ถ้าไม่เคยบริหารคณะ?", "category": "Governance & Administration", "slug": "08-faculty-level-understanding"}, {"question": "ทำไมสภาควรเลือกท่าน มากกว่าผู้สมัครอีก 2 คน?", "category": "Strategy & Positioning", "slug": "09-why-you-over-others"}, {"question": "หากดำรงตำแหน่งครบ 4 ปี สิ่งที่ท่านภาคภูมิใจที่สุดและอยากให้คนจำได้คือผลงานด้านใดที่ถือเป็นรากฐานสำคัญที่สุดของมหาวิทยาลัยต่อไป?", "category": "Strategy & Positioning", "slug": "10-four-year-legacy"}, {"question": "เราอยากไปส่งบางคนไป top league หรือ ทุกคนไป division 3", "category": "Strategy & Positioning", "slug": "11-top-league-vs-division-3"}, {"question": "ท่านจะทำให้ KU ขยับ ranking ได้อย่างไร ภายใต้ทรัพยากรจำกัด?", "category": "Strategy & Positioning", "slug": "12-ku-ranking-under-constraints"}, {"question": "Digital University ภายใน 4 ปี จะทำจริงอย่างไร?", "category": "Strategy & Positioning", "slug": "13-digital-university-in-four-years"}, {"question": "ถ้ารายได้จากการศึกษาไม่เพิ่ม ท่านจะหารายได้จากไหน?", "category": "Finance & Partnerships", "slug": "14-new-revenue-sources"}, {"question": "ท่านจะจัดการงบขาดดุลหรือภาระบุคลากรอย่างไร?", "category": "Finance & Partnerships", "slug": "15-deficit-and-workforce"}, {"question": "จะระดมทุน 100 ล้านบาท/ปี ทำอย่างไรให้เป็นรูปธรรม?", "category": "Finance & Partnerships", "slug": "16-fundraising-100m"}, {"question": "หากคณบดีไม่เห็นด้วยกับนโยบายท่าน จะทำอย่างไร?", "category": "Governance & Administration", "slug": "17-dean-disagreement"}, {"question": "ถ้าอาจารย์ต่อต้าน AI / Digital shift จะจัดการอย่างไร?", "category": "AI, Data & Digital", "slug": "18-ai-digital-shift-resistance"}, {"question": "ท่านจะบริหารสภามหาวิทยาลัยอย่างไรให้ทำงานเชิงยุทธศาสตร์ ไม่ใช่เชิงจุกจิก?", "category": "Governance & Administration", "slug": "19-board-strategic-governance"}, {"question": "ท่านจะสร้างระบบประเมินผู้บริหารที่เป็นธรรมและปลอดภัยได้อย่างไร?", "category": "Governance & Administration", "slug": "20-fair-executive-evaluation"}, {"question": "ถ้ามีประเด็นร้องเรียนผู้บริหารระดับสูง ท่านจะจัดการอย่างไร?", "category": "Governance & Administration", "slug": "21-senior-complaint-handling"}, {"question": "ความเห็นต่อโครงการอุทยานการแพทย์ / โรงพยาบาล?", "category": "Medicine & Expansion", "slug": "22-medical-park-opinion"}, {"question": "KU ควรเปิดคณะแพทย์หรือไม่? มีความเสี่ยงอะไร?", "category": "Medicine & Expansion", "slug": "23-should-ku-open-med-school"}, {"question": "จุดอ่อนของท่านคืออะไร?", "category": "Personal Fit", "slug": "24-personal-weakness"}];</script>
+</body>
+</html>
