@@ -18,7 +18,8 @@ Projects in this repo
   application/reference/profile materials
   entry: selection/README.md
 
-- research_award
-  standalone GitHub Pages site
-  local: bash scripts/run_local.sh award
+- research-award-insights
+  separate project at ../research-award-insights
+  local: cd ../research-award-insights && bash run_local.sh
+  deploy check: cd ../research-award-insights && bash deploy_github_pages.sh
 EOF

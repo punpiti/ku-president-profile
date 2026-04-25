@@ -11,17 +11,14 @@ Usage:
 Projects:
   public   public website from docs/
   vision   vision Q&A workspace from vision/qna/
-  award    research_award standalone site
 
 Aliases:
   public-site, site, docs -> public
   vision-qna, qna, question_bank -> vision
-  research-award, research_award -> award
 
 Examples:
   bash scripts/run_local.sh public
   bash scripts/run_local.sh vision 9000
-  bash scripts/run_local.sh award
 EOF
 }
 
@@ -55,9 +52,6 @@ case "${TARGET}" in
     ;;
   vision|vision-qna|qna|question_bank)
     SITE_DIR="${REPO_ROOT}/vision/qna"
-    ;;
-  award|research-award|research_award)
-    SITE_DIR="${REPO_ROOT}/research_award"
     ;;
   /*)
     SITE_DIR="${TARGET}"

@@ -12,6 +12,7 @@ vision/sources/
 vision/tools/
 /vision/README.md
 research_award/.git/
+/research_award/
 __pycache__/
 *.py[cod]
 .pytest_cache/

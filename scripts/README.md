@@ -4,7 +4,8 @@
 
 - `docs/` = public website
 - `vision/` = vision workspace
-- `research_award/` = standalone site อีกก้อน
+
+งาน `research-award-insights` แยกออกไปเป็นโปรเจคของตัวเองที่ `../research-award-insights` และมี run/deploy scripts แยกในโฟลเดอร์นั้น
 
 ถ้าต้องการดูรายการโปรเจคแบบย่อ:
 
@@ -58,12 +59,6 @@ vision Q&A portal:
 bash scripts/run_local.sh vision
 ```
 
-research award site:
-
-```bash
-bash scripts/run_local.sh award
-```
-
 ถ้าไม่ใส่ target สคริปต์จะขึ้น help และลิสต์โปรเจคที่เลือกได้:
 
 ```bash
@@ -92,8 +87,9 @@ target ที่รองรับตอนนี้:
 
 - `public`, `public-site`, `site`, `docs` -> `docs/`
 - `vision`, `vision-qna`, `qna`, `question_bank` -> `vision/qna/`
-- `award`, `research-award` -> `research_award/`
 - relative path หรือ absolute path ของ directory ที่มี `index.html`
+
+หมายเหตุ: งาน research award publish เป็น standalone GitHub Pages site ที่ `https://punpiti.github.io/research-award-insights/` ไม่ใช่ path ใต้ `ku-president-profile`
 
 ## GitHub Pages deployment
 
