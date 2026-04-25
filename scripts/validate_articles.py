@@ -34,6 +34,10 @@ REQUIRED_FIELDS = {
     "original_text": str,
 }
 
+OPTIONAL_FIELDS = {
+    "read_more": dict,
+}
+
 SLUG_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 
@@ -105,6 +109,10 @@ def validate_article(article: dict, seen_slugs: set[str]) -> None:
       if expected_type is str and not article[field].strip():
           fail(f"{slug}: field '{field}' must not be empty")
 
+    for field, expected_type in OPTIONAL_FIELDS.items():
+        if field in article and not isinstance(article[field], expected_type):
+            fail(f"{slug}: optional field '{field}' must be {expected_type.__name__}")
+
     validate_iso_date(article["date"], slug)
 
     if not article["source_url"].startswith(("http://", "https://")):
@@ -136,6 +144,30 @@ def validate_article(article: dict, seen_slugs: set[str]) -> None:
             fail(f"{slug}: section #{index} paragraphs must be a non-empty list")
         if any(not isinstance(p, str) or not p.strip() for p in section["paragraphs"]):
             fail(f"{slug}: section #{index} paragraphs must contain non-empty strings")
+
+    if "read_more" in article:
+        validate_read_more(article["read_more"], slug)
+
+
+def validate_read_more(read_more: dict, slug: str) -> None:
+    required = {
+        "title": str,
+        "kicker": str,
+        "headline": str,
+        "description": str,
+        "button_label": str,
+        "url": str,
+    }
+    missing = [field for field in required if field not in read_more]
+    if missing:
+        fail(f"{slug}: read_more missing fields: {', '.join(missing)}")
+    for field, expected_type in required.items():
+        if not isinstance(read_more[field], expected_type):
+            fail(f"{slug}: read_more field '{field}' must be {expected_type.__name__}")
+        if not read_more[field].strip():
+            fail(f"{slug}: read_more field '{field}' must not be empty")
+    if not read_more["url"].startswith(("http://", "https://")):
+        fail(f"{slug}: read_more url must start with http:// or https://")
 
 
 def validate_articles(articles: list[dict]) -> None:

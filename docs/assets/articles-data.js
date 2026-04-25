@@ -1,5 +1,24 @@
 window.ARTICLES_DATA = [
   {
+    "slug": "research-award-incentives-and-publication-output",
+    "path": "./research-award-incentives-and-publication-output.html",
+    "archive_path": "articles/research-award-incentives-and-publication-output.html",
+    "title": "รางวัลตีพิมพ์สัมพันธ์กับจำนวนบทความ แต่ข้อมูลต้องถูกอ่านอย่างระวัง",
+    "summary": "บทความว่าด้วยการใช้ข้อมูลรางวัลตีพิมพ์ ทุนวิจัย และจำนวนบทความ เพื่ออ่านความสัมพันธ์เชิงนโยบายโดยไม่สับสนระหว่าง correlation กับ causation พร้อมชวนอ่านรายงานวิเคราะห์ฉบับเต็มใน Research Award Insights",
+    "category": "วิจัยและนวัตกรรม",
+    "date": "2026-04-22",
+    "display_date": "22 April 2026",
+    "image_index": "assets/research-award-incentives-and-publication-output.jpg",
+    "image_alt": "ภาพรายงานวิเคราะห์แนวโน้มรางวัลตีพิมพ์ มหาวิทยาลัยเกษตรศาสตร์",
+    "tags": [
+      "research",
+      "publication-incentives",
+      "data-analysis",
+      "research-policy",
+      "decision-support"
+    ]
+  },
+  {
     "slug": "curriculum-cycle-no-one-stops",
     "path": "./curriculum-cycle-no-one-stops.html",
     "archive_path": "articles/curriculum-cycle-no-one-stops.html",

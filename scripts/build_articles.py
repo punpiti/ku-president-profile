@@ -78,12 +78,17 @@ def render_seo_meta(
     image_path: str | None = None,
     page_type: str = "website",
     published_time: str | None = None,
+    favicon_html: str = "",
 ) -> str:
     site_url = site_config["site_url"]
     canonical_url = join_site_url(site_url, canonical_path)
     social_image = join_site_url(site_url, image_path or site_config["default_social_image"])
     parts = [
         f'  <link rel="canonical" href="{html.escape(canonical_url)}">',
+    ]
+    if favicon_html:
+        parts.extend(favicon_html.splitlines())
+    parts.extend([
         '  <meta name="robots" content="index,follow">',
         f'  <meta property="og:site_name" content="{html.escape(site_config["site_name"])}">',
         f'  <meta property="og:type" content="{html.escape(page_type)}">',
@@ -95,7 +100,7 @@ def render_seo_meta(
         f'  <meta name="twitter:title" content="{html.escape(title)}">',
         f'  <meta name="twitter:description" content="{html.escape(description)}">',
         f'  <meta name="twitter:image" content="{html.escape(social_image)}">',
-    ]
+    ])
     if published_time:
         parts.append(f'  <meta property="article:published_time" content="{html.escape(published_time)}">')
     return "\n".join(parts)
@@ -314,7 +319,21 @@ def render_article_content(article: dict) -> str:
         if section["title"]:
             sections.append(f"            <h2>{section['title']}</h2>")
         sections.extend(f"            <p>{paragraph}</p>" for paragraph in section["paragraphs"])
+    if "read_more" in article:
+        sections.append(render_read_more(article["read_more"]))
     return "\n".join(sections), intro
+
+
+def render_read_more(read_more: dict) -> str:
+    return f"""            <h2>{html.escape(read_more["title"])}</h2>
+            <a class="read-more-callout" href="{html.escape(read_more["url"])}" target="_blank" rel="noopener noreferrer">
+              <span class="read-more-copy">
+                <span class="read-more-kicker">{html.escape(read_more["kicker"])}</span>
+                <strong>{html.escape(read_more["headline"])}</strong>
+                <span>{html.escape(read_more["description"])}</span>
+              </span>
+              <span class="read-more-button">{html.escape(read_more["button_label"])}</span>
+            </a>"""
 
 
 def build_related_data(articles: list[dict]) -> str:
@@ -356,6 +375,7 @@ def render_article_page(article: dict, site_config: dict) -> str:
     image_path=article["image_index"],
     page_type="article",
     published_time=article["date"],
+    favicon_html='  <link rel="icon" href="../favicon.ico" sizes="any">\n  <link rel="icon" type="image/png" href="../assets/convergence.png">',
 )}
 {render_article_json_ld(article, site_config)}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -706,6 +726,7 @@ def render_articles_index(articles: list[dict], archive_config: dict, site_confi
     description="บทความและข้อเขียนประกอบวิสัยทัศน์การขับเคลื่อนมหาวิทยาลัยเกษตรศาสตร์",
     canonical_path="articles.html",
     site_config=site_config,
+    favicon_html='  <link rel="icon" href="favicon.ico" sizes="any">\n  <link rel="icon" type="image/png" href="assets/convergence.png">',
 )}
 {render_webpage_json_ld(
     title="บทความ",
@@ -837,6 +858,7 @@ def render_article_browsing_page(articles: list[dict], site_config: dict) -> str
     description="หน้า browse บทความแบบเต็มพื้นที่ เรียงภาพเป็น tile เพื่อสำรวจข้อเขียนทั้งหมดอย่างรวดเร็ว",
     canonical_path="article-browsing.html",
     site_config=site_config,
+    favicon_html='  <link rel="icon" href="favicon.ico" sizes="any">\n  <link rel="icon" type="image/png" href="assets/convergence.png">',
 )}
 {render_webpage_json_ld(
     title="Article Browsing",
