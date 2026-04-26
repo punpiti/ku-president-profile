@@ -224,15 +224,14 @@
         const uniqueDesiredTags = [...new Set(desiredTags)];
         const topics = [...new Set(item.topic_tags.length ? item.topic_tags.map(name => sankeyName(name, topicGrouping)) : ["ไม่มี tag/topic"])];
         const visions = [...new Set(item.vision_alignment.map(row => sankeyName(`${row.dimension}: ${row.title}`, visionGrouping)))];
-        const desiredShare = item.weight / uniqueDesiredTags.length;
         const topicShare = item.weight / topics.length;
 
-        uniqueDesiredTags.forEach(desiredTag => addLink(linkMap, category, desiredTag, desiredShare));
-        uniqueDesiredTags.forEach(desiredTag => {
-          topics.forEach(topic => addLink(linkMap, desiredTag, topic, desiredShare / topics.length));
-        });
         topics.forEach(topic => {
-          visions.forEach(vision => addLink(linkMap, topic, vision, topicShare / visions.length));
+          addLink(linkMap, category, topic, topicShare);
+          uniqueDesiredTags.forEach(desiredTag => addLink(linkMap, topic, desiredTag, topicShare / uniqueDesiredTags.length));
+        });
+        uniqueDesiredTags.forEach(desiredTag => {
+          visions.forEach(vision => addLink(linkMap, desiredTag, vision, item.weight / uniqueDesiredTags.length / visions.length));
         });
       });
 
@@ -253,7 +252,7 @@
       const nodeWidth = 190;
       const nodeHeight = 28;
       const layerX = [24, 315, 610, 900];
-      const layerLabels = ["หมวดนี้", "ลักษณะพึงประสงค์", "tag/topic", "วิสัยทัศน์"];
+      const layerLabels = ["หมวดนี้", "tag/topic", "ลักษณะพึงประสงค์", "วิสัยทัศน์"];
       const layers = [
         [category],
         [...new Set(links.filter(link => link.source === category).map(link => link.target))],
@@ -264,8 +263,8 @@
 
       function layerName(name) {
         if (name === category) return 0;
-        if (report.evidence.some(item => item.desired_tags.includes(name))) return 1;
-        if (name.includes("tag/topic") || name === "ไม่มี tag/topic" || report.evidence.some(item => item.topic_tags.includes(name))) return 2;
+        if (name.includes("tag/topic") || name === "ไม่มี tag/topic" || report.evidence.some(item => item.topic_tags.includes(name))) return 1;
+        if (report.evidence.some(item => item.desired_tags.includes(name))) return 2;
         return 3;
       }
 
@@ -368,7 +367,7 @@
       const { nodes, links } = buildSankeyData();
       const width = 1200;
       const height = 720;
-      const layerLabels = ["หมวดนี้", "ลักษณะพึงประสงค์", "tag/topic", "วิสัยทัศน์"];
+      const layerLabels = ["หมวดนี้", "tag/topic", "ลักษณะพึงประสงค์", "วิสัยทัศน์"];
       const vividPalette = [
         "#14b8a6", "#f97316", "#8b5cf6", "#06b6d4", "#ef4444",
         "#22c55e", "#eab308", "#ec4899", "#3b82f6", "#a855f7",
@@ -381,8 +380,8 @@
 
       function nodeLayer(node) {
         if (node.name.startsWith("หมวด ")) return 0;
-        if (report.evidence.some(item => item.desired_tags.includes(node.name))) return 1;
-        if (node.name.includes("tag/topic") || node.name === "ไม่มี tag/topic" || report.evidence.some(item => item.topic_tags.includes(node.name))) return 2;
+        if (node.name.includes("tag/topic") || node.name === "ไม่มี tag/topic" || report.evidence.some(item => item.topic_tags.includes(node.name))) return 1;
+        if (report.evidence.some(item => item.desired_tags.includes(node.name))) return 2;
         return 3;
       }
 
@@ -468,6 +467,7 @@
       const svg = d3.select(selector);
       const status = document.querySelector(".sankey-status");
       const reset = document.querySelector(".sankey-reset");
+      const defaultNodeName = report.desired_characteristics?.[0]?.name;
 
       function clearSelection() {
         svg.classed("is-filtered", false);
@@ -511,6 +511,13 @@
           event.stopPropagation();
           selectLink(link);
         });
+
+      const defaultNode = svg.selectAll(".sankey-node")
+        .data()
+        .find(node => node.name === defaultNodeName);
+      if (defaultNode) {
+        selectNode(defaultNode.name, defaultNode.value);
+      }
 
       reset?.addEventListener("click", clearSelection);
     }

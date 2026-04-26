@@ -514,6 +514,7 @@
       min-width: 1100px;
       width: 100%;
       height: 720px;
+      overflow: visible;
     }
 
     .sankey-wrap.is-fullscreen .sankey {
@@ -556,9 +557,20 @@
       cursor: pointer;
     }
 
-    .sankey.is-filtered .sankey-link,
-    .sankey.is-filtered .sankey-node {
+    .sankey.is-filtered .sankey-link {
       opacity: .14;
+    }
+
+    .sankey.is-filtered .sankey-node {
+      opacity: 1;
+    }
+
+    .sankey.is-filtered .sankey-node rect {
+      opacity: .18;
+    }
+
+    .sankey.is-filtered .sankey-node text {
+      opacity: .46;
     }
 
     .sankey.is-filtered .sankey-link.is-selected {
@@ -567,6 +579,11 @@
     }
 
     .sankey.is-filtered .sankey-node.is-selected {
+      opacity: 1;
+    }
+
+    .sankey.is-filtered .sankey-node.is-selected rect,
+    .sankey.is-filtered .sankey-node.is-selected text {
       opacity: 1;
     }
 

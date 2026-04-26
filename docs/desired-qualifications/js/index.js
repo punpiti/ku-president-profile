@@ -105,14 +105,13 @@
         const topics = [...new Set(item.topic_tags.length ? item.topic_tags.map(name => sankeyName(name, topicGrouping)) : ["ไม่มี tag/topic"])];
         const visions = [...new Set(item.vision_alignment.map(row => sankeyName(`${row.dimension}: ${row.title}`, visionGrouping)))];
 
-        const desiredShare = item.weight / desiredTags.length;
         const topicShare = item.weight / topics.length;
-        desiredTags.forEach(desired => {
-          addLink(linkMap, category, desired, desiredShare);
-          topics.forEach(topic => addLink(linkMap, desired, topic, desiredShare / topics.length));
-        });
         topics.forEach(topic => {
-          visions.forEach(vision => addLink(linkMap, topic, vision, topicShare / visions.length));
+          addLink(linkMap, category, topic, topicShare);
+          desiredTags.forEach(desired => addLink(linkMap, topic, desired, topicShare / desiredTags.length));
+        });
+        desiredTags.forEach(desired => {
+          visions.forEach(vision => addLink(linkMap, desired, vision, item.weight / desiredTags.length / visions.length));
         });
       });
 
@@ -127,8 +126,8 @@
 
     function nodeLayer(name) {
       if (name.startsWith("หมวด ")) return 0;
-      if (categoryReports.some(report => report.desired_characteristics.some(row => row.name === name)) || name.startsWith("ลักษณะพึงประสงค์:")) return 1;
-      if (name.includes("tag/topic") || name === "ไม่มี tag/topic" || categoryReports.some(report => report.frequency_profile.some(row => row.name === name))) return 2;
+      if (name.includes("tag/topic") || name === "ไม่มี tag/topic" || categoryReports.some(report => report.frequency_profile.some(row => row.name === name))) return 1;
+      if (categoryReports.some(report => report.desired_characteristics.some(row => row.name === name)) || name.startsWith("ลักษณะพึงประสงค์:")) return 2;
       return 3;
     }
 
@@ -144,7 +143,7 @@
       const height = 760;
       const nodeWidth = 210;
       const layerX = [24, 330, 650, 960];
-      const layerLabels = ["หมวด", "ลักษณะพึงประสงค์", "tag/topic", "วิสัยทัศน์"];
+      const layerLabels = ["หมวด", "tag/topic", "ลักษณะพึงประสงค์", "วิสัยทัศน์"];
       const incoming = new Map();
       const outgoing = new Map();
       links.forEach(link => {
@@ -259,7 +258,7 @@
       const { nodes, links } = buildSankeyData();
       const width = 1240;
       const height = 760;
-      const layerLabels = ["หมวด", "ลักษณะพึงประสงค์", "tag/topic", "วิสัยทัศน์"];
+      const layerLabels = ["หมวด", "tag/topic", "ลักษณะพึงประสงค์", "วิสัยทัศน์"];
       const palette = [
         "#14b8a6", "#f97316", "#8b5cf6", "#06b6d4", "#ef4444",
         "#22c55e", "#eab308", "#ec4899", "#3b82f6", "#a855f7",
@@ -345,6 +344,7 @@
       const svg = d3.select(selector);
       const status = document.querySelector(".sankey-status");
       const reset = document.querySelector(".sankey-reset");
+      const defaultNodeName = "เข้าใจนิสิตและพัฒนาคุณภาพชีวิต";
 
       function clearSelection() {
         svg.classed("is-filtered", false);
@@ -388,6 +388,13 @@
           event.stopPropagation();
           selectLink(link);
         });
+
+      const defaultNode = svg.selectAll(".sankey-node")
+        .data()
+        .find(node => node.name === defaultNodeName);
+      if (defaultNode) {
+        selectNode(defaultNode.name, defaultNode.value);
+      }
 
       reset?.addEventListener("click", clearSelection);
     }
