@@ -1,6 +1,7 @@
     const fmt = new Intl.NumberFormat("th-TH");
     let report;
     const expandedLists = new Set();
+    const expandedAlignmentGroups = new Set();
     const exampleStates = new Map();
     let examplesInitialized = false;
 
@@ -164,10 +165,20 @@
       });
     }
 
+    function wireAlignmentGroups() {
+      document.querySelectorAll("[data-alignment-group]").forEach(group => {
+        group.addEventListener("toggle", () => {
+          const key = group.dataset.alignmentGroup;
+          if (group.open) expandedAlignmentGroups.add(key);
+          else expandedAlignmentGroups.delete(key);
+        });
+      });
+    }
+
     function renderVisionAlignment(target) {
       target.innerHTML = report.vision_alignment_summary.by_group.map(group => `
-        <div class="alignment-group">
-          <h3 class="alignment-title">${group.dimension}</h3>
+        <details class="alignment-group" data-alignment-group="${group.dimension}" ${expandedAlignmentGroups.has(group.dimension) ? "open" : ""}>
+          <summary><h3 class="alignment-title">${group.dimension}</h3></summary>
           ${group.items.map(item => `
             <article class="alignment-card ${item.count ? "" : "is-empty"}">
               <div class="card-head">
@@ -181,8 +192,9 @@
               ${item.examples.length ? renderExampleBlock(`vision:${item.id}`, item.examples) : `<div class="alignment-summary">ยังไม่พบ evidence ที่ match โดยตรงในหมวดนี้</div>`}
             </article>
           `).join("")}
-        </div>
+        </details>
       `).join("");
+      wireAlignmentGroups();
     }
 
     function groupTop(values, limit, otherLabel) {

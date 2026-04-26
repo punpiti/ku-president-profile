@@ -158,8 +158,48 @@
 
     main {
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
       padding: 22px 0 42px;
+    }
+
+    main > *,
+    .grid > * {
+      min-width: 0;
+    }
+
+    main > details:nth-of-type(1) {
+      order: 2;
+    }
+
+    main > details:nth-of-type(2) {
+      order: -2;
+      grid-column: 1 / -1;
+    }
+
+    main > details:nth-of-type(3) {
+      order: 0;
+    }
+
+    main > details:nth-of-type(4) {
+      order: 1;
+    }
+
+    main > .grid > details {
+      order: 3;
+    }
+
+    main > details:nth-of-type(5) {
+      order: 4;
+    }
+
+    main > .grid {
+      display: contents;
+    }
+
+    main > .evidence-panel {
+      order: 5;
+      grid-column: 1 / -1;
     }
 
     .grid {
@@ -283,6 +323,23 @@
       display: grid;
       gap: 10px;
       margin-top: 14px;
+      border: 1px solid rgba(0, 150, 136, .2);
+      border-radius: 8px;
+      background: linear-gradient(180deg, #ffffff 0%, #f3fffb 100%);
+    }
+
+    .alignment-group > summary {
+      padding: 12px 13px;
+      border-bottom: 1px solid rgba(0, 102, 100, .14);
+      background: transparent;
+    }
+
+    .alignment-group:not([open]) > summary {
+      border-bottom: 0;
+    }
+
+    .alignment-group > summary::after {
+      font-weight: 700;
     }
 
     .alignment-title {
@@ -299,6 +356,7 @@
       background: linear-gradient(180deg, #ffffff 0%, #f3fffb 100%);
       display: grid;
       gap: 7px;
+      margin: 0 13px 10px;
     }
 
     .alignment-card.is-empty {
@@ -650,6 +708,7 @@
     }
 
     @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
       .hero, .grid { grid-template-columns: 1fr; }
       .toolbar { grid-template-columns: 1fr; }
       .nav { justify-content: flex-start; }
