@@ -27,3 +27,9 @@ __pycache__/
 .picasa.ini
 .DS_Store
 Thumbs.db
+
+# Local working copy for the desired-qualifications report.
+# Deployed files live in docs/desired-qualifications/.
+desired_qualifications/*
+!desired_qualifications/CATEGORY_PAGE_TEMPLATE.md
+!desired_qualifications/CATEGORY_REPORT_TEMPLATE.md
