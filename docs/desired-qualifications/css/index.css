@@ -299,6 +299,27 @@
       transition: opacity 160ms ease, stroke-opacity 160ms ease;
     }
 
+    .sankey-layer-header {
+      pointer-events: none;
+    }
+
+    .sankey-layer-header rect {
+      fill: rgba(0, 102, 100, .92);
+      stroke: rgba(255, 255, 255, .88);
+      stroke-width: 1;
+      rx: 14;
+    }
+
+    .sankey-layer-header text {
+      fill: #fff;
+      font-size: 14px;
+      font-weight: 850;
+      text-anchor: middle;
+      paint-order: stroke;
+      stroke: rgba(0, 64, 62, .22);
+      stroke-width: 2px;
+    }
+
     .sankey-node rect {
       stroke: rgba(255, 255, 255, .85);
       stroke-width: 1;

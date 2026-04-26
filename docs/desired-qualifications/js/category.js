@@ -253,6 +253,7 @@
       const nodeWidth = 190;
       const nodeHeight = 28;
       const layerX = [24, 315, 610, 900];
+      const layerLabels = ["หมวดนี้", "ลักษณะพึงประสงค์", "tag/topic", "วิสัยทัศน์"];
       const layers = [
         [category],
         [...new Set(links.filter(link => link.source === category).map(link => link.target))],
@@ -284,9 +285,9 @@
       const nodePos = new Map();
       layers.forEach((layer, layerIndex) => {
         const sorted = [...layer].sort((a, b) => sortNodes(a, b, layerIndex));
-        const gap = Math.max(10, (height - 40 - sorted.length * nodeHeight) / Math.max(1, sorted.length - 1));
+        const gap = Math.max(10, (height - 78 - sorted.length * nodeHeight) / Math.max(1, sorted.length - 1));
         sorted.forEach((name, index) => {
-          const y = sorted.length === 1 ? height / 2 - nodeHeight / 2 : 20 + index * (nodeHeight + gap);
+          const y = sorted.length === 1 ? height / 2 - nodeHeight / 2 : 58 + index * (nodeHeight + gap);
           nodePos.set(name, { x: layerX[layerIndex], y, width: nodeWidth, height: nodeHeight, value: incoming.get(name) || 0 });
         });
       });
@@ -317,7 +318,42 @@
         `;
       }).join("");
 
-      svg.innerHTML = `<g>${linkSvg}</g><g>${nodeSvg}</g>`;
+      const headerSvg = layerLabels.map((label, index) => {
+        const x = layerX[index] + nodeWidth / 2;
+        const w = Math.max(86, label.length * 12 + 30);
+        return `
+          <g class="sankey-layer-header" transform="translate(${x},24)">
+            <rect x="${-w / 2}" y="-14" width="${w}" height="28"></rect>
+            <text y="5">${label}</text>
+          </g>
+        `;
+      }).join("");
+
+      svg.innerHTML = `<g>${headerSvg}</g><g>${linkSvg}</g><g>${nodeSvg}</g>`;
+    }
+
+    function drawSankeyLayerHeaders(svg, graph, labels) {
+      const columns = [...d3.group(graph.nodes, node => Math.round(node.x0)).entries()]
+        .sort((a, b) => a[0] - b[0])
+        .map(([, nodes]) => d3.mean(nodes, node => (node.x0 + node.x1) / 2));
+
+      const header = svg.append("g")
+        .attr("class", "sankey-layer-headers")
+        .selectAll("g")
+        .data(labels.map((label, index) => ({ label, x: columns[index] })).filter(row => Number.isFinite(row.x)))
+        .join("g")
+        .attr("class", "sankey-layer-header")
+        .attr("transform", row => `translate(${row.x},24)`);
+
+      header.append("rect")
+        .attr("x", row => -Math.max(86, row.label.length * 12 + 30) / 2)
+        .attr("y", -14)
+        .attr("width", row => Math.max(86, row.label.length * 12 + 30))
+        .attr("height", 28);
+
+      header.append("text")
+        .attr("y", 5)
+        .text(row => row.label);
     }
 
     function renderSankey() {
@@ -332,6 +368,7 @@
       const { nodes, links } = buildSankeyData();
       const width = 1200;
       const height = 720;
+      const layerLabels = ["หมวดนี้", "ลักษณะพึงประสงค์", "tag/topic", "วิสัยทัศน์"];
       const vividPalette = [
         "#14b8a6", "#f97316", "#8b5cf6", "#06b6d4", "#ef4444",
         "#22c55e", "#eab308", "#ec4899", "#3b82f6", "#a855f7",
@@ -373,10 +410,12 @@
         .nodeId(node => node.name)
         .nodeWidth(18)
         .nodePadding(13)
-        .extent([[20, 16], [width - 24, height - 16]])
+        .extent([[20, 54], [width - 24, height - 16]])
         .nodeSort(sankeyNodeSort);
 
       sankey(graph);
+
+      drawSankeyLayerHeaders(svg, graph, layerLabels);
 
       const linkSelection = svg.append("g")
         .attr("fill", "none")
