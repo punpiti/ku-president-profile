@@ -378,7 +378,7 @@
 
       sankey(graph);
 
-      svg.append("g")
+      const linkSelection = svg.append("g")
         .attr("fill", "none")
         .selectAll("path")
         .data(graph.links)
@@ -387,8 +387,9 @@
         .attr("stroke", link => color(link.source.name))
         .attr("stroke-opacity", 0.34)
         .attr("stroke-width", link => Math.max(1, link.width))
-        .attr("class", "sankey-link")
-        .append("title")
+        .attr("class", "sankey-link");
+
+      linkSelection.append("title")
         .text(link => `${link.source.name} → ${link.target.name}: ${fmt.format(link.value)}`);
 
       const node = svg.append("g")
@@ -419,11 +420,66 @@
         .attr("y", node => (node.y0 + node.y1) / 2 + 10)
         .attr("text-anchor", node => node.x0 < width / 2 ? "start" : "end")
         .text(node => `จำนวนอ้างอิง ${fmt.format(node.value)}`);
+
+      setupSankeyInteractions("#sankey");
+    }
+
+    function setupSankeyInteractions(selector) {
+      if (!window.d3) return;
+      const svg = d3.select(selector);
+      const status = document.querySelector(".sankey-status");
+      const reset = document.querySelector(".sankey-reset");
+
+      function clearSelection() {
+        svg.classed("is-filtered", false);
+        svg.selectAll(".sankey-link").classed("is-selected", false);
+        svg.selectAll(".sankey-node").classed("is-selected", false);
+        if (status) status.textContent = "คลิก node หรือเส้นเพื่อเน้นความสัมพันธ์";
+      }
+
+      function selectNode(name, value) {
+        const connected = new Set([name]);
+        svg.selectAll(".sankey-link").classed("is-selected", link => {
+          const matched = link.source.name === name || link.target.name === name;
+          if (matched) {
+            connected.add(link.source.name);
+            connected.add(link.target.name);
+          }
+          return matched;
+        });
+        svg.selectAll(".sankey-node").classed("is-selected", node => connected.has(node.name));
+        svg.classed("is-filtered", true);
+        if (status) status.textContent = `${name} · จำนวนอ้างอิง ${fmt.format(Math.round(value))}`;
+      }
+
+      function selectLink(link) {
+        svg.classed("is-filtered", true);
+        svg.selectAll(".sankey-link").classed("is-selected", row => row === link);
+        svg.selectAll(".sankey-node").classed("is-selected", node => {
+          return node.name === link.source.name || node.name === link.target.name;
+        });
+        if (status) status.textContent = `${link.source.name} → ${link.target.name} · จำนวนอ้างอิง ${fmt.format(Math.round(link.value))}`;
+      }
+
+      svg.selectAll(".sankey-node")
+        .on("click", (event, node) => {
+          event.stopPropagation();
+          selectNode(node.name, node.value);
+        });
+
+      svg.selectAll(".sankey-link")
+        .on("click", (event, link) => {
+          event.stopPropagation();
+          selectLink(link);
+        });
+
+      reset?.addEventListener("click", clearSelection);
     }
 
     function setupSankeyFullscreen() {
       const wrap = document.querySelector(".sankey-wrap");
       const close = wrap.querySelector(".sankey-close");
+      const expand = wrap.querySelector(".sankey-expand");
       function open() {
         wrap.classList.add("is-fullscreen");
         document.body.classList.add("sankey-locked");
@@ -432,10 +488,7 @@
         wrap.classList.remove("is-fullscreen");
         document.body.classList.remove("sankey-locked");
       }
-      wrap.addEventListener("click", event => {
-        if (event.target.closest(".sankey-close")) return;
-        if (!wrap.classList.contains("is-fullscreen")) open();
-      });
+      expand?.addEventListener("click", open);
       close.addEventListener("click", event => {
         event.stopPropagation();
         closeFullscreen();

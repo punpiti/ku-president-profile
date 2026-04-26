@@ -39,6 +39,11 @@
       <div class="section-body">
         <p class="note">แสดงเฉพาะรายการที่ถูกจัดเป็น “ลักษณะพึงประสงค์”: หมวด → ประเด็นลักษณะพึงประสงค์ → tag/topic → ข้อวิสัยทัศน์ที่สอดคล้อง โดยตัดการนับซ้ำด้วยการกระจายน้ำหนักของแต่ละข้อเมื่อเข้าหลาย tag และเรียงวิสัยทัศน์จาก บริบท, บทบาท, เป้าหมาย, กลยุทธ์ และแผนสี่ปี</p>
         <div class="sankey-wrap">
+          <div class="sankey-controls">
+            <button class="sankey-expand" type="button">ดูภาพใหญ่</button>
+            <button class="sankey-reset" type="button">ล้างการเลือก</button>
+            <span class="sankey-status">คลิก node หรือเส้นเพื่อเน้นความสัมพันธ์</span>
+          </div>
           <button class="sankey-close" type="button" aria-label="ปิดกราฟแบบเต็มหน้า">ปิด</button>
           <svg class="sankey" id="sankey" viewBox="0 0 1200 720" role="img" aria-label="Sankey diagram"></svg>
         </div>

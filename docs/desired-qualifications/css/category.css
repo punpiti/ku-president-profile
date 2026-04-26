@@ -425,7 +425,6 @@
       background:
         linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(244, 255, 251, .98)),
         radial-gradient(circle at 8% 8%, rgba(0, 166, 178, .12), transparent 28%);
-      cursor: zoom-in;
     }
 
     .sankey-wrap.is-fullscreen {
@@ -435,7 +434,44 @@
       padding: 50px 14px 14px;
       border-color: rgba(0, 102, 100, .34);
       box-shadow: 0 24px 70px rgba(10, 36, 33, .28);
-      cursor: default;
+    }
+
+    .sankey-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(0, 102, 100, .14);
+      background: rgba(255, 255, 255, .72);
+      position: sticky;
+      left: 0;
+      z-index: 3;
+    }
+
+    .sankey-expand,
+    .sankey-reset {
+      min-height: 32px;
+      border: 1px solid rgba(0, 102, 100, .28);
+      border-radius: 999px;
+      padding: 5px 11px;
+      background: #fff;
+      color: var(--primary);
+      font: inherit;
+      font-size: .84rem;
+      font-weight: 760;
+      cursor: pointer;
+    }
+
+    .sankey-expand {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .sankey-status {
+      color: var(--muted);
+      font-size: .86rem;
     }
 
     .sankey-close {
@@ -488,12 +524,29 @@
     .sankey-link {
       fill: none;
       mix-blend-mode: multiply;
+      cursor: pointer;
+      transition: opacity 160ms ease, stroke-opacity 160ms ease;
     }
 
     .sankey-node rect {
       stroke: rgba(255, 255, 255, .8);
       stroke-width: 1;
       rx: 6;
+      cursor: pointer;
+    }
+
+    .sankey.is-filtered .sankey-link,
+    .sankey.is-filtered .sankey-node {
+      opacity: .14;
+    }
+
+    .sankey.is-filtered .sankey-link.is-selected {
+      opacity: 1;
+      stroke-opacity: .72;
+    }
+
+    .sankey.is-filtered .sankey-node.is-selected {
+      opacity: 1;
     }
 
     .sankey-node text {
