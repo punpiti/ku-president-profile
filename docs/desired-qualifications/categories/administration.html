@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>รายงานรายหมวด</title>
+  <link rel="stylesheet" href="../css/category.css">
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <span>รายงานรายหมวดแบบอ้างหลักฐาน</span>
+      <nav class="nav">
+        <a class="pill" href="../index.html">หน้าภาพรวม</a>
+        <a class="pill" href="../desired-characteristics.html">สรุปลักษณะพึงประสงค์</a>
+      </nav>
+    </div>
+    <nav class="wrap category-nav" id="categoryNav" aria-label="เลือกหมวดรายงาน"></nav>
+    <div class="wrap hero">
+      <div>
+        <h1 id="title">หมวด 1</h1>
+        <p class="lead" id="summary"></p>
+      </div>
+      <div class="metrics" id="metrics"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <details class="panel" open>
+      <summary><h2>ลักษณะทั่วไปตามจำนวนอ้างอิง</h2></summary>
+      <div class="section-body">
+        <p class="note">จำนวนอ้างอิง = จำนวนครั้งที่รายการนั้นแทนเสียงตอบใน PDF โดยใช้เลขในวงเล็บท้ายข้อ ถ้าไม่มีเลขในวงเล็บนับเป็น 1</p>
+        <div class="bars" id="frequency"></div>
+      </div>
+    </details>
+
+    <details class="panel" open>
+      <summary><h2>Sankey: เส้นทางการจัดกลุ่ม</h2></summary>
+      <div class="section-body">
+        <p class="note">แสดงเฉพาะรายการที่ถูกจัดเป็น “ลักษณะพึงประสงค์”: หมวด → ประเด็นลักษณะพึงประสงค์ → tag/topic → ข้อวิสัยทัศน์ที่สอดคล้อง โดยตัดการนับซ้ำด้วยการกระจายน้ำหนักของแต่ละข้อเมื่อเข้าหลาย tag และเรียงวิสัยทัศน์จาก บริบท, บทบาท, เป้าหมาย, กลยุทธ์ และแผนสี่ปี</p>
+        <div class="sankey-wrap">
+          <button class="sankey-close" type="button" aria-label="ปิดกราฟแบบเต็มหน้า">ปิด</button>
+          <svg class="sankey" id="sankey" viewBox="0 0 1200 720" role="img" aria-label="Sankey diagram"></svg>
+        </div>
+      </div>
+    </details>
+
+    <details class="panel" open>
+      <summary><h2>ลักษณะพึงประสงค์ของอธิการบดี</h2></summary>
+      <div class="section-body">
+        <p class="note">ตัวเลขบนการ์ดคือจำนวนอ้างอิงของรายการที่เข้ากับลักษณะนั้น</p>
+        <div class="cards" id="desired"></div>
+      </div>
+    </details>
+
+    <details class="panel" open>
+      <summary><h2>ความสอดคล้องกับวิสัยทัศน์</h2></summary>
+      <div class="section-body">
+        <p class="sensitive-note">เทียบทุกข้อในชุดบริบท บทบาท เป้าหมาย กลยุทธ์ และแผนสี่ปี จาก `KU/president/docs` โดยใช้ keyword matching เป็นรอบแรก รายการตัวอย่างยังอ้างอิงข้อและหน้าใน PDF ได้</p>
+        <div id="visionAlignment"></div>
+      </div>
+    </details>
+
+    <section class="grid">
+      <details class="panel">
+        <summary><h2>ข้อกังวล</h2></summary>
+        <div class="section-body">
+          <p class="note">ตัวเลขบนการ์ดคือจำนวนอ้างอิงของรายการที่สะท้อนข้อกังวลนั้น</p>
+          <div class="cards" id="concerns"></div>
+        </div>
+      </details>
+      <details class="panel">
+        <summary><h2>ประเด็นละเอียดอ่อน</h2></summary>
+        <div class="section-body">
+          <p class="sensitive-note">แสดงเฉพาะรายการที่มีคำหรือบริบทเกี่ยวกับกลุ่มอำนาจ ผลประโยชน์ การแต่งตั้ง ความไม่เป็นธรรม หรือการเมืองภายใน ควรใช้เพื่อชี้ตำแหน่งหลักฐาน ไม่ใช่ขยายข้อกล่าวหา</p>
+          <div class="cards" id="sensitive"></div>
+        </div>
+      </details>
+    </section>
+
+    <details class="panel">
+      <summary><h2>ประเด็นอื่น</h2></summary>
+      <div class="section-body">
+        <p class="sensitive-note">รายการที่อาจหลุดจากโจทย์คุณลักษณะของอธิการบดีในหมวดนี้ หรือเป็นรายละเอียดของหมวดอื่นโดยตรง</p>
+        <div class="cards" id="lessRelevant"></div>
+      </div>
+    </details>
+
+    <details class="evidence-panel">
+      <summary><h2>ตารางหลักฐานทั้งหมด</h2></summary>
+      <div class="section-body">
+        <p class="note">คอลัมน์ “จำนวนอ้างอิง” ใช้เลขในวงเล็บท้ายข้อ ถ้ามี; ถ้าไม่มีเลขในวงเล็บนับเป็น 1</p>
+        <div class="toolbar">
+          <input id="search" type="search" placeholder="ค้นหาข้อความ / tag / เลขหน้า">
+          <select id="classification">
+            <option value="">ทุกประเภท</option>
+          </select>
+          <select id="confidence">
+            <option value="">ทุกระดับความมั่นใจ</option>
+            <option value="สูง">สูง</option>
+            <option value="กลาง">กลาง</option>
+            <option value="ต่ำ">ต่ำ</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>อ้างอิง</th>
+                <th>จำนวนอ้างอิง</th>
+                <th>ข้อความ</th>
+                <th>ประเภท</th>
+                <th>tag/topic</th>
+                <th>สอดคล้องกับวิสัยทัศน์</th>
+                <th>มั่นใจ</th>
+              </tr>
+            </thead>
+            <tbody id="evidenceRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+  <script src="../js/category.js"></script>
+</body>
+</html>

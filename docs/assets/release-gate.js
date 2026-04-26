@@ -12,6 +12,10 @@
     return;
   }
 
+  document.querySelectorAll("[data-release-hidden]").forEach((element) => {
+    element.hidden = true;
+  });
+
   const style = document.createElement("style");
   style.textContent = `
     .release-gate-backdrop {
