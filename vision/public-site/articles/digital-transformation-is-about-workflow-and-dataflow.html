@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เทคโนโลยีพร้อมมานานแล้ว แต่สิ่งที่ไม่พร้อมคือองค์กรจะยอม transform จริงหรือไม่</title>
+  <meta name="description" content="Archive บทความว่าด้วยประสบการณ์ออกแบบระบบข้อมูลภาษี งานวิจัย KU-Work และ KU Forest เพื่อชี้ว่า digital transformation ที่แท้จริงต้องเปลี่ยน workflow, dataflow, กติกา และแรงต้านภายในองค์กร ไม่ใช่แค่ทำซอฟต์แวร์ขึ้นมา">
+  <link rel="canonical" href="https://punpiti.github.io/ku-president-profile/articles/digital-transformation-is-about-workflow-and-dataflow.html">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/convergence.png">
+  <meta name="robots" content="index,follow">
+  <meta property="og:site_name" content="Kasetsart University President Vision Archive">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="เทคโนโลยีพร้อมมานานแล้ว แต่สิ่งที่ไม่พร้อมคือองค์กรจะยอม transform จริงหรือไม่">
+  <meta property="og:description" content="Archive บทความว่าด้วยประสบการณ์ออกแบบระบบข้อมูลภาษี งานวิจัย KU-Work และ KU Forest เพื่อชี้ว่า digital transformation ที่แท้จริงต้องเปลี่ยน workflow, dataflow, กติกา และแรงต้านภายในองค์กร ไม่ใช่แค่ทำซอฟต์แวร์ขึ้นมา">
+  <meta property="og:url" content="https://punpiti.github.io/ku-president-profile/articles/digital-transformation-is-about-workflow-and-dataflow.html">
+  <meta property="og:image" content="https://punpiti.github.io/ku-president-profile/assets/digital-transformation-is-about-workflow-and-dataflow.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="เทคโนโลยีพร้อมมานานแล้ว แต่สิ่งที่ไม่พร้อมคือองค์กรจะยอม transform จริงหรือไม่">
+  <meta name="twitter:description" content="Archive บทความว่าด้วยประสบการณ์ออกแบบระบบข้อมูลภาษี งานวิจัย KU-Work และ KU Forest เพื่อชี้ว่า digital transformation ที่แท้จริงต้องเปลี่ยน workflow, dataflow, กติกา และแรงต้านภายในองค์กร ไม่ใช่แค่ทำซอฟต์แวร์ขึ้นมา">
+  <meta name="twitter:image" content="https://punpiti.github.io/ku-president-profile/assets/digital-transformation-is-about-workflow-and-dataflow.jpg">
+  <meta property="article:published_time" content="2026-03-13">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Digital transformation ที่แท้จริงไม่ใช่แค่มีระบบ แต่ต้องเปลี่ยน workflow และ dataflow ขององค์กรให้ได้", "description": "Archive บทความว่าด้วยประสบการณ์ออกแบบระบบข้อมูลภาษี งานวิจัย KU-Work และ KU Forest เพื่อชี้ว่า digital transformation ที่แท้จริงต้องเปลี่ยน workflow, dataflow, กติกา และแรงต้านภายในองค์กร ไม่ใช่แค่ทำซอฟต์แวร์ขึ้นมา", "datePublished": "2026-03-13", "dateModified": "2026-03-13", "mainEntityOfPage": "https://punpiti.github.io/ku-president-profile/articles/digital-transformation-is-about-workflow-and-dataflow.html", "image": ["https://punpiti.github.io/ku-president-profile/assets/digital-transformation-is-about-workflow-and-dataflow.jpg"], "author": {"@type": "Person", "name": "รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า"}, "publisher": {"@type": "Organization", "name": "Kasetsart University President Vision Archive"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/archive-article.css">
+  <style>
+    :root {
+      --hero-title-max: 16ch;
+      --hero-subtitle-max: 62rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="frame">
+      <div class="inner">
+        <header class="topbar">
+          <div class="site-label"><span>Kasetsart University</span><span>The Life Systems University</span></div>
+          <nav class="nav">
+            <a href="../index.html">หน้าแรก</a>
+            <a href="../context.html">บริบท</a>
+            <a href="../roles.html">บทบาท</a>
+            <a href="../goals.html">เป้าหมาย</a>
+            <a href="../strategy.html">กลยุทธ์</a>
+            <a href="../four-year-plan.html">แผนสี่ปี</a>
+            <a href="../articles.html" aria-current="page">บทความ</a>
+            <a href="../qa.html">ถาม/ตอบ</a>
+            <a href="../about.html">แนะนำตัว</a>
+          </nav>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">Archive</div>
+          <h1>Digital transformation ที่แท้จริงไม่ใช่แค่มีระบบ แต่ต้องเปลี่ยน workflow และ dataflow ขององค์กรให้ได้</h1>
+          <div class="hero-subtitle">
+            ข้อเขียนนี้เล่าจากประสบการณ์ยาวนานในการออกแบบระบบข้อมูลของหน่วยงานรัฐและมหาวิทยาลัย เพื่อย้ำว่าปัญหาของ digital transformation ไม่ได้อยู่ที่เทคโนโลยีเป็นหลัก แต่คือการทำให้องค์กรเปลี่ยนวิธีทำงาน วิธีไหลของข้อมูล และเงื่อนไขเชิงนโยบายให้สอดรับกับระบบใหม่
+          </div>
+          <div class="meta-row">
+            <div class="pill">หมวด: วิจัยและนวัตกรรม</div>
+            <div class="pill">วันที่โพสต์: 13 March 2026</div>
+            <div class="pill">ที่มา: Facebook post archive</div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">digital-transformation</span>
+            <span class="tag">data-infrastructure</span>
+            <span class="tag">research-information-system</span>
+            <span class="tag">workflow-design</span>
+            <span class="tag">ku</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Rewritten Post</div>
+          <div class="content-panel is-interactive">
+            <div class="rewrite-title">เทคโนโลยีพร้อมมานานแล้ว แต่สิ่งที่ไม่พร้อมคือองค์กรจะยอม transform จริงหรือไม่</div>
+            <div class="lead-split">
+              <figure class="lead-figure">
+                <a class="figure-link" href="../assets/digital-transformation-is-about-workflow-and-dataflow.jpg" data-lightbox-image="../assets/digital-transformation-is-about-workflow-and-dataflow.jpg">
+                  <img class="post-image" src="../assets/digital-transformation-is-about-workflow-and-dataflow.jpg" alt="ภาพประกอบบทความเรื่อง digital transformation และระบบข้อมูลวิจัยของมหาวิทยาลัย">
+                </a>
+                <figcaption class="figure-caption">คลิกรูปเพื่อดูภาพขยายใหญ่</figcaption>
+              </figure>
+              <div class="intro-copy">
+                <p>บทความนี้เริ่มจากคำถามง่ายแต่แหลมคมว่า ในเมื่อรัฐมีระบบเก็บภาษีเงินได้และมีข้อมูลจากหน่วยงานที่หักภาษี ณ ที่จ่ายอยู่แล้ว ทำไมประชาชนยังต้องมากรอกแบบภาษีเองอีก คำถามนี้กลายเป็นจุดตั้งต้นของการมอง <span class="key-term">digital transformation</span> ว่าแท้จริงแล้วปัญหาไม่ได้อยู่ที่เทคโนโลยี เพราะเทคโนโลยีพร้อมมานานมาก แต่สิ่งที่ไม่พร้อมคือ<span class="key-term">องค์กร</span>จะเปลี่ยนจากระบบกระดาษไปสู่ระบบดิจิทัลที่มี workflow และ dataflow ชัดเจนได้หรือไม่</p>
+                <p>จากประสบการณ์ที่ต่อเนื่องมาสู่การทำระบบข้อมูลงานวิจัยของมหาวิทยาลัย ระบบภาระงาน <span class="key-term">KU-Work</span> และเว็บไซต์ <span class="key-term">KU Forest</span> บทความนี้ชี้ให้เห็นปัญหาเดิมซ้ำ ๆ คือข้อมูลชุดเดียวถูกขอซ้ำจากหลายหน่วยงาน หลายฟอร์แมต หลายช่วงเวลา ทั้งที่จริงแล้วโจทย์พื้นฐานคือการทำให้<span class="key-term">ข้อมูลเดียวถูกใช้ได้หลายงาน</span>อย่างเชื่อถือได้</p>
+              </div>
+            </div>
+            <p>บทความอธิบายว่าระบบเหล่านี้จะเกิดผลได้ก็ต่อเมื่อข้อมูลถูกต้อง ทันสมัย และนำไปใช้ต่อได้จริง แต่ในโลกจริงข้อมูลข้ามหน่วยงานมักแชร์กันไม่ได้ หรือไม่แน่ใจด้วยซ้ำว่าอันไหนถูกต้องกว่าอีกอันหนึ่ง ความท้าทายจึงไม่ใช่แค่เขียนระบบ แต่คือการทำให้ <span class="key-term">source of truth</span> ชัดเจนและเชื่อมกันได้</p>
+            <h2>ระบบที่ดีต้องลดการกรอกซ้ำ และดึงข้อมูลจากแหล่งที่เชื่อถือได้จริง</h2>
+            <p>บทความยกตัวอย่างเชิงปฏิบัติหลายกรณี เช่น การส่งต่อข้อมูลงานวิจัยจากระบบของ สวพ. ไปยังกองการเจ้าหน้าที่เพื่อให้คณาจารย์กรอกเพียงครั้งเดียว หรือการหยุดขอข้อมูลตีพิมพ์จากนักวิจัยโดยตรงแล้วหันไป <span class="key-term">ดูดข้อมูลจากแหล่งต้นทาง</span> เช่นฐานข้อมูล Scopus แทน เพราะข้อมูลจาก source มักน่าเชื่อถือและลดภาระคนได้มากกว่า</p>
+            <p>แนวคิดนี้ยังต่อยอดไปสู่การออกแบบ <span class="key-term">incentive system</span> อย่างรางวัลผลงานวิจัย ที่ไม่เพียงให้รางวัลการตีพิมพ์ แต่ทำให้คนช่วยตรวจสอบข้อมูลให้ใช้ประโยชน์ต่อได้จริงด้วย</p>
+            <h2>Digital transformation เป็นโจทย์ของวิสัยทัศน์องค์กร ไม่ใช่แค่โจทย์ไอที</h2>
+            <p>บทความจึงสรุปตรงไปตรงมาว่า ในทางเทคนิค งานแบบนี้ไม่ได้ยากที่สุด แต่ในเชิงวิชาการและเชิงองค์กร มันคือปัญหาเรื่อง<span class="key-term">วิสัยทัศน์และกลยุทธ์</span>ของผู้นำองค์กร เพราะการเปลี่ยน workflow และ dataflow จริง ๆ หมายถึงต้องแตะระเบียบ ข้อกฎหมาย และแรงต้านภายในอีกจำนวนมาก</p>
+            <p>ถ้าไม่มีความเข้าใจและการกำกับจาก <span class="key-term">เบอร์หนึ่งขององค์กร</span> งานพวกนี้ก็มักไปได้แค่ระดับบางหน่วย ไม่สามารถ transform ทั้งระบบได้จริง นี่จึงเป็นอีกบทความที่ย้ำว่าความสำเร็จของระบบดิจิทัลขึ้นกับการออกแบบองค์กรพอ ๆ กับการออกแบบซอฟต์แวร์</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Original</div>
+          <div class="reference-panel">
+            <div class="reference-list">
+              <div>ลิงก์อ้างอิง:</div>
+              <a class="reference-link" href="https://www.facebook.com/share/p/18STJkesEP/" target="_blank" rel="noopener noreferrer" aria-label="เปิดโพสต์บน Facebook">f</a>
+            </div>
+            <details class="original-toggle">
+              <summary>Original Facebook Post</summary>
+              <div class="original-text">พันธุ์ปิติ เปี่ยมสง่า
+13 มีนาคม
+ ·
+แชร์กับ สาธารณะ
+ขออภัยก่อนเลยครับ ยาวสุดๆ
+พักนี้เรื่องอยากเล่าเยอะครับ ใกล้เกษียณแล้วก็รู้สึกว่าอะไรมันผ่านไปเร็วเหลือเกิน มันมีเรื่องมากมายที่อยากเล่า แต่ไม่เคยได้เล่า และถ้าจะเล่าก็คงเล่าให้ลูกหลานฟังมากกว่า ซึ่งก็ไม่แน่ใจว่าจะมีประโยชน์อะไรกับเขาหรือเปล่า
+เรื่องหนึ่งที่ผมชอบคิดคือ ทำไมเรามีระบบเก็บภาษีเงินได้แล้ว เรายังต้องให้ประชาชนยื่นแบบภาษี มันดูตลกดีนะครับ เพราะข้อมูลภาษีคุณก็ไปขอจากหน่วยงานที่หักภาษี ณ ที่จ่ายมาแล้ว เงินก็เก็บได้ตรง แล้วทำไมประชาชนต้องมานั่งปวดกบาลกรอกฟอร์มกันอีก
+เรื่องนี้มันนานมากแล้ว ตั้งแต่ผมจบปริญญาเอกใหม่ ๆ (ปี 2000) ตอนนั้นผมมีโอกาสได้ร่วมทีมเขียนแผนแม่บทให้กรมสรรพากร ผมก็เป็นแค่เด็กน้อยในทีม อยู่ในระดับ subproject อีกทอดหนึ่ง มุมมองตอนนั้นก็ยังอ่อนต่อโลก คิดง่าย ๆ ว่าในยุคที่เทคโนโลยีมันล้ำขึ้นทุกวัน หลายอย่างมันก็น่าจะไปได้เร็ว สิ่งที่ผมเสนอไปหลังจากแผนเขียนเสร็จแล้ว จริง ๆ ผมก็ไม่รู้หรอกว่าเขาเอาไปใส่ในแผนจริงหรือเปล่า เพราะไม่เคยเห็น final report แต่ประเด็นที่อยากเล่าก็ไม่ใช่เรื่องนั้น
+เอาเป็นว่าข้ามเรื่องทางเทคนิคไปก่อน มาดูผลลัพธ์เลย สิ่งที่ผมเขียนไว้ มันเกิดขึ้นได้จริงหลังจากนั้นอีกยี่สิบกว่าปี ที่เรากรอกภาษีได้โดยมีข้อมูลตั้งต้นมาแล้ว ซึ่งมันดูตลกพราะความจริงเทคโนโลยีมันพร้อมมานานแล้ว แต่สิ่งที่มันไม่พร้อมคือองค์กรไม่พร้อมจะ transform จากระบบกระดาษ งานราชการ ไปเป็นระบบดิจิทัลที่มี workflow และ dataflow ในการจัดการ ระหว่างทางก็จะติดทั้งกฎหมาย ระเบียบ และแรงต้านของผู้ใช้งาน
+ระหว่างนั้นผมก็มีโอกาสทำระบบที่ใช้แนวคิดเดียวกันอยู่สองระบบ คือระบบฐานข้อมูลงานวิจัย ของมก. และระบบข้อมูลภาระงาน (KU-Work) ผมเคยเล่าแนวคิดที่เคยเสนอในงานของกรมสรรพากรไปเล่าให้อาจารย์ผู้ใหญ่ท่านหนึ่งฟัง ท่านทำตาโตดีใจมาก แล้วก็ให้กำลังใจผมว่าให้ผมทำให้สำเร็จก่อนผมเกษียณ ลองคิดดูนะครับ ตอนนั้นผมอายุ 32 จะไปคิดเรื่องเกษียณอะไร ตอนนั้นก็คิดง่าย ๆ ว่ามันจะยากอะไร ยังแอบคิดเลยว่าอาจารย์ท่านประชดผมหรือเปล่า แต่จริง ๆ ไม่ใช่ ท่านคิดแบบนั้นจริง ๆ เพราะระบบพวกนี้มันไปช้ามาก
+สมัยนั้นทั้งระบบงานวิจัยและระบบภาระงานทำกันด้วยกระดาษ และข้อมูลชุดเดียวกันนี้ถูกใช้จากหลายหน่วยงาน ไม่ว่าจะเรื่องอะไร ก็ใช้ข้อมูลพวกนี้ ผลก็คืออาจารย์ทั้งมหาวิทยาลัยถูกขอเอกสารทุกเดือนจากหน่วยงานที่แตกต่างกันสำหรับข้อมูลเดียวกันแต่ฟอร์แมตไม่เหมือนกัน แล้วก็โดนขอข้อมูลซ้ำทุกปี
+โจทย์จริง ๆ มันก็แค่ต้องทำระบบ ระบบมันต้องมีกระบวนการด้วย ข้อมูลต้องถูกต้อง ทันสมัย และเอาไปใช้ประโยชน์ต่อได้ มันจะเกิดขึ้นได้ยังไงถ้าข้อมูลข้ามกองกันยังแชร์กันไม่ได้ และยังไม่แน่ใจว่าข้อมูลที่ต่างกันอันไหนถูกต้องกว่าอีกอัน ซึ่งทุกวันนี้ก็ยังเป็นปัญหาระดับกระทรวงอยู่เลย
+เราก็จัดการข้อมูลงานวิจัย โดยสร้างระบบข้อมูลงานวิจัย เป็นธรรมดาที่
+อาจารย์จะต้องรายงานเพื่อขอตำแหน่งวิชาการ ซึ่งพอได้ตำแหน่งก็จบหน้าที่ แต่มหาวิทยาลัยต้องใช้ข้อมูลพวกนี้ ทั้งเรื่องประกันคุณภาพ ranking และเรื่องอื่น ๆ อีกมาก คนที่ใจดีเขาให้ครบแล้ว มาขอใหม่เขาก็ให้ได้ แต่ถ้ามาขอทุกเดือนคนละฟอร์แมต บางทีก็ไม่ให้ หรือก็ส่งไปแบบงั้น ๆ คาดว่าทุกท่านคงพอนึกภาพออก
+อาจารย์บางท่านก็ไม่คิดขอตำแหน่งวิชาการเลย แม้ว่าจะตีพิมพ์เยอะแยะ ทำวิจัยเพราะความสนใจส่วนตัวเท่านั้น พอลูกศิษย์จบก็จบ ไม่สนใจตำแหน่งอะไร แล้วคราวนี้มหาวิทยาลัยจะรู้ได้อย่างไรว่าใครทำอะไรอยู่ แม้จะมีระบบให้กรอกก็ไม่มีใครกรอก
+นั่นเป็นที่มาของระบบภาระงาน ku-work ที่ผมทำให้กองการเจ้าหน้าที่ ซึ่งผมเผอิญได้เป็นผู้ช่วยอธิการบดีด้าน IT ควบกับรองผู้อำนวยการ สวพ.มก. ผมก็เล่นง่าย ๆ เอางานจาก สวพ.มก. ส่งต่อไปให้กองการเจ้าหน้าที่ ดังนั้น เมื่ออาจารย์ส่งข้อมูลให้ระบบของ สวพ.มก. แล้ว ก็ถือว่ากรอกครั้งเดียว สวพ.ตรวจครั้งเดียว กองการเจ้าหน้าที่ก็รับรายงานที่ถูกต้อง แถมหัวหน้าภาคก็เปิดคอมพ์ดูผลงานของลูกภาคได้
+แต่นั่นแหละ ข้อมูลเดียวกันอาจไม่ได้ดีที่สุดหรือถูกต้องที่สุด ถ้าไม่ได้มาจาก source อย่างข้อมูลการตีพิมพ์ ตอนนั้นใครเป็นชื่อแรกชื่อหลังวุ่นวายมาก ลืมใส่บ้าง ใส่มั่วบ้าง ตรวจยากตลอด สุดท้ายเราก็ไปดูดข้อมูลจากฐานโดยตรงแทน เท่าที่เราได้ประโยชน์ เพราะมหาวิทยาลัยสนใจ Scopus เราก็เลยไม่ขอนักวิจัยแล้ว ดูดจาก source มาใช้เลย นักวิจัยก็สบาย สวพ.มก.ก็สบายขึ้น ไม่ต้องคอยขอให้นักวิจัยช่วยกรอกข้อมูลอีก
+และนั่นก็กลายเป็นที่มาของการออกแบบระบบ รางวัลผลงานวิจัยของมหาวิทยาลัย โดยเฉพาะผลงานตีพิมพ์ในวารสารนานาชาติ เราอยากให้ incentive นักวิจัย ซึ่งก็เห็นได้ว่าจำนวนการตีพิมพ์ยังเพิ่มขึ้นอยู่ แต่การจะได้ incentive ก็ต้องแลกกับการช่วยตรวจสอบข้อมูลให้ถูกต้อง ไม่งั้นก็ไม่รับรางวัลส่วนนี้ ในฐานะที่ผมเป็นกรรมการอยู่ด้วย ก็ต้องขออภัยหลายท่านเหมือนกัน เราเข้าใจว่าท่านทำงาน แต่ถ้าข้อมูลผลงานของท่านไม่ปรากฏให้มหาวิทยาลัยใช้ประโยชน์ได้ ก็ต้องปรับให้มันใช้ได้ก่อนแล้วถึงจะจ่ายรางวัลได้ ข้อมูลก็เลยค่อนข้างมั่นใจว่าถูกต้อง
+ทีนี้ไหน ๆ ก็พูดถึงรางวัลตีพิมพ์ สูตรของการให้ความต่อเนื่องก็เริ่มต้นจากความตั้งใจอยากให้เกิดความต่อเนื่องจริง ๆ สูตรทางคณิตศาสตร์มันก็มีอยู่ ดยสูตรคือ สร้างสมการ p index โดยปี ปัจจุบัน นับ 1 ปีก่อนหน้าสองปี นับ 0.5 ถ้าสามปีตีพิมพ์ติดกัน ก็จะได้ p index = 0.5+0.5+1 = 2 แล้วคูณกับ คุณภาพของของบทความ ทำให้ถ้าบทความระดับ Q1 สามปีติดกัน ได้จากการตีพิมพ์ ในปีทีสาม มีโอกาสถึง 40,000 บาท จากบทความในปีที่สาม ถ้าสองปีก่อนหน้านั้นไม่มีบทความ ก็ได้แค่ 20,000 และปีหน้าก็คิดต่อได้อีก แต่ที่อธิบายจะบอกว่าถ้าไม่มีระบบคอมพิวเตอร์ที่ดีพอ คงใช้สูตรซับซ้อนไม่ได้ 
+และถ้าให้พูดถึง KU-Work ผมก็มองเหมือนตอนออกแบบระบบภาษีนั่นแหละ มีข้อมูลอยู่แล้ว ทำไมคนต้องกรอกอีก ผมขอตอบว่า ผมเป็นแค่คนออกแบบระบบ แต่ทุกระบบใหม่จะมีไอเดียบรรเจิดที่ใหม่และไม่มีข้อมูลมาก่อนระบบที่ควรจะจบในตัว ก็เลยมักกลายเป็นระบบให้กรอกอยู่เสมอ สุดท้ายผมก็ทำให้เขากรอกได้ ในทางปฏิบัติมันคือข้อจำกัดของระบบ แต่ถ้าถามว่าขัดใจไหม ตอบเลยว่าสุด ๆ
+สุดท้าย KU Forest ซึ่งเป็นเว็บที่รายงานผลงานวิจัยของอาจารย์ มก. เว็บนี้รันมาจะยี่สิบปีแล้ว และยังรันอยู่ ก็เป็นงานอีกชิ้นที่มีมหาวิทยาลัยหลายแห่งมาดูงานด้านระบบข้อมูลวิจัย เอาเป็นว่ามหาวิทยาลัยใหญ่ ๆ ทั้งนั้น
+ที่เล่ามาทั้งหมดนี้ก็เป็นตัวอย่างหนึ่งของ digital transformation ในทางเทคนิคมันไม่ได้ยากอะไรหรอก แต่ถ้ามองในเชิงวิชาการจริง ๆ มันเป็นปัญหาเรื่องวิสัยทัศน์และกลยุทธ์ขององค์กร องค์กรต้องสามารถเปลี่ยน workflow และ dataflow ได้จริง ซึ่งหมายถึงต้องปรับระเบียบ ข้อกฎหมาย และรับมือกับแรงต้านภายในองค์กรอีกมาก ถ้าไม่มีวิสัยทัศน์ของเบอร์หนึ่งก็คงยาก สิ่งที่ทำได้ก็มักจะเป็นแค่กระบวนการขององค์กรเดียวที่อยู่ในอำนาจของหัวหน้าองค์กรนั้นเท่านั้น
+ผมเล่ามานี่ก็เป็นแค่ส่วนหนึ่งนะครับ จริง ๆ มีอีกหลายโปรเจคที่ fail ถ้าไม่มีเบอร์หนึ่งขององค์กรที่มีความเข้าใจมากำกับ งานนี้ก็จะเป็นงานที่ท้าทายเกินไปจริง ๆ
+ขออภัยครับ ที่เขียนยาวมาก ขอบคุณที่อ่านจนจบนะครับ
+ปล. ทุกระบบที่เริ่มต้น มีผู้อื่นดูแลต่อมาต่อเนื่องนะครับ ปัจจุบันผมไม่ได้ดูแลระบบที่กล่าวมาทั้งหมดแล้วครับ</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">บทความอื่นที่เกี่ยวข้อง</div>
+          <div class="reference-panel">
+            <div class="related-grid" data-related-articles data-current-slug="digital-transformation-is-about-workflow-and-dataflow" data-current-tags="digital-transformation,data-infrastructure,research-information-system,workflow-design,ku"></div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>Articles Archive</div>
+          <div>วิสัยทัศน์ของ รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า สำหรับการสรรหาอธิการบดีมหาวิทยาลัยเกษตรศาสตร์</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="ภาพขยายใหญ่">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="ปิดภาพขยาย">×</button>
+      <img class="lightbox-image" id="lightboxImage" src="" alt="">
+    </div>
+  </div>
+  <script src="../assets/release-gate.js" defer></script>
+  <script src="../assets/site-analytics.js" defer></script>
+  <script src="../assets/articles-data.js" defer></script>
+  <script src="../assets/related-articles.js" defer></script>
+  <script src="../assets/archive-lightbox.js" defer></script>
+</body>
+</html>

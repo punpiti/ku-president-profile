@@ -10,7 +10,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "articles_data" / "articles.json"
-DOCS_ASSETS_DIR = ROOT / "docs" / "assets"
+PUBLIC_SITE_DIR = ROOT / "vision" / "public-site"
+PUBLIC_SITE_ASSETS_DIR = PUBLIC_SITE_DIR / "assets"
 
 
 def load_articles() -> list[dict]:
@@ -72,8 +73,8 @@ def apply_migrations(articles: list[dict], migrations: list[dict], *, copy: bool
     DATA_FILE.write_text(json.dumps(articles, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     for plan in migrations:
-        src = ROOT / "docs" / plan["source_asset"]
-        dst = ROOT / "docs" / plan["target_asset"]
+        src = PUBLIC_SITE_DIR / plan["source_asset"]
+        dst = PUBLIC_SITE_DIR / plan["target_asset"]
         if not src.exists():
             raise FileNotFoundError(f"source image not found: {src}")
         if dst.exists():

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>จาก Edge Detection ถึง latent space: ในวันที่วิชาเดิมถูกย่อเหลือไม่กี่บรรทัด เราควรสอนอะไรต่อไป</title>
+  <meta name="description" content="Archive บทความว่าด้วยการเปลี่ยนผ่านจาก image processing แบบคลาสสิกไปสู่ deep learning และคำถามเรื่องการออกแบบการเรียนรู้ว่าอะไรควรเก็บไว้เป็นรากฐานในยุคใหม่">
+  <link rel="canonical" href="https://punpiti.github.io/ku-president-profile/articles/from-edge-detection-to-latent-space.html">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/convergence.png">
+  <meta name="robots" content="index,follow">
+  <meta property="og:site_name" content="Kasetsart University President Vision Archive">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="จาก Edge Detection ถึง latent space: ในวันที่วิชาเดิมถูกย่อเหลือไม่กี่บรรทัด เราควรสอนอะไรต่อไป">
+  <meta property="og:description" content="Archive บทความว่าด้วยการเปลี่ยนผ่านจาก image processing แบบคลาสสิกไปสู่ deep learning และคำถามเรื่องการออกแบบการเรียนรู้ว่าอะไรควรเก็บไว้เป็นรากฐานในยุคใหม่">
+  <meta property="og:url" content="https://punpiti.github.io/ku-president-profile/articles/from-edge-detection-to-latent-space.html">
+  <meta property="og:image" content="https://punpiti.github.io/ku-president-profile/assets/from-edge-detection-to-latent-space.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="จาก Edge Detection ถึง latent space: ในวันที่วิชาเดิมถูกย่อเหลือไม่กี่บรรทัด เราควรสอนอะไรต่อไป">
+  <meta name="twitter:description" content="Archive บทความว่าด้วยการเปลี่ยนผ่านจาก image processing แบบคลาสสิกไปสู่ deep learning และคำถามเรื่องการออกแบบการเรียนรู้ว่าอะไรควรเก็บไว้เป็นรากฐานในยุคใหม่">
+  <meta name="twitter:image" content="https://punpiti.github.io/ku-president-profile/assets/from-edge-detection-to-latent-space.jpg">
+  <meta property="article:published_time" content="2025-07-25">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "เมื่อ Deep Learning เปลี่ยน computer vision คำถามสำคัญจึงไม่ใช่ว่าจะสอนทุกอย่างเหมือนเดิมหรือไม่ แต่คืออะไรควรเก็บไว้เป็นแก่น", "description": "Archive บทความว่าด้วยการเปลี่ยนผ่านจาก image processing แบบคลาสสิกไปสู่ deep learning และคำถามเรื่องการออกแบบการเรียนรู้ว่าอะไรควรเก็บไว้เป็นรากฐานในยุคใหม่", "datePublished": "2025-07-25", "dateModified": "2025-07-25", "mainEntityOfPage": "https://punpiti.github.io/ku-president-profile/articles/from-edge-detection-to-latent-space.html", "image": ["https://punpiti.github.io/ku-president-profile/assets/from-edge-detection-to-latent-space.jpg"], "author": {"@type": "Person", "name": "รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า"}, "publisher": {"@type": "Organization", "name": "Kasetsart University President Vision Archive"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/archive-article.css">
+  <style>
+    :root {
+      --hero-title-max: 15ch;
+      --hero-subtitle-max: 60rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="frame">
+      <div class="inner">
+        <header class="topbar">
+          <div class="site-label"><span>Kasetsart University</span><span>The Life Systems University</span></div>
+          <nav class="nav">
+            <a href="../index.html">หน้าแรก</a>
+            <a href="../context.html">บริบท</a>
+            <a href="../roles.html">บทบาท</a>
+            <a href="../goals.html">เป้าหมาย</a>
+            <a href="../strategy.html">กลยุทธ์</a>
+            <a href="../four-year-plan.html">แผนสี่ปี</a>
+            <a href="../articles.html" aria-current="page">บทความ</a>
+            <a href="../qa.html">ถาม/ตอบ</a>
+            <a href="../about.html">แนะนำตัว</a>
+          </nav>
+        </header>
+
+        <section class="hero">
+          <div class="hero-kicker">Archive</div>
+          <h1>เมื่อ Deep Learning เปลี่ยน computer vision คำถามสำคัญจึงไม่ใช่ว่าจะสอนทุกอย่างเหมือนเดิมหรือไม่ แต่คืออะไรควรเก็บไว้เป็นแก่น</h1>
+          <div class="hero-subtitle">
+            ข้อเขียนนี้สะท้อนความเปลี่ยนแปลงของโลก computer vision จากยุคที่การเรียนการสอนเน้น edge detection, Fourier transform, SIFT, HOG และ SURF ไปสู่ยุคที่ deep learning กลืนหลายขั้นตอนเข้าไปอยู่ใน latent space พร้อมตั้งคำถามสำคัญต่อการศึกษาในยุค AI ว่า เมื่อเทคนิคจำนวนมากถูกแทนที่ด้วยโมเดลที่เรียนรู้เองได้ เราควรเก็บอะไรไว้เพื่อเป็นรากฐานความเข้าใจ และควรปล่อยอะไรไปเพื่อไม่ให้ถ่วงอนาคต
+          </div>
+          <div class="meta-row">
+            <div class="pill">หมวด: AI ดิจิทัล และอนาคตการศึกษา</div>
+            <div class="pill">วันที่โพสต์: 25 July 2025</div>
+            <div class="pill">ที่มา: Facebook post archive</div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">computer-vision</span>
+            <span class="tag">deep-learning</span>
+            <span class="tag">ai-education</span>
+            <span class="tag">curriculum</span>
+            <span class="tag">foundations</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Rewritten Post</div>
+          <div class="content-panel is-interactive">
+            <div class="rewrite-title">จาก Edge Detection ถึง latent space: ในวันที่วิชาเดิมถูกย่อเหลือไม่กี่บรรทัด เราควรสอนอะไรต่อไป</div>
+            <div class="lead-split">
+              <figure class="lead-figure">
+                <a class="figure-link" href="../assets/from-edge-detection-to-latent-space.jpg" data-lightbox-image="../assets/from-edge-detection-to-latent-space.jpg">
+                  <img class="post-image" src="../assets/from-edge-detection-to-latent-space.jpg" alt="ภาพประกอบบทความเรื่องการเปลี่ยนจาก edge detection ไปสู่ latent space">
+                </a>
+                <figcaption class="figure-caption">คลิกรูปเพื่อดูภาพขยายใหญ่</figcaption>
+              </figure>
+              <div class="intro-copy">
+                <p>โพสต์นี้มีน้ำหนักมากเพราะมันไม่ได้พูดแค่ว่าเทคนิคใหม่เก่งกว่าเทคนิคเก่า แต่กำลังสะท้อนความรู้สึกของคนที่เคยสอน <span class="key-term">image processing</span> แบบคลาสสิกอย่างจริงจัง เคยภาคภูมิใจกับการอธิบาย edge detection, Fourier transform, SIFT, HOG หรือ SURF และเห็นสิ่งเหล่านี้เป็นรากฐานของการทำความเข้าใจภาพในเชิงคอมพิวเตอร์</p>
+                <p>แต่เมื่อโลกเปลี่ยนเข้าสู่ยุค <span class="key-term">deep learning</span> หลายอย่างที่เคยต้องสอนเป็นลำดับขั้นกลับถูกย่อหรือถูกกลืนเข้าไปอยู่ใน <span class="key-term">latent space</span> ของโมเดล ผู้เขียนจึงตั้งคำถามที่สำคัญกว่า nostalgia นั่นคือ ในโลกที่โมเดลเรียนรู้ representation ได้เอง เราควรยังเก็บอะไรไว้ในวิชาเพื่อรักษาแก่นของความเข้าใจ และควรปล่อยอะไรไปเพื่อไม่ให้หลักสูตรติดอยู่กับอดีต</p>
+              </div>
+            </div>
+            <h2>เทคนิคคลาสสิกไม่ได้หายไปเพราะไม่มีคุณค่า แต่เพราะโลกใหม่ย้ายระดับของ abstraction ขึ้นไปอีกชั้น</h2>
+            <p>สิ่งที่โพสต์นี้อธิบายได้ดีมากคือ การมาของ deep learning ไม่ได้แค่เพิ่มเครื่องมือใหม่ แต่มันเปลี่ยนวิธีคิดของทั้งสาขา จากเดิมที่เราต้องแยกขั้นตอนชัดเจน ตั้งแต่ preprocessing, feature extraction ไปจนถึง classification มาสู่โลกที่ convolutional network สามารถเรียนรู้ feature ด้วยตัวเองจากข้อมูลมหาศาล</p>
+            <p>ดังนั้น edge detection, 2D FFT หรือ SIFT จึงไม่ใช่แค่เทคนิคที่ตกยุค แต่เป็นตัวแทนของยุคที่มนุษย์ยังต้องบอกคอมพิวเตอร์ทีละขั้นว่าควรมองภาพอย่างไร ขณะที่ในโลกใหม่ เรากลับยอมให้โมเดลสร้าง representation ภายในของตัวเองซึ่งลึกและซับซ้อนกว่าที่มนุษย์ออกแบบไว้ล่วงหน้า</p>
+            <h2>คำถามที่สำคัญกว่า nostalgia คืออะไรคือแก่นความเข้าใจที่ยังควรสอนในยุค deep learning</h2>
+            <p>ประโยคที่คมที่สุดของโพสต์น่าจะอยู่ที่คำถามว่า ในโลกที่ deep learning ทำได้แทบทุกอย่าง อะไรคือสิ่งที่ควร <span class="key-term">เก็บไว้</span> เพื่อวางรากฐานความเข้าใจ และอะไรควร <span class="key-term">ปล่อยไป</span> เพื่อไม่ถ่วงอนาคต เพราะการเรียนรู้ที่ดีอาจไม่ใช่การรู้ให้ครบทุกเทคนิคอีกต่อไป</p>
+            <p>นี่คือคำถามเชิงหลักสูตรโดยตรงว่า ผู้เรียนควรเข้าใจอะไรในระดับแก่น เช่น representation, error, learning dynamics, data bias หรือข้อจำกัดของโมเดล มากกว่าจดจำ pipeline แบบเดิมทั้งหมดหรือไม่ หากตอบไม่ได้ หลักสูตรก็เสี่ยงจะกลายเป็นการสะสมความรู้เก่าที่ไม่เชื่อมกับโลกปัจจุบัน</p>
+            <h2>การเรียนรู้ในยุคใหม่จึงอาจต้องเปลี่ยนจากการรู้ให้ครบ ไปสู่การเลือกให้ลึกในสิ่งที่อธิบายโลกได้จริง</h2>
+            <p>ช่วงท้ายของโพสต์เสนอหลักคิดที่กว้างกว่าวิชา image processing มาก นั่นคือการเรียนรู้ที่ดีอาจไม่ได้หมายถึงการเก็บทุกอย่างไว้ในหลักสูตร แต่คือการเลือกให้ลึกว่าอะไรคือแก่นแท้ของความเข้าใจในยุคใหม่ มุมนี้ใช้ได้กับหลายสาขา ไม่เฉพาะ computer vision</p>
+            <p>ดังนั้น บทความนี้จึงไม่ได้โศกเศร้ากับการหายไปของ edge detection หรือ SIFT หากกำลังชวนให้ครูและผู้ออกแบบหลักสูตรยอมรับว่า โลกเปลี่ยนแล้ว และหน้าที่ของการศึกษาคือคัดสิ่งที่ยังช่วยให้ผู้เรียน <span class="key-term">เข้าใจโครงสร้างของปัญหา</span> และพร้อมสร้างอนาคตต่อไป ไม่ใช่เก็บทุกเทคนิคไว้เพียงเพราะเราเคยผูกพันกับมัน</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">Original</div>
+          <div class="reference-panel">
+            <div class="reference-list">
+              <div>ลิงก์อ้างอิง:</div>
+              <a class="reference-link" href="https://www.facebook.com/share/p/1FUShwqLLt/" target="_blank" rel="noopener noreferrer" aria-label="เปิดโพสต์บน Facebook">f</a>
+            </div>
+            <details class="original-toggle">
+              <summary>Original Facebook Post</summary>
+              <div class="original-text">พันธุ์ปิติ เปี่ยมสง่า
+25 กรกฎาคม 2025
+ ·
+🖼️ Image Processing: วิชาคลาสสิกในวันที่โลกเปลี่ยน 🤖✨
+
+เราเคยภาคภูมิใจกับการสอน 🧠 Edge Detection
+เราเคยอธิบายอย่างลุ่มลึกว่า Fourier Transform ช่วยแยกความถี่ของภาพอย่างไร 📈
+เราเคยถอดโครงสร้างของภาพออกมาเป็น SIFT, HOG หรือ SURF 🧩
+
+แต่นั่นคือ “ยุคหนึ่ง”
+ก่อนที่ Deep Learning จะกลืนทุกอย่างไปใน latent space 🌌
+
+วันนี้… segmentation ที่เราเคยต้องใช้หลายขั้นตอน
+ถูกแทนที่ด้วย UNet เพียงบรรทัดเดียว 🧬
+Feature extraction ถูกโยนทิ้ง แล้วให้ convolutional layer เรียนรู้เอง 🌀
+
+Edge Detection, 2D FFT, SIFT —
+บางทีอาจกลายเป็นแค่ ความทรงจำของมนุษย์ 🕰️
+ว่าเราเคยสอนคอมพิวเตอร์แบบนั้น
+ก่อนที่มันจะเรียนรู้ได้เองอย่างลึกและซับซ้อนกว่าที่เราคิด
+
+❓ คำถามสำคัญคือ:
+ในโลกที่ Deep Learning ทำได้หมด
+อะไรคือสิ่งที่ควร “เก็บไว้” เพื่อวางรากฐานความเข้าใจ?
+และอะไรควร “ปล่อยไป” เพื่อไม่ถ่วงอนาคต?
+
+📚 การเรียนรู้ที่ดี อาจไม่ใช่แค่ &quot;รู้ให้ครบ&quot;
+แต่คือ &quot;เลือกให้ลึก&quot; ว่าอะไรคือแก่นแท้ของความเข้าใจในยุคใหม่
+
+🔖 #ImageProcessing #DeepLearning #ComputerVision #AIeducation
+🧠 #FromEdgeToUnderstanding #TheFutureSeesDifferently #TechReflection
+💡 #ReimagineLearning #AIxEducation #MachineVision
+📸 #SIFT_HOG_SURF #FFTtoLatentSpace</div>
+            </details>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-title">บทความอื่นที่เกี่ยวข้อง</div>
+          <div class="reference-panel">
+            <div class="related-grid" data-related-articles data-current-slug="from-edge-detection-to-latent-space" data-current-tags="computer-vision,deep-learning,ai-education,curriculum,foundations"></div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>Articles Archive</div>
+          <div>วิสัยทัศน์ของ รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า สำหรับการสรรหาอธิการบดีมหาวิทยาลัยเกษตรศาสตร์</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="ภาพขยายใหญ่">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="ปิดภาพขยาย">×</button>
+      <img class="lightbox-image" id="lightboxImage" src="" alt="">
+    </div>
+  </div>
+  <script src="../assets/release-gate.js" defer></script>
+  <script src="../assets/site-analytics.js" defer></script>
+  <script src="../assets/articles-data.js" defer></script>
+  <script src="../assets/related-articles.js" defer></script>
+  <script src="../assets/archive-lightbox.js" defer></script>
+</body>
+</html>

@@ -10,7 +10,7 @@ Projects in this repo
   local: bash scripts/run_local.sh vision
 
 - public website
-  GitHub Pages site from docs/
+  source from vision/public-site/, deploy artifact in .public-site-build/
   local: bash scripts/run_local.sh public
   deploy: bash scripts/deploy_github_pages.sh
 

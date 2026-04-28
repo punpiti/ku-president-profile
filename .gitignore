@@ -5,6 +5,8 @@
 .python-version
 .codex
 .backup/
+/docs/
+/.public-site-build/
 /README.md
 articles_data/
 selection/
@@ -29,7 +31,7 @@ __pycache__/
 Thumbs.db
 
 # Local working copy for the desired-qualifications report.
-# Deployed files live in docs/desired-qualifications/.
+# Public site source lives in vision/public-site/desired-qualifications/.
 desired_qualifications/*
 !desired_qualifications/CATEGORY_PAGE_TEMPLATE.md
 !desired_qualifications/CATEGORY_REPORT_TEMPLATE.md

@@ -9,12 +9,15 @@ Usage:
   PORT=9000 HOST=0.0.0.0 bash scripts/run_local.sh <project>
 
 Projects:
-  public   public website from docs/
-  vision   vision Q&A workspace from vision/qna/
+  public   public website source from vision/public-site/
+  vision   vision workspace from vision/
 
 Aliases:
-  public-site, site, docs -> public
-  vision-qna, qna, question_bank -> vision
+  public-site, site -> public
+  public-build, deploy-artifact -> local deploy artifact in .public-site-build/
+  vision-qna, qna -> vision
+  question-bank, question_bank -> vision/question-bank
+  presentation-narrator, presentation_narrator -> vision/presentation-narrator
 
 Examples:
   bash scripts/run_local.sh public
@@ -47,11 +50,20 @@ else
 fi
 
 case "${TARGET}" in
-  site|public|public-site|docs)
-    SITE_DIR="${REPO_ROOT}/docs"
+  site|public|public-site)
+    SITE_DIR="${REPO_ROOT}/vision/public-site"
     ;;
-  vision|vision-qna|qna|question_bank)
-    SITE_DIR="${REPO_ROOT}/vision/qna"
+  public-build|deploy-artifact)
+    SITE_DIR="${PUBLIC_SITE_BUILD_DIR:-${REPO_ROOT}/.public-site-build}"
+    ;;
+  vision|vision-qna|qna)
+    SITE_DIR="${REPO_ROOT}/vision"
+    ;;
+  question-bank|question_bank)
+    SITE_DIR="${REPO_ROOT}/vision/question-bank"
+    ;;
+  presentation-narrator|presentation_narrator)
+    SITE_DIR="${REPO_ROOT}/vision/presentation-narrator"
     ;;
   /*)
     SITE_DIR="${TARGET}"

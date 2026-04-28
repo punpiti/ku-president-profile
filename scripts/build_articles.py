@@ -14,9 +14,10 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "articles_data" / "articles.json"
 ARCHIVE_CONFIG_FILE = ROOT / "articles_data" / "archive_config.json"
 SITE_CONFIG_FILE = ROOT / "site_config.json"
-DOCS_DIR = ROOT / "docs"
-ARTICLES_DIR = DOCS_DIR / "articles"
-ASSETS_DIR = DOCS_DIR / "assets"
+PUBLIC_SITE_REL = "vision/public-site"
+PUBLIC_SITE_DIR = ROOT / PUBLIC_SITE_REL
+ARTICLES_DIR = PUBLIC_SITE_DIR / "articles"
+ASSETS_DIR = PUBLIC_SITE_DIR / "assets"
 PRIMARY_SITEMAP_FILENAME = "sitemap.xml"
 
 # Architecture note:
@@ -24,8 +25,8 @@ PRIMARY_SITEMAP_FILENAME = "sitemap.xml"
 # At the current scale this keeps the workflow deterministic and avoids
 # cache invalidation bugs, especially because one article change can affect:
 # - its own article page
-# - docs/articles.html
-# - docs/assets/articles-data.js
+# - vision/public-site/articles.html
+# - vision/public-site/assets/articles-data.js
 # - related article sections in other pages
 #
 # If the article count grows substantially, the next safe optimization is:
@@ -186,12 +187,13 @@ def build_sitemap(articles: list[dict], site_config: dict) -> str:
     ]
     urls_by_path: dict[str, str] = {}
     tracked_html_paths = get_git_tracked_html_paths()
+    use_tracked_filter = bool(tracked_html_paths)
 
-    for html_path in DOCS_DIR.rglob("*.html"):
+    for html_path in PUBLIC_SITE_DIR.rglob("*.html"):
         if "assets" in html_path.parts:
             continue
-        relative_path = html_path.relative_to(DOCS_DIR).as_posix()
-        if relative_path not in tracked_html_paths:
+        relative_path = html_path.relative_to(PUBLIC_SITE_DIR).as_posix()
+        if use_tracked_filter and relative_path not in tracked_html_paths:
             continue
         text = html_path.read_text(encoding="utf-8")
         if noindex_pattern.search(text):
@@ -223,7 +225,7 @@ def build_sitemap(articles: list[dict], site_config: dict) -> str:
 
 
 def get_git_lastmods(urls_by_path: dict[str, str]) -> dict[str, str]:
-    tracked_html_paths = [f"docs/{path}" for path in sorted(urls_by_path)]
+    tracked_html_paths = [f"{PUBLIC_SITE_REL}/{path}" for path in sorted(urls_by_path)]
     if not tracked_html_paths:
         return {}
     try:
@@ -245,9 +247,9 @@ def get_git_lastmods(urls_by_path: dict[str, str]) -> dict[str, str]:
         if re.fullmatch(r"\d{4}-\d{2}-\d{2}", line):
             current_date = line
             continue
-        if not current_date or not line.startswith("docs/") or not line.endswith(".html"):
+        if not current_date or not line.startswith(f"{PUBLIC_SITE_REL}/") or not line.endswith(".html"):
             continue
-        relative_path = line.removeprefix("docs/")
+        relative_path = line.removeprefix(f"{PUBLIC_SITE_REL}/")
         lastmod_by_path.setdefault(relative_path, current_date)
     return lastmod_by_path
 
@@ -255,7 +257,7 @@ def get_git_lastmods(urls_by_path: dict[str, str]) -> dict[str, str]:
 def get_git_tracked_html_paths() -> set[str]:
     try:
         result = subprocess.run(
-            ["git", "-C", str(ROOT), "ls-files", "docs"],
+            ["git", "-C", str(ROOT), "ls-files", PUBLIC_SITE_REL],
             check=True,
             capture_output=True,
             text=True,
@@ -263,9 +265,9 @@ def get_git_tracked_html_paths() -> set[str]:
     except subprocess.CalledProcessError:
         return set()
     return {
-        line.removeprefix("docs/")
+        line.removeprefix(f"{PUBLIC_SITE_REL}/")
         for line in result.stdout.splitlines()
-        if line.startswith("docs/") and line.endswith(".html")
+        if line.startswith(f"{PUBLIC_SITE_REL}/") and line.endswith(".html")
     }
 
 
@@ -394,8 +396,9 @@ def render_article_page(article: dict, site_config: dict) -> str:
     <section class="frame">
       <div class="inner">
         <header class="topbar">
-          <div class="site-label">Kasetsart University -- The Life Systems University</div>
+          <div class="site-label"><span>Kasetsart University</span><span>The Life Systems University</span></div>
           <nav class="nav">
+            <a href="../index.html">หน้าแรก</a>
             <a href="../context.html">บริบท</a>
             <a href="../roles.html">บทบาท</a>
             <a href="../goals.html">เป้าหมาย</a>
@@ -744,8 +747,9 @@ def render_articles_index(articles: list[dict], archive_config: dict, site_confi
     <section class="frame">
       <div class="inner">
         <header class="topbar">
-          <div class="site-label">Kasetsart University -- The Life Systems University</div>
+          <div class="site-label"><span>Kasetsart University</span><span>The Life Systems University</span></div>
           <nav class="nav">
+            <a href="index.html">หน้าแรก</a>
             <a href="context.html">บริบท</a>
             <a href="roles.html">บทบาท</a>
             <a href="goals.html">เป้าหมาย</a>
@@ -873,8 +877,9 @@ def render_article_browsing_page(articles: list[dict], site_config: dict) -> str
 </head>
 <body>
   <header class="browse-topbar">
-    <div class="browse-topbar__brand">Kasetsart University -- The Life Systems University</div>
+    <div class="browse-topbar__brand"><span>Kasetsart University</span><span>The Life Systems University</span></div>
     <nav class="browse-topbar__nav" aria-label="Primary">
+      <a href="index.html">หน้าแรก</a>
       <a href="context.html">บริบท</a>
       <a href="roles.html">บทบาท</a>
       <a href="goals.html">เป้าหมาย</a>
@@ -915,13 +920,13 @@ def main() -> None:
         output = ARTICLES_DIR / f"{article['slug']}.html"
         output.write_text(render_article_page(article, site_config), encoding="utf-8")
 
-    (DOCS_DIR / "articles.html").write_text(render_articles_index(articles, archive_config, site_config), encoding="utf-8")
-    (DOCS_DIR / "article-browsing.html").write_text(render_article_browsing_page(articles, site_config), encoding="utf-8")
+    (PUBLIC_SITE_DIR / "articles.html").write_text(render_articles_index(articles, archive_config, site_config), encoding="utf-8")
+    (PUBLIC_SITE_DIR / "article-browsing.html").write_text(render_article_browsing_page(articles, site_config), encoding="utf-8")
     (ASSETS_DIR / "articles-data.js").write_text(build_related_data(articles), encoding="utf-8")
     (ASSETS_DIR / "site-analytics.js").write_text(build_site_analytics(site_config), encoding="utf-8")
     sitemap_xml = build_sitemap(articles, site_config)
-    (DOCS_DIR / PRIMARY_SITEMAP_FILENAME).write_text(sitemap_xml, encoding="utf-8")
-    (DOCS_DIR / "robots.txt").write_text(build_robots_txt(site_config), encoding="utf-8")
+    (PUBLIC_SITE_DIR / PRIMARY_SITEMAP_FILENAME).write_text(sitemap_xml, encoding="utf-8")
+    (PUBLIC_SITE_DIR / "robots.txt").write_text(build_robots_txt(site_config), encoding="utf-8")
 
 
 if __name__ == "__main__":

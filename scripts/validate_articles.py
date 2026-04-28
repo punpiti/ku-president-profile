@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "articles_data" / "articles.json"
+PUBLIC_SITE_DIR = ROOT / "vision" / "public-site"
 
 REQUIRED_FIELDS = {
     "slug": str,
@@ -58,7 +59,7 @@ def validate_iso_date(value: str, slug: str) -> None:
 
 def validate_image(path_value: str, slug: str) -> None:
     normalized = path_value[3:] if path_value.startswith("../") else path_value
-    candidate = ROOT / "docs" / normalized
+    candidate = PUBLIC_SITE_DIR / normalized
     if not candidate.exists():
         fail(f"{slug}: image file not found at '{path_value}'")
 

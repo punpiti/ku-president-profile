@@ -2,7 +2,8 @@
 
 สคริปต์ในโฟลเดอร์นี้ใช้เป็น repo-level entry point สำหรับหลาย workspace ใน repo นี้
 
-- `docs/` = public website
+- `vision/public-site/` = public website source
+- `.public-site-build/` = local deploy artifact generated from `vision/public-site/`
 - `vision/` = vision workspace
 
 งาน `research-award-insights` แยกออกไปเป็นโปรเจคของตัวเองที่ `../research-award-insights` และมี run/deploy scripts แยกในโฟลเดอร์นั้น
@@ -47,7 +48,7 @@ python3 scripts/migrate_article_images.py --apply --copy
 
 รัน local web server
 
-public website จาก `docs/`
+public website source จาก `vision/public-site/`
 
 ```bash
 bash scripts/run_local.sh public
@@ -85,8 +86,11 @@ PORT=9000 HOST=0.0.0.0 bash scripts/run_local.sh
 
 target ที่รองรับตอนนี้:
 
-- `public`, `public-site`, `site`, `docs` -> `docs/`
-- `vision`, `vision-qna`, `qna`, `question_bank` -> `vision/qna/`
+- `public`, `public-site`, `site` -> `vision/public-site/`
+- `public-build`, `deploy-artifact` -> `.public-site-build/`
+- `vision`, `vision-qna`, `qna` -> `vision/`
+- `question-bank`, `question_bank` -> `vision/question-bank/`
+- `presentation-narrator`, `presentation_narrator` -> `vision/presentation-narrator/`
 - relative path หรือ absolute path ของ directory ที่มี `index.html`
 
 หมายเหตุ: งาน research award publish เป็น standalone GitHub Pages site ที่ `https://punpiti.github.io/research-award-insights/` ไม่ใช่ path ใต้ `ku-president-profile`
@@ -99,7 +103,9 @@ target ที่รองรับตอนนี้:
 bash scripts/deploy_github_pages.sh
 ```
 
-ถ้าพร้อมและต้องการ push branch ปัจจุบันขึ้น GitHub:
+คำสั่ง deploy จะ build `vision/public-site/` ไป `.public-site-build/` ผ่าน allowlist และรัน safety check ก่อนเสมอ
+
+ถ้าพร้อมและต้องการ publish artifact ไป branch `gh-pages`:
 
 ```bash
 bash scripts/deploy_github_pages.sh --push
