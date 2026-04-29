@@ -233,6 +233,71 @@
       font-weight: 700;
     }
 
+    .video-section {
+      margin-top: 22px;
+    }
+
+    .video-label {
+      color: var(--ku-green);
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .video-title {
+      margin-top: 8px;
+      color: var(--blue-deep);
+      font-size: 1.28rem;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .video-note {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .video-reading {
+      margin-top: 12px;
+      color: #2d393b;
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+
+    .video-reading a {
+      color: var(--ku-green-deep);
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 102, 100, 0.25);
+      text-underline-offset: 0.18em;
+    }
+
+    .video-reading a:hover {
+      text-decoration-color: currentColor;
+    }
+
+    .video-embed {
+      position: relative;
+      overflow: hidden;
+      margin-top: 14px;
+      border: 1px solid rgba(0, 102, 100, 0.1);
+      border-radius: 18px;
+      background: #101818;
+      box-shadow: 0 18px 44px rgba(0, 68, 67, 0.12);
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -415,14 +480,35 @@
             <div class="event-card">
               <img src="assets/portrait.jpg" alt="รองศาสตราจารย์ ดร.พันธุ์ปิติ เปี่ยมสง่า">
               <div>
-                <div class="event-title">ขอเชิญบุคลากร มหาวิทยาลัยเกษตรศาสตร์และผู้สนใจร่วมรับฟังวิสัยทัศน์และแนวทางในการบริหารจัดการมหาวิทยาลัย</div>
+                <div class="event-title">บันทึกการบรรยายวิสัยทัศน์และแนวทางในการบริหารจัดการมหาวิทยาลัยเกษตรศาสตร์</div>
                 <div class="event-copy">
-                  ของผู้สมัครเข้ารับการสรรหา ผู้สมควรดำรงตำแหน่งอธิการบดี
+                  โดย รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า ผู้สมัครเข้ารับการสรรหา ผู้สมควรดำรงตำแหน่งอธิการบดี
                 </div>
                 <div class="event-meta">
                   <div><strong>วันและเวลา:</strong> วันพุธที่ 29 เมษายน พ.ศ. 2569 เวลา 9:30 น. เป็นต้นไป</div>
                   <div><strong>On site:</strong> ณ ห้องประชุมสุธรรม อารีกุล ชั้น 1 อาคารสารนิเทศ 50 ปี</div>
-                  <div><strong>Online:</strong> Nontri Live ที่ <a href="https://live.ku.ac.th/">https://live.ku.ac.th/</a></div>
+                  <div><strong>Online:</strong> ถ่ายทอดผ่าน Nontri Live ที่ <a href="https://live.ku.ac.th/">https://live.ku.ac.th/</a></div>
+                  <div><strong>ช่วงบรรยายในคลิป:</strong> 2:10:12 - 2:37:46</div>
+                </div>
+                <div class="video-section">
+                  <div class="video-label">Recorded Presentation</div>
+                  <div class="video-title">รับชมการบรรยายวิสัยทัศน์</div>
+                  <div class="video-note">วิดีโอด้านล่างเริ่มเล่นจากช่วงการบรรยายของ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า โดยตรง</div>
+                  <div class="video-reading">
+                    อ่านคำบรรยายที่เพิ่มเติมได้จากเมนู
+                    <a href="context.html">บริบท</a>,
+                    <a href="roles.html">บทบาท</a>,
+                    <a href="goals.html">เป้าหมาย</a>,
+                    <a href="strategy.html">กลยุทธ์</a>
+                    และ <a href="four-year-plan.html">แผนสี่ปี</a>
+                  </div>
+                  <div class="video-embed">
+                    <iframe
+                      src="https://www.youtube.com/embed/wbF3WQU5noI?start=7812&amp;end=9466&amp;rel=0"
+                      title="บันทึกการบรรยายวิสัยทัศน์ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+                  </div>
                 </div>
               </div>
             </div>
