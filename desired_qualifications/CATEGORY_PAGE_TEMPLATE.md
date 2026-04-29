@@ -99,8 +99,8 @@ python3 scripts/build_category_report.py
 - มี header คอลัมน์ใน SVG: `หมวดนี้`, `tag/topic`, `ลักษณะพึงประสงค์`, `วิสัยทัศน์`
 - เปิดหน้าหมวดให้เลือก default node เป็น `desired_characteristics[0].name` หรือประเด็นลักษณะพึงประสงค์ที่โดดเด่นที่สุดของหมวดนั้น
 - หน้า index ใช้ flow เดียวกันแต่คอลัมน์แรกเป็น `หมวด` และ default selection เป็น `เข้าใจนิสิตและพัฒนาคุณภาพชีวิต`
-- การคลิก node/link ใช้ highlight ความสัมพันธ์เท่านั้น; การขยายเต็มจอทำผ่านปุ่ม `ดูภาพใหญ่`
-- เมื่อเปิดเต็มจอ ข้อความกำกับ node ต้องยังอ่านได้ ไม่ถูกซ่อนด้วย opacity ของกลุ่ม node
+- การคลิก node/link ใช้ highlight ความสัมพันธ์เท่านั้น
+- ไม่มีปุ่ม `ดูภาพใหญ่` แล้ว เพราะ fullscreen ทำให้ selection/link rendering ของ Sankey เพี้ยนในบางกรณี
 
 ### โครงหน้าและพฤติกรรม UI
 
@@ -153,7 +153,7 @@ python3 scripts/build_category_report.py
 - Sankey ใช้ flow `หมวดนี้ -> tag/topic -> ลักษณะพึงประสงค์ -> วิสัยทัศน์`
 - Sankey มี default selection ของลักษณะพึงประสงค์ที่เด่นสุดในหมวด
 - คลิก node หรือเส้นแล้วต้อง highlight ได้
-- ปุ่ม `ดูภาพใหญ่` ต้องทำงาน และข้อความกำกับ node ต้องไม่หายใน fullscreen
+- ไม่มีปุ่ม `ดูภาพใหญ่` หรือ fullscreen Sankey
 - วิสัยทัศน์เรียงตาม `บริบท`, `บทบาท`, `เป้าหมาย`, `กลยุทธ์`, `แผนสี่ปี`
 - สีหลักยังเป็น `#006664`
 - หน้าแรกยังไม่เสีย และ link ไปหน้าหมวดถูกต้อง
@@ -175,9 +175,10 @@ python3 scripts/build_category_report.py
 
 ## สถานะล่าสุด
 
-ทำครบทั้ง 7 หมวดแล้ว และ deploy เข้า `../docs/desired-qualifications/` แล้ว
+ทำครบทั้ง 7 หมวดแล้ว และ deploy ผ่าน `vision/public-site/desired-qualifications/` ไป `gh-pages` แล้ว
 
-- commit ล่าสุดของ deployment: `8eeb0aa` (`Refine desired qualifications Sankey flow`)
+- source commit ล่าสุดของ deployment: `11b052f` (`Remove Sankey fullscreen control`)
+- deploy commit ล่าสุด: `a4a6e1b` (`Publish public site`)
 - URL: `https://punpiti.github.io/ku-president-profile/desired-qualifications/`
 
 สิ่งที่เปลี่ยนล่าสุด:
@@ -185,5 +186,5 @@ python3 scripts/build_category_report.py
 - หน้า index และหน้าหมวดย่อยใช้ Sankey flow ใหม่ `หมวด/หมวดนี้ -> tag/topic -> ลักษณะพึงประสงค์ -> วิสัยทัศน์`
 - หน้า index default selection: `เข้าใจนิสิตและพัฒนาคุณภาพชีวิต`
 - หน้าหมวด default selection: ลักษณะพึงประสงค์อันดับแรกของหมวดนั้น
-- แก้ fullscreen Sankey ไม่ให้ข้อความกำกับ node หาย
+- ถอดปุ่ม `ดูภาพใหญ่`/fullscreen Sankey เพราะทำให้ link highlight เพี้ยนในบางกรณี
 - คำอธิบายการอ่าน Sankey ปรับให้บอกที่มาของลักษณะพึงประสงค์และแนะนำ interaction
