@@ -1,0 +1,5 @@
+;/*FB_PKG_DELIM*/
+
+__d("CometAlbumEditComposerRootAreaQuery_facebookRelayOperation",[],(function(t,n,r,o,a,i){a.exports="25473961218947490"}),null);
+__d("CometAlbumEditComposerRootAreaQuery$Parameters",["CometAlbumEditComposerRootAreaQuery_facebookRelayOperation"],(function(t,n,r,o,a,i){"use strict";var e={kind:"PreloadableConcreteRequest",params:{id:n("CometAlbumEditComposerRootAreaQuery_facebookRelayOperation"),metadata:{},name:"CometAlbumEditComposerRootAreaQuery",operationKind:"query",text:null}};a.exports=e}),null);
+__d("CometPhotoAlbumEditRoot.entrypoint",["CometAlbumEditComposerRootAreaQuery$Parameters","JSResourceForInteraction","WebPixelRatio"],(function(t,n,r,o,a,i,l){"use strict";var e={getPreloadProps:function(t){var e=t.routeParams.mediaset_token;return{queries:{CometAlbumEditComposerRootAreaQueryReference:{parameters:n("CometAlbumEditComposerRootAreaQuery$Parameters"),variables:{mediasetToken:e,privacySelectorRenderLocation:"COMET_ALBUM",scale:o("WebPixelRatio").get()}}}}},root:r("JSResourceForInteraction")("CometPhotoAlbumEditRoot.react").__setRef("CometPhotoAlbumEditRoot.entrypoint")};l.default=e}),98);

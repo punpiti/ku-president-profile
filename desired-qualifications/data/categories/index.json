@@ -1,0 +1,67 @@
+{
+  "reports": [
+    {
+      "number": 1,
+      "title": "ด้านการบริหารทั่วไป",
+      "slug": "administration",
+      "items": 461,
+      "weighted_items": 588,
+      "href": "categories/administration.html",
+      "data": "data/categories/administration.json"
+    },
+    {
+      "number": 2,
+      "title": "ด้านวิชาการและการเรียนการสอน",
+      "slug": "academic-teaching",
+      "items": 448,
+      "weighted_items": 523,
+      "href": "categories/academic-teaching.html",
+      "data": "data/categories/academic-teaching.json"
+    },
+    {
+      "number": 3,
+      "title": "ด้านวิจัยและบริการทางวิชาการ",
+      "slug": "research-academic-service",
+      "items": 467,
+      "weighted_items": 521,
+      "href": "categories/research-academic-service.html",
+      "data": "data/categories/research-academic-service.json"
+    },
+    {
+      "number": 4,
+      "title": "ด้านการพัฒนานิสิต",
+      "slug": "student-development",
+      "items": 463,
+      "weighted_items": 503,
+      "href": "categories/student-development.html",
+      "data": "data/categories/student-development.json"
+    },
+    {
+      "number": 5,
+      "title": "ด้านบุคลากร (การบริหารทรัพยากรบุคคล และสวัสดิการของบุคลากร)",
+      "slug": "human-resources",
+      "items": 505,
+      "weighted_items": 555,
+      "href": "categories/human-resources.html",
+      "data": "data/categories/human-resources.json"
+    },
+    {
+      "number": 6,
+      "title": "ด้านบทบาทของมหาวิทยาลัยในการรับผิดชอบต่อสังคมและชี้นำ",
+      "slug": "social-responsibility",
+      "items": 447,
+      "weighted_items": 472,
+      "href": "categories/social-responsibility.html",
+      "data": "data/categories/social-responsibility.json"
+    },
+    {
+      "number": 7,
+      "title": "ด้านการแสวงหารายได้",
+      "slug": "revenue-generation",
+      "items": 459,
+      "weighted_items": 478,
+      "href": "categories/revenue-generation.html",
+      "data": "data/categories/revenue-generation.json"
+    }
+  ]
+}

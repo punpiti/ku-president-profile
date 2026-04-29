@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f4ec" />
+      <stop offset="100%" stop-color="#efe8dc" />
+    </linearGradient>
+    <radialGradient id="glowGold" cx="0.18" cy="0.12" r="0.55">
+      <stop offset="0%" stop-color="#efc84a" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#efc84a" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowGreen" cx="0.88" cy="0.86" r="0.58">
+      <stop offset="0%" stop-color="#006664" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#006664" stop-opacity="0" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#9e988b" flood-opacity="0.18" />
+    </filter>
+    <clipPath id="portraitClip">
+      <rect x="0" y="0" width="332" height="460" rx="24" ry="24" />
+    </clipPath>
+    <style>
+      .thai-regular { font-family: "Sarabun", "Noto Sans Thai", sans-serif; font-weight: 400; }
+      .thai-semibold { font-family: "Sarabun", "Noto Sans Thai", sans-serif; font-weight: 600; }
+      .thai-bold { font-family: "Sarabun", "Noto Sans Thai", sans-serif; font-weight: 700; }
+      .thai-xbold { font-family: "Sarabun", "Noto Sans Thai", sans-serif; font-weight: 800; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glowGold)" />
+  <rect width="1200" height="630" fill="url(#glowGreen)" />
+
+  <rect x="18" y="18" width="1164" height="594" rx="28" ry="28" fill="none" stroke="#d6cfbf" stroke-width="2" />
+
+  <g filter="url(#shadow)">
+    <rect x="28" y="24" width="344" height="582" rx="24" ry="24" fill="#fbf9f4" stroke="#ddd4c6" stroke-width="2" />
+    <rect x="398" y="24" width="774" height="582" rx="28" ry="28" fill="#fbf9f4" stroke="#ddd4c6" stroke-width="2" />
+  </g>
+
+  <g transform="translate(40 44)">
+    <image href="file:///home/punpiti/OneDrive/KU/president/docs/assets/portrait.jpg" x="0" y="0" width="332" height="460" preserveAspectRatio="xMidYMid slice" clip-path="url(#portraitClip)" />
+  </g>
+
+  <text x="200" y="548" text-anchor="middle" class="thai-regular" font-size="27" fill="#0d6b68">คิดเชิงระบบ ทำงานเพื่อคน</text>
+  <text x="200" y="586" text-anchor="middle" class="thai-regular" font-size="27" fill="#0d6b68">ขับเคลื่อนด้วยข้อมูล</text>
+
+  <text x="432" y="82" class="thai-bold" font-size="24" fill="#0d6b68">วิสัยทัศน์</text>
+  <text x="430" y="174" class="thai-bold" font-size="40" fill="#557398" textLength="660" lengthAdjust="spacingAndGlyphs">Designing the Next Phase of KU</text>
+  <text x="430" y="230" class="thai-semibold" font-size="24" fill="#315987">as the</text>
+  <text x="528" y="230" class="thai-xbold" font-size="46" fill="#1f4271" textLength="562" lengthAdjust="spacingAndGlyphs">Life Systems University</text>
+
+  <text x="430" y="312" class="thai-regular" font-size="28" fill="#6a7478">รองศาสตราจารย์</text>
+  <text x="430" y="382" class="thai-semibold" font-size="55" fill="#43525c">ดร.พันธุ์ปิติ เปี่ยมสง่า</text>
+  <text x="1088" y="548" text-anchor="end" class="thai-regular" font-size="27" fill="#646d68">Rethink. Reframe. Realize.</text>
+</svg>

@@ -1,0 +1,4 @@
+;/*FB_PKG_DELIM*/
+
+__d("videoTimeFormatter",[],(function(t,n,r,o,a,i){"use strict";function e(e){var t=e.time;if(t==null)return"--:--";var n=t;(e.inSeconds==null||e.inSeconds===!1)&&(n=Math.round(t/1e3));var r=Math.floor(n/3600),o=String(n%60).padStart(2,"0");return r>0?r+":"+String(Math.floor(n/60)-r*60).padStart(2,"0")+":"+o:Math.floor(n/60)+":"+o}i.default=e}),66);
+__d("videoTimeFormatterWrapper",["TofuNumberCategory","getTofuNumber","videoTimeFormatter"],(function(t,n,r,o,a,i,l){"use strict";function e(e){return r("getTofuNumber")(e,r("TofuNumberCategory").Time_DurationInMs)}function s(t){return e(t).toString()}function u(e){var t=0,n=null;return e.forEach(function(r,o){if(o>0){var a=e[o-1].y,i=r.y;a!=null&&i!=null&&a-i>t&&(t=a-i,n=r.x)}}),r("videoTimeFormatter")({inSeconds:!0,time:n})}l.videoTimeFormatterWrapper=e,l.videoTimeToStringWrapper=s,l.getFormattedDropoffTime=u}),98);
