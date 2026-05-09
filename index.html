@@ -234,7 +234,15 @@
     }
 
     .video-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 460px);
+      gap: 18px;
+      align-items: start;
       margin-top: 22px;
+    }
+
+    .video-copy {
+      min-width: 0;
     }
 
     .video-label {
@@ -282,11 +290,11 @@
     .video-embed {
       position: relative;
       overflow: hidden;
-      margin-top: 14px;
+      width: 100%;
       border: 1px solid rgba(0, 102, 100, 0.1);
       border-radius: 18px;
       background: #101818;
-      box-shadow: 0 18px 44px rgba(0, 68, 67, 0.12);
+      box-shadow: 0 14px 32px rgba(0, 68, 67, 0.1);
       aspect-ratio: 16 / 9;
     }
 
@@ -412,6 +420,14 @@
         grid-template-columns: 88px 1fr;
         gap: 16px;
       }
+
+      .video-section {
+        grid-template-columns: 1fr;
+      }
+
+      .video-embed {
+        max-width: 560px;
+      }
     }
 
     @media (max-width: 720px) {
@@ -491,16 +507,18 @@
                   <div><strong>ช่วงบรรยายในคลิป:</strong> 2:10:12 - 2:37:46</div>
                 </div>
                 <div class="video-section">
-                  <div class="video-label">Recorded Presentation</div>
-                  <div class="video-title">รับชมการบรรยายวิสัยทัศน์</div>
-                  <div class="video-note">วิดีโอด้านล่างเริ่มเล่นจากช่วงการบรรยายของ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า โดยตรง</div>
-                  <div class="video-reading">
-                    อ่านคำบรรยายที่เพิ่มเติมได้จากเมนู
-                    <a href="context.html">บริบท</a>,
-                    <a href="roles.html">บทบาท</a>,
-                    <a href="goals.html">เป้าหมาย</a>,
-                    <a href="strategy.html">กลยุทธ์</a>
-                    และ <a href="four-year-plan.html">แผนสี่ปี</a>
+                  <div class="video-copy">
+                    <div class="video-label">Recorded Presentation</div>
+                    <div class="video-title">รับชมการบรรยายวิสัยทัศน์</div>
+                    <div class="video-note">วิดีโอเริ่มเล่นจากช่วงการบรรยายของ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า โดยตรง</div>
+                    <div class="video-reading">
+                      อ่านคำบรรยายที่เพิ่มเติมได้จากเมนู
+                      <a href="context.html">บริบท</a>,
+                      <a href="roles.html">บทบาท</a>,
+                      <a href="goals.html">เป้าหมาย</a>,
+                      <a href="strategy.html">กลยุทธ์</a>
+                      และ <a href="four-year-plan.html">แผนสี่ปี</a>
+                    </div>
                   </div>
                   <div class="video-embed">
                     <iframe
