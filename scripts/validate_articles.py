@@ -36,7 +36,13 @@ REQUIRED_FIELDS = {
 }
 
 OPTIONAL_FIELDS = {
+    "content_label": str,
+    "hide_original": bool,
+    "original_label": str,
     "read_more": dict,
+    "source_link_label": str,
+    "source_note": str,
+    "video_embed": dict,
 }
 
 SLUG_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -148,6 +154,25 @@ def validate_article(article: dict, seen_slugs: set[str]) -> None:
 
     if "read_more" in article:
         validate_read_more(article["read_more"], slug)
+    if "video_embed" in article:
+        validate_video_embed(article["video_embed"], slug)
+
+
+def validate_video_embed(video_embed: dict, slug: str) -> None:
+    required = {
+        "title": str,
+        "url": str,
+    }
+    missing = [field for field in required if field not in video_embed]
+    if missing:
+        fail(f"{slug}: video_embed missing fields: {', '.join(missing)}")
+    for field, expected_type in required.items():
+        if not isinstance(video_embed[field], expected_type):
+            fail(f"{slug}: video_embed field '{field}' must be {expected_type.__name__}")
+        if not video_embed[field].strip():
+            fail(f"{slug}: video_embed field '{field}' must not be empty")
+    if not video_embed["url"].startswith(("http://", "https://")):
+        fail(f"{slug}: video_embed url must start with http:// or https://")
 
 
 def validate_read_more(read_more: dict, slug: str) -> None:

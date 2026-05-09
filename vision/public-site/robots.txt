@@ -2,6 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://punpiti.github.io/ku-president-profile/sitemap.xml
-Sitemap: https://punpiti.github.io/ku-president-profile/sitemap-gsc.xml
-Sitemap: https://punpiti.github.io/ku-president-profile/sitemap.txt
-Sitemap: https://punpiti.github.io/ku-president-profile/bing-sitemap.xml

@@ -1,5 +1,203 @@
 window.ARTICLES_DATA = [
   {
+    "slug": "university-still-matters-when-ai-can-take-exams",
+    "path": "./university-still-matters-when-ai-can-take-exams.html",
+    "archive_path": "articles/university-still-matters-when-ai-can-take-exams.html",
+    "title": "มหาวิทยาลัยยังจำเป็นไหม ในวันที่ AI ทำข้อสอบแทนคนได้",
+    "summary": "บทความตั้งคำถามว่ามหาวิทยาลัยยังจำเป็นไหมในวันที่ AI ทำข้อสอบได้และคอร์สออนไลน์เข้าถึงง่าย โดยเสนอว่าคุณค่าของมหาวิทยาลัยอยู่ที่การเป็นพื้นที่พบกันทางปัญญา การสร้างคน งานเสี่ยงระยะยาว และ trusted system partner ของสังคม",
+    "category": "บทบาทมหาวิทยาลัยในยุค AI",
+    "date": "2026-05-09",
+    "display_date": "09 May 2026",
+    "image_index": "assets/university-still-matters-when-ai-can-take-exams.jpg",
+    "image_alt": "ภาพประกอบบทความเรื่องบทบาทมหาวิทยาลัยในวันที่ AI ทำข้อสอบแทนคนได้",
+    "tags": [
+      "ai",
+      "future-of-university",
+      "trusted-system-partner",
+      "higher-education",
+      "capability-building",
+      "student-experience"
+    ]
+  },
+  {
+    "slug": "ontology-treemap-for-university-knowledge-graph",
+    "path": "./ontology-treemap-for-university-knowledge-graph.html",
+    "archive_path": "articles/ontology-treemap-for-university-knowledge-graph.html",
+    "title": "Ontology Treemap คือก้าวต่อของ University Knowledge Graph และ Research Intelligence",
+    "summary": "บทความว่าด้วย Ontology Treemap ของ KU Urban Decision Intelligence ในฐานะ infrastructure ที่ช่วยให้มหาวิทยาลัยเห็นความเชี่ยวชาญ งานวิจัย โครงการ สิ่งพิมพ์ บุคลากร และองค์ความรู้เป็นระบบความสัมพันธ์ ไม่ใช่เพียงรายชื่อข้อมูลกระจัดกระจาย",
+    "category": "AI และการเปลี่ยนแปลงองค์กร",
+    "date": "2026-05-08",
+    "display_date": "08 May 2026",
+    "image_index": "assets/ontology-treemap-for-university-knowledge-graph.jpg",
+    "image_alt": "ภาพหน้า Ontology Treemap ของ KU Urban Decision Intelligence",
+    "tags": [
+      "ku-urban",
+      "research-intelligence",
+      "knowledge-graph",
+      "ontology",
+      "decision-support",
+      "ai"
+    ]
+  },
+  {
+    "slug": "ai-lowers-the-cost-of-university-prototyping",
+    "path": "./ai-lowers-the-cost-of-university-prototyping.html",
+    "archive_path": "articles/ai-lowers-the-cost-of-university-prototyping.html",
+    "title": "AI ลดต้นทุนการทดลอง จนมหาวิทยาลัยต้องเปลี่ยนวิธีคิดเรื่องการทำงาน",
+    "summary": "บทความว่าด้วยการใช้ AI ทำ prototype ระบบค้นองค์ความรู้ของมหาวิทยาลัยในเวลาประมาณ 6 ชั่วโมง และข้อเสนอว่ามหาวิทยาลัยต้องเข้าใจต้นทุนใหม่ของการทดลองที่ถูกลงอย่างมาก เพื่อทดลองเร็ว เรียนรู้เร็ว และเปลี่ยนไอเดียให้เป็นระบบจริงได้เร็วขึ้น",
+    "category": "AI และการเปลี่ยนแปลงองค์กร",
+    "date": "2026-05-06",
+    "display_date": "06 May 2026",
+    "image_index": "assets/ai-lowers-the-cost-of-university-prototyping.jpg",
+    "image_alt": "ภาพตัวอย่าง prototype ระบบค้นองค์ความรู้ของมหาวิทยาลัยด้วย AI",
+    "tags": [
+      "ai",
+      "prototype",
+      "digital-transformation",
+      "decision-support",
+      "university-knowledge-system",
+      "execution"
+    ]
+  },
+  {
+    "slug": "foundation-cores-times-dynamic-frontiers",
+    "path": "./foundation-cores-times-dynamic-frontiers.html",
+    "archive_path": "articles/foundation-cores-times-dynamic-frontiers.html",
+    "title": "Foundation Cores × Dynamic Frontiers คือวิธีเปลี่ยน KU จากสาขาไปสู่โจทย์โลก",
+    "summary": "บทความขยายแนวคิด Foundation Cores × Dynamic Frontiers ว่า KU ต้องไม่เพียงทำงานตามสาขาเดิม แต่ต้องเชื่อมความแข็งแรงเดิมกับโจทย์โลก เพื่อสร้าง capability ใหม่ ผลกระทบเชิงระบบ และบทบาท trusted partner ของประเทศ",
+    "category": "ยุทธศาสตร์มหาวิทยาลัย",
+    "date": "2026-04-29",
+    "display_date": "29 April 2026",
+    "image_index": "assets/foundation-cores-times-dynamic-frontiers.jpg",
+    "image_alt": "ภาพประกอบแนวคิด KU Foundation Cores คูณ Dynamic Frontiers",
+    "tags": [
+      "university-strategy",
+      "life-systems",
+      "foundation-cores",
+      "dynamic-frontiers",
+      "interdisciplinary",
+      "trusted-partner"
+    ]
+  },
+  {
+    "slug": "life-systems-university-presentation-transcript",
+    "path": "./life-systems-university-presentation-transcript.html",
+    "archive_path": "articles/life-systems-university-presentation-transcript.html",
+    "title": "Transcript การนำเสนอวิสัยทัศน์: Life Systems University",
+    "summary": "Transcript เรียบเรียงจากการนำเสนอวิสัยทัศน์ว่ามหาวิทยาลัยเกษตรศาสตร์ควรขยับสู่ Life Systems University ด้วยธรรมาภิบาล ระบบข้อมูล คน และความยั่งยืน",
+    "category": "Vision Presentation",
+    "date": "2026-04-29",
+    "display_date": "29 April 2026",
+    "image_index": "assets/life-systems-university-presentation-transcript.jpg",
+    "image_alt": "ภาพประกอบบทความการนำเสนอวิสัยทัศน์ Life Systems University",
+    "tags": [
+      "vision-presentation",
+      "transcript",
+      "life-systems-university",
+      "governance",
+      "university-strategy"
+    ]
+  },
+  {
+    "slug": "making-672-university-voices-readable",
+    "path": "./making-672-university-voices-readable.html",
+    "archive_path": "articles/making-672-university-voices-readable.html",
+    "title": "ทำให้เสียง 672 คนในมหาวิทยาลัยอ่านได้ เห็นภาพ และใช้ตัดสินใจได้จริง",
+    "summary": "บทความว่าด้วยการแปลงข้อเสนอแนะ 199 หน้า จากคนในมหาวิทยาลัย 672 คน ให้เป็นเว็บไซต์ที่อ่านภาพรวมได้ง่ายขึ้น เห็นทิศทางของเสียงในมหาวิทยาลัย และนำไปใช้ประกอบการตัดสินใจได้จริง",
+    "category": "ธรรมาภิบาลและการตัดสินใจด้วยข้อมูล",
+    "date": "2026-04-28",
+    "display_date": "28 April 2026",
+    "image_index": "assets/making-672-university-voices-readable.jpg",
+    "image_alt": "ภาพประกอบบทความเรื่องการวิเคราะห์ข้อเสนอแนะ 199 หน้า จากคนในมหาวิทยาลัย 672 คน",
+    "tags": [
+      "data-analysis",
+      "university-feedback",
+      "decision-support",
+      "governance",
+      "transparency",
+      "president-selection"
+    ]
+  },
+  {
+    "slug": "systems-that-make-ideas-work",
+    "path": "./systems-that-make-ideas-work.html",
+    "archive_path": "articles/systems-that-make-ideas-work.html",
+    "title": "มหาวิทยาลัยไม่ได้ขาดไอเดีย แต่ขาดระบบที่ทำให้ไอเดียเกิดผลจริง",
+    "summary": "บทความว่าด้วยบทบาทผู้นำมหาวิทยาลัยในการสร้างระบบที่ทำให้ไอเดียเกิดผลจริง ทำให้องค์กรเดินไปในทิศเดียวกัน และทำให้ทรัพยากร ความสามารถ และศักยภาพที่มีอยู่สร้างผลกระทบต่อสังคมได้อย่างยั่งยืน",
+    "category": "ภาวะผู้นำและมหาวิทยาลัย",
+    "date": "2026-04-28",
+    "display_date": "28 April 2026",
+    "image_index": "assets/systems-that-make-ideas-work.jpg",
+    "image_alt": "ภาพประกอบบทความเรื่องระบบที่ทำให้ไอเดียเกิดผลจริงในมหาวิทยาลัย",
+    "tags": [
+      "leadership",
+      "systems-thinking",
+      "governance",
+      "university-management",
+      "institutional-change",
+      "execution"
+    ]
+  },
+  {
+    "slug": "talent-support-network-and-good-questions",
+    "path": "./talent-support-network-and-good-questions.html",
+    "archive_path": "articles/talent-support-network-and-good-questions.html",
+    "title": "การสนับสนุน talent ไม่ได้สร้างแค่เหรียญ แต่สร้างเครือข่ายและคำถามที่ดี",
+    "summary": "บทความว่าด้วยเหตุผลของการสนับสนุน talent ผ่าน TOI22 และโอลิมปิกคอมพิวเตอร์ โดยชี้ว่าสิ่งที่ได้ไม่ใช่แค่เหรียญ แต่คือการรู้ศักยภาพประเทศ เครือข่ายคนและองค์กร ระบบนิเวศการเรียนรู้ และความสามารถในการตั้งคำถามที่ดีในยุค AI",
+    "category": "การศึกษาและการพัฒนาคน",
+    "date": "2026-04-27",
+    "display_date": "27 April 2026",
+    "image_index": "assets/talent-support-network-and-good-questions.jpg",
+    "image_alt": "ภาพประกอบบทความจากพิธีเปิดการแข่งขันคอมพิวเตอร์โอลิมปิกระดับชาติ TOI22",
+    "tags": [
+      "toi22",
+      "talent-development",
+      "computer-olympiad",
+      "education-ecosystem",
+      "ai-literacy",
+      "good-questions"
+    ]
+  },
+  {
+    "slug": "toi-from-four-medalists-to-national-talent-ecosystem",
+    "path": "./toi-from-four-medalists-to-national-talent-ecosystem.html",
+    "archive_path": "articles/toi-from-four-medalists-to-national-talent-ecosystem.html",
+    "title": "TOI ไม่ได้สร้างแค่ 4 ผู้แทน แต่สร้างฐานคนหลักหมื่นให้ประเทศ",
+    "summary": "บทความอธิบายคุณค่าของ TOI และ สอวน.คอมพิวเตอร์ว่าไม่ได้อยู่ที่เหรียญหรือผู้แทน 4 คนเท่านั้น แต่อยู่ที่ฐานคนหลักหมื่น ครู ระบบฝึก และ ecosystem ที่ช่วยสร้างทักษะด้านคอมพิวเตอร์ให้ประเทศในระยะยาว",
+    "category": "การศึกษาและการพัฒนาคน",
+    "date": "2026-04-25",
+    "display_date": "25 April 2026",
+    "image_index": "assets/toi-from-four-medalists-to-national-talent-ecosystem.jpg",
+    "image_alt": "ภาพประกอบบทความเรื่อง TOI จากผู้แทน 4 คนสู่ ecosystem การพัฒนาคนของประเทศ",
+    "tags": [
+      "toi",
+      "ioi",
+      "talent-development",
+      "computer-olympiad",
+      "education-ecosystem",
+      "systems-thinking"
+    ]
+  },
+  {
+    "slug": "good-university-knows-talent-pipeline",
+    "path": "./good-university-knows-talent-pipeline.html",
+    "archive_path": "articles/good-university-knows-talent-pipeline.html",
+    "title": "มหาวิทยาลัยที่ดีต้องรู้ว่าคนเก่งมาจากไหน และจะพาเขาไปไหนต่อ",
+    "summary": "บทความสรุปภาวะผู้นำที่มหาวิทยาลัยต้องการในช่วงเปลี่ยนผ่าน ผ่าน 4 มิติ คือ system, talent, global และ institution building โดยเน้นว่ามหาวิทยาลัยที่ดีต้องเห็นเส้นทางของคนตั้งแต่ก่อนเข้ามหาวิทยาลัยจนถึงอนาคตหลังจากนั้น",
+    "category": "ภาวะผู้นำและมหาวิทยาลัย",
+    "date": "2026-04-24",
+    "display_date": "24 April 2026",
+    "image_index": "assets/good-university-knows-talent-pipeline.jpg",
+    "image_alt": "ภาพประกอบบทความเรื่องมหาวิทยาลัยที่ดีต้องรู้ว่าคนเก่งมาจากไหนและจะพาเขาไปไหนต่อ",
+    "tags": [
+      "leadership",
+      "talent-development",
+      "systems-thinking",
+      "global-collaboration",
+      "institution-building"
+    ]
+  },
+  {
     "slug": "research-award-incentives-and-publication-output",
     "path": "./research-award-incentives-and-publication-output.html",
     "archive_path": "articles/research-award-incentives-and-publication-output.html",

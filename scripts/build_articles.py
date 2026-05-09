@@ -326,6 +326,49 @@ def render_article_content(article: dict) -> str:
     return "\n".join(sections), intro
 
 
+def render_article_lead_media(article: dict) -> str:
+    if "video_embed" in article:
+        video = article["video_embed"]
+        return f"""              <figure class="lead-figure lead-figure--video">
+                <div class="video-embed">
+                  <iframe
+                    src="{html.escape(video["url"])}"
+                    title="{html.escape(video["title"])}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+                </div>
+                <figcaption class="figure-caption">{html.escape(video.get("caption", "รับชมวิดีโอประกอบบทความ"))}</figcaption>
+              </figure>"""
+
+    return f"""              <figure class="lead-figure">
+                <a class="figure-link" href="{html.escape(article["image"])}" data-lightbox-image="{html.escape(article["image"])}">
+                  <img class="post-image" src="{html.escape(article["image"])}" alt="{html.escape(article["image_alt"])}">
+                </a>
+                <figcaption class="figure-caption">คลิกรูปเพื่อดูภาพขยายใหญ่</figcaption>
+              </figure>"""
+
+
+def render_source_note(article: dict) -> str:
+    source_note = article.get("source_note", "").strip()
+    if not source_note:
+        return ""
+    return f"""            <div class="source-note">
+              <div class="source-note-title">หมายเหตุเกี่ยวกับต้นฉบับ</div>
+              <div class="source-note-text">{html.escape(source_note)}</div>
+            </div>"""
+
+
+def render_original_toggle(article: dict) -> str:
+    if article.get("hide_original"):
+        return ""
+    original_label = article.get("original_label", "Original Facebook Post")
+    return f"""            <details class="original-toggle">
+              <summary>{html.escape(original_label)}</summary>
+              <div class="original-text">{html.escape(article["original_text"])}</div>
+            </details>"""
+
+
 def render_read_more(read_more: dict) -> str:
     return f"""            <h2>{html.escape(read_more["title"])}</h2>
             <a class="read-more-callout" href="{html.escape(read_more["url"])}" target="_blank" rel="noopener noreferrer">
@@ -360,8 +403,13 @@ def build_related_data(articles: list[dict]) -> str:
 
 def render_article_page(article: dict, site_config: dict) -> str:
     rendered_sections, rendered_intro = render_article_content(article)
+    rendered_lead_media = render_article_lead_media(article)
+    rendered_source_note = render_source_note(article)
+    rendered_original_toggle = render_original_toggle(article)
     tags_attr = ",".join(article["tags"])
     display_date = format_display_date(article["date"])
+    content_label = article.get("content_label", "Rewritten Post")
+    source_link_label = article.get("source_link_label", "f")
     return f"""<!doctype html>
 <html lang="th">
 <head>
@@ -427,16 +475,11 @@ def render_article_page(article: dict, site_config: dict) -> str:
         </section>
 
         <section class="section">
-          <div class="section-title">Rewritten Post</div>
+          <div class="section-title">{html.escape(content_label)}</div>
           <div class="content-panel is-interactive">
             <div class="rewrite-title">{html.escape(article["rewrite_title"])}</div>
             <div class="lead-split">
-              <figure class="lead-figure">
-                <a class="figure-link" href="{html.escape(article["image"])}" data-lightbox-image="{html.escape(article["image"])}">
-                  <img class="post-image" src="{html.escape(article["image"])}" alt="{html.escape(article["image_alt"])}">
-                </a>
-                <figcaption class="figure-caption">คลิกรูปเพื่อดูภาพขยายใหญ่</figcaption>
-              </figure>
+{rendered_lead_media}
               <div class="intro-copy">
 {rendered_intro}
               </div>
@@ -450,12 +493,10 @@ def render_article_page(article: dict, site_config: dict) -> str:
           <div class="reference-panel">
             <div class="reference-list">
               <div>ลิงก์อ้างอิง:</div>
-              <a class="reference-link" href="{html.escape(article["source_url"])}" target="_blank" rel="noopener noreferrer" aria-label="เปิดโพสต์บน Facebook">f</a>
+              <a class="reference-link" href="{html.escape(article["source_url"])}" target="_blank" rel="noopener noreferrer" aria-label="เปิดแหล่งอ้างอิง">{html.escape(source_link_label)}</a>
             </div>
-            <details class="original-toggle">
-              <summary>Original Facebook Post</summary>
-              <div class="original-text">{html.escape(article["original_text"])}</div>
-            </details>
+{rendered_source_note}
+{rendered_original_toggle}
           </div>
         </section>
 
@@ -621,8 +662,8 @@ def render_articles_index(articles: list[dict], archive_config: dict, site_confi
     featured_article = slug_lookup.get(featured_slug, ordered[0])
 
     latest_articles = [article for article in ordered if article["slug"] != featured_article["slug"]]
-    latest_primary = latest_articles[:3]
-    latest_extra = latest_articles[3:]
+    latest_primary = latest_articles[:5]
+    latest_extra = latest_articles[5:]
     latest_html = "\n".join(render_latest_card(article) for article in latest_primary)
     latest_extra_html = "\n".join(render_latest_card(article, hidden=True) for article in latest_extra)
 
