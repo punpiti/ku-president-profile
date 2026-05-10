@@ -99,6 +99,25 @@ window.ARTICLES_DATA = [
     ]
   },
   {
+    "slug": "life-systems-university-presentation-qa",
+    "path": "./life-systems-university-presentation-qa.html",
+    "archive_path": "articles/life-systems-university-presentation-qa.html",
+    "title": "ถามตอบหลังการนำเสนอวิสัยทัศน์: Life Systems University",
+    "summary": "ช่วงถามตอบหลังการนำเสนอวิสัยทัศน์ Life Systems University ว่าด้วยความมั่นคงบุคลากร รายได้จากงานวิจัย การพัฒนาวิทยาเขต ธรรมาภิบาล ความเสี่ยง และ trusted system partner",
+    "category": "Vision Presentation",
+    "date": "2026-04-29",
+    "display_date": "29 April 2026",
+    "image_index": "assets/life-systems-university-presentation-transcript.jpg",
+    "image_alt": "ภาพประกอบช่วงถามตอบหลังการนำเสนอวิสัยทัศน์ Life Systems University",
+    "tags": [
+      "vision-presentation",
+      "qa",
+      "life-systems-university",
+      "governance",
+      "university-strategy"
+    ]
+  },
+  {
     "slug": "making-672-university-voices-readable",
     "path": "./making-672-university-voices-readable.html",
     "archive_path": "articles/making-672-university-voices-readable.html",

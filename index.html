@@ -235,7 +235,7 @@
 
     .video-section {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 460px);
+      grid-template-columns: minmax(0, 1fr);
       gap: 18px;
       align-items: start;
       margin-top: 22px;
@@ -287,23 +287,50 @@
       text-decoration-color: currentColor;
     }
 
-    .video-embed {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      border: 1px solid rgba(0, 102, 100, 0.1);
-      border-radius: 18px;
-      background: #101818;
-      box-shadow: 0 14px 32px rgba(0, 68, 67, 0.1);
-      aspect-ratio: 16 / 9;
+    .article-link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
     }
 
-    .video-embed iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .article-link-card {
+      display: block;
+      min-height: 100%;
+      padding: 16px;
+      border: 1px solid rgba(0, 102, 100, 0.1);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.76);
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .article-link-card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(0, 102, 100, 0.2);
+      box-shadow: 0 12px 26px rgba(0, 68, 67, 0.08);
+    }
+
+    .article-link-card__label {
+      color: var(--ku-green);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .article-link-card__title {
+      margin-top: 8px;
+      color: var(--blue-deep);
+      font-size: 1.08rem;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .article-link-card__body {
+      margin-top: 8px;
+      color: #2d393b;
+      font-size: 0.95rem;
+      line-height: 1.7;
     }
 
     .actions {
@@ -425,8 +452,8 @@
         grid-template-columns: 1fr;
       }
 
-      .video-embed {
-        max-width: 560px;
+      .article-link-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -508,24 +535,29 @@
                 </div>
                 <div class="video-section">
                   <div class="video-copy">
-                    <div class="video-label">Recorded Presentation</div>
-                    <div class="video-title">รับชมการบรรยายวิสัยทัศน์</div>
-                    <div class="video-note">วิดีโอเริ่มเล่นจากช่วงการบรรยายของ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า โดยตรง</div>
+                    <div class="video-label">Presentation Articles</div>
+                    <div class="video-title">อ่านบันทึกการบรรยายและช่วงถามตอบ</div>
+                    <div class="video-note">เพื่อให้อ่านต่อเนื่องและอ้างอิงง่ายขึ้น จึงแนะนำให้อ่านฉบับเรียบเรียงเป็นบทความแทนการรับชมวิดีโอจากหน้าแรก</div>
                     <div class="video-reading">
-                      อ่านคำบรรยายที่เพิ่มเติมได้จากเมนู
+                      อ่านเนื้อหาประกอบเพิ่มเติมได้จากเมนู
                       <a href="context.html">บริบท</a>,
                       <a href="roles.html">บทบาท</a>,
                       <a href="goals.html">เป้าหมาย</a>,
                       <a href="strategy.html">กลยุทธ์</a>
                       และ <a href="four-year-plan.html">แผนสี่ปี</a>
                     </div>
-                  </div>
-                  <div class="video-embed">
-                    <iframe
-                      src="https://www.youtube.com/embed/wbF3WQU5noI?start=7812&amp;end=9466&amp;rel=0"
-                      title="บันทึกการบรรยายวิสัยทัศน์ รศ.ดร.พันธุ์ปิติ เปี่ยมสง่า"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen></iframe>
+                    <div class="article-link-grid">
+                      <a class="article-link-card" href="articles/life-systems-university-presentation-transcript.html">
+                        <div class="article-link-card__label">Transcript</div>
+                        <div class="article-link-card__title">Transcript การนำเสนอวิสัยทัศน์: Life Systems University</div>
+                        <div class="article-link-card__body">อ่านบันทึกการบรรยายวิสัยทัศน์ฉบับเรียบเรียง พร้อมภาพประกอบตามหัวข้อ</div>
+                      </a>
+                      <a class="article-link-card" href="articles/life-systems-university-presentation-qa.html">
+                        <div class="article-link-card__label">Q&amp;A</div>
+                        <div class="article-link-card__title">ถามตอบหลังการนำเสนอวิสัยทัศน์</div>
+                        <div class="article-link-card__body">อ่านช่วงถามตอบต่อจากเวทีเดียวกัน เรื่องบุคลากร รายได้ วิทยาเขต ธรรมาภิบาล และ trusted system partner</div>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
