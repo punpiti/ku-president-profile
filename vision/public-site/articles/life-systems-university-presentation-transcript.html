@@ -30,7 +30,129 @@
       --hero-title-max: 18ch;
       --hero-subtitle-max: 66rem;
     }
+
+    .transcript-panel {
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .transcript-panel.is-enhanced {
+      display: grid;
+      gap: 18px;
+    }
+
+    .transcript-panel .rewrite-title,
+    .transcript-panel .lead-split {
+      margin-right: 32px;
+      margin-left: 32px;
+    }
+
+    .transcript-panel .rewrite-title {
+      margin-top: 30px;
+    }
+
+    .transcript-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(390px, 0.66fr);
+      gap: 26px;
+      align-items: start;
+      padding: 26px 28px;
+      border: 1px solid rgba(0, 102, 100, 0.1);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.58);
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .transcript-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 102, 100, 0.24);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 18px 42px rgba(0, 68, 67, 0.1);
+    }
+
+    .transcript-card-copy {
+      min-width: 0;
+    }
+
+    .transcript-card .transcript-card-title {
+      margin-top: 0;
+      transition: color 180ms ease;
+    }
+
+    .transcript-card .key-term {
+      border-radius: 0.28em;
+      color: inherit;
+      font-weight: 500;
+      transition: color 180ms ease, background-color 180ms ease, font-weight 180ms ease;
+    }
+
+    .transcript-card:hover .transcript-card-title {
+      color: var(--ku-green-deep);
+    }
+
+    .transcript-card:hover .key-term {
+      background: rgba(239, 200, 74, 0.24);
+      color: var(--ku-green-deep);
+      font-weight: 700;
+    }
+
+    .transcript-card-media {
+      position: sticky;
+      top: 18px;
+      margin: 4px 0 0;
+    }
+
+    .transcript-card-media a {
+      display: block;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #f5f7f4;
+      cursor: zoom-in;
+    }
+
+    .transcript-card-media img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #ffffff;
+      border: 1px solid rgba(0, 102, 100, 0.08);
+      border-radius: 18px;
+      transition: transform 220ms ease, filter 220ms ease;
+    }
+
+    .transcript-card:hover .transcript-card-media img {
+      transform: scale(1.035);
+      filter: saturate(1.08) contrast(1.03);
+    }
+
+    .transcript-card-media figcaption {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 860px) {
+      .transcript-panel .rewrite-title,
+      .transcript-panel .lead-split {
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+
+      .transcript-card {
+        grid-template-columns: 1fr;
+        padding: 22px 20px;
+      }
+
+      .transcript-card-media {
+        position: static;
+        order: -1;
+      }
+    }
   </style>
+  <link rel="stylesheet" href="../assets/archive-status.css">
 </head>
 <body>
   <main class="page">
@@ -73,7 +195,7 @@
 
         <section class="section">
           <div class="section-title">Presentation Transcript</div>
-          <div class="content-panel is-interactive">
+          <div class="content-panel transcript-panel">
             <div class="rewrite-title">Transcript เรียบเรียง: เฟสใหม่ของมหาวิทยาลัยเกษตรศาสตร์</div>
             <div class="lead-split">
               <figure class="lead-figure lead-figure--video">
@@ -166,7 +288,7 @@
             <p>คำหนึ่งที่ผมใช้คือ <strong>Trusted System Partner</strong> เราต้องเป็น trusted system partner ที่ทำให้ผู้คนทำงานกับเราได้และเชื่อใจเราได้ เพราะถ้าเขาไม่เชื่อใจเรา เราก็อยู่ไม่ได้</p>
             <h2>มหาวิทยาลัยมีพร้อม แต่ขาดระบบ</h2>
             <p>สิ่งสำคัญคือมหาวิทยาลัยมีพร้อม สิ่งที่ขาดคือระบบ</p>
-            <p>สิ่งที่ผมพยายามเสนอคือ เราต้องมองโครงสร้างของมหาวิทยาลัย มองความเป็นนานาชาติ ดึงคนในระดับ talent เชื่อมโยงโลก และทำสิ่งใหม่ ๆ</p>
+            <p>สิ่งที่ผมพยายามเสนอคือ เราต้องมองโครงสร้างของมหาวิทยาลัย มองโครงสร้างหลักสูตรระดับประเทศ เชื่อมโยงมองความเป็นนานาชาติ พัฒนาคนในระดับ talent เชื่อมโยงโลก และทำสิ่งใหม่ ๆ อื่น ๆ ทางด้านระบบสารสนเทศระดับประเทศ</p>
             <p>หลายสิ่งที่ผมเคยทำ เช่น หลักสูตรใหม่ที่ไม่เคยมีมาก่อนในมหาวิทยาลัยเกษตรศาสตร์ หรือการวางรากฐาน AI ที่เริ่มจากภาควิชาวิศวกรรมคอมพิวเตอร์ในช่วงที่ผมเป็นหัวหน้าภาค ล้วนเป็นตัวอย่างของสิ่งที่ต้องทำเป็นระบบ</p>
             <p>ตอนจบ เราไม่ควรต้องพึ่งพาคนเก่งเป็นพิเศษ แต่ต้องการทิศทางที่ชัดและระบบที่ชัด นี่คือเรื่องสำคัญที่สุด</p>
             <h2>แผน 4 ปี</h2>
@@ -191,6 +313,17 @@
             <p>เราต้องคิดใหม่ เพื่อทำให้เกิดความยั่งยืนระยะยาวและมีความต่อเนื่องต่อไป สังคมยังต้องการเราอยู่</p>
             <p>ผมขออนุญาตจบเพียงเท่านี้</p>
           </div>
+        </section>
+
+        <section class="section">
+          <a class="read-more-callout" href="life-systems-university-presentation-qa.html">
+            <span class="read-more-copy">
+              <span class="read-more-kicker">อ่านต่อ</span>
+              <strong>ช่วงถามตอบหลังการนำเสนอวิสัยทัศน์: Life Systems University</strong>
+              <span>อ่าน Q&amp;A ต่อจากเวทีเดียวกัน เรื่องความมั่นคงบุคลากร รายได้จากงานวิจัย การพัฒนาวิทยาเขต ธรรมาภิบาล และ trusted system partner</span>
+            </span>
+            <span class="read-more-button">เปิด Q&amp;A</span>
+          </a>
         </section>
 
         <section class="section">
@@ -231,9 +364,133 @@
     </div>
   </div>
   <script src="../assets/release-gate.js" defer></script>
+  <script>
+    (() => {
+      const panel = document.querySelector(".transcript-panel");
+      if (!panel) return;
+
+      const images = [
+        ["the-next-phase-of-kasetsart-university.png", "เฟสใหม่ของมหาวิทยาลัยเกษตรศาสตร์"],
+        ["context.JPG", "มหาวิทยาลัยไม่ได้ขาดของ แต่ขาดระบบ"],
+        ["Slide3.JPG", "Life Systems University"],
+        ["role-1-slide.JPG", "บทบาทที่ 1: ธรรมาภิบาล"],
+        ["role-2-slide.JPG", "บทบาทที่ 2: Life Systems University ที่ตอบโจทย์โลก"],
+        ["role-3-slide.JPG", "บทบาทที่ 3: ทำในสิ่งที่ประเทศขาดและตลาดยังไม่พร้อม"],
+        ["goal-1-slide.JPG", "เป้าหมายที่ 1: บัณฑิตต้องทำงานได้จริง"],
+        ["goal-2-slide.JPG", "เป้าหมายที่ 2: คนในมหาวิทยาลัยต้องอยู่เป็นสุข"],
+        ["goal-3-slide.JPG", "เป้าหมายที่ 3: ระบบต้องเดินได้โดยไม่พึ่งคนเก่งเป็นพิเศษ"],
+        ["strategy-1-slide.JPG", "กลไกที่ 1: Foundation Core และ Dynamic Frontier"],
+        ["strategy-2-slide.JPG", "กลไกที่ 2: ธรรมาภิบาลบนข้อมูลเดียวกัน"],
+        ["strategy-3-slide.JPG", "กลไกที่ 3: วินัยทางการคลัง"],
+        ["Slide13.JPG", "มหาวิทยาลัยมีพร้อม แต่ขาดระบบ"],
+        ["4-year-plan-slide.JPG", "แผน 4 ปี"],
+        ["Slide15.JPG", "เร่งอย่างมีระบบ"],
+        ["life-systems-university-presentation-transcript.jpg", "สรุป Life Systems University"]
+      ];
+
+      const highlights = [
+        ["Life Systems University", "ธรรมาภิบาล", "ศักยภาพ", "ความยั่งยืน"],
+        ["ไม่ได้ขาดอะไร", "ขาดคือการทำให้ทุกอย่างทำงานเป็นระบบ", "ยุคสมัยเปลี่ยนไป", "มหาวิทยาลัยตอนนี้ยังจำเป็นอยู่หรือไม่"],
+        ["Life Systems University", "เกษตร", "อาหาร", "พลังงาน", "สังคม", "วิศวกรรม", "การแพทย์", "อยู่ดีกินดีและมีความสุข"],
+        ["ธรรมาภิบาล", "บทบาท", "กระบวนการ", "โปร่งใสและตรวจสอบได้", "ข้อมูลชุดเดียวกัน"],
+        ["Life System Flow", "climate adaptation", "food security", "One Health", "platform", "impact"],
+        ["ประเทศขาด", "ตลาดยังไม่พร้อม", "ความเสี่ยงของประเทศ", "สะสมความรู้ระยะยาว", "networking"],
+        ["บัณฑิตต้องทำงานได้จริง", "ตอบสนองสังคม", "ประเทศต้องการ", "ภาควิชา"],
+        ["ภาควิชา", "คนในมหาวิทยาลัยต้องยั่งยืน", "incentive", "ระบบที่ยั่งยืน"],
+        ["ระบบที่ดี", "ไม่พึ่งคนเก่งเป็นพิเศษ", "วัดผลได้", "ข้อมูลเดียวกัน", "การใช้ดุลพินิจต้องลดลง"],
+        ["Foundation Core", "Dynamic Frontier", "AI", "Sustainability", "Economy", "cross"],
+        ["ข้อมูลเป็นชิ้นเดียวกัน", "ตัดสินใจจากข้อมูลเดียวกัน", "ธรรมาภิบาล", "ระบบ IT"],
+        ["วินัยทางการคลัง", "monitor", "ต้นทุนจริง", "business unit", "Trusted System Partner"],
+        ["มหาวิทยาลัยมีพร้อม", "ขาดคือระบบ", "โครงสร้างหลักสูตรระดับประเทศ", "talent", "ระบบสารสนเทศระดับประเทศ"],
+        ["ปีแรก", "ปีที่สอง", "ปีที่สาม", "ปีที่สี่", "แข่งขัน", "สร้างความเชื่อถือ"],
+        ["เร่งอย่างมีระบบ", "ของครบ", "data governance", "capacity", "Sustainability"],
+        ["Life Systems University", "คิดใหม่", "ความยั่งยืนระยะยาว", "สังคมยังต้องการเราอยู่"]
+      ];
+
+      function escapeRegExp(text) {
+        return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      }
+
+      function highlightTerms(root, terms) {
+        const orderedTerms = [...terms].sort((a, b) => b.length - a.length);
+        const pattern = new RegExp(`(${orderedTerms.map(escapeRegExp).join("|")})`, "g");
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode(node) {
+            if (!node.nodeValue.trim() || !pattern.test(node.nodeValue)) {
+              pattern.lastIndex = 0;
+              return NodeFilter.FILTER_REJECT;
+            }
+            pattern.lastIndex = 0;
+            const parent = node.parentElement;
+            if (!parent || parent.closest("a, script, style, .key-term")) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+
+        const textNodes = [];
+        while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+        textNodes.forEach((node) => {
+          const fragment = document.createDocumentFragment();
+          const parts = node.nodeValue.split(pattern);
+          parts.forEach((part, index) => {
+            if (!part) return;
+            if (index % 2 === 1) {
+              const span = document.createElement("span");
+              span.className = "key-term";
+              span.textContent = part;
+              fragment.appendChild(span);
+            } else {
+              fragment.appendChild(document.createTextNode(part));
+            }
+          });
+          node.replaceWith(fragment);
+        });
+      }
+
+      const h2s = Array.from(panel.querySelectorAll(":scope > h2"));
+      h2s.forEach((heading, index) => {
+        const card = document.createElement("article");
+        card.className = "transcript-card";
+
+        const copy = document.createElement("div");
+        copy.className = "transcript-card-copy";
+
+        const media = document.createElement("figure");
+        media.className = "transcript-card-media";
+
+        const [fileName, caption] = images[index % images.length];
+        const src = `../assets/${fileName}`;
+        media.innerHTML = `
+          <a href="${src}" data-lightbox-image="${src}" aria-label="เปิดภาพประกอบหัวข้อ ${heading.textContent.trim()}">
+            <img src="${src}" alt="${caption}" loading="lazy">
+          </a>
+          <figcaption>${caption}</figcaption>
+        `;
+
+        panel.insertBefore(card, heading);
+        card.append(copy, media);
+        heading.classList.add("transcript-card-title");
+
+        let node = heading;
+        while (node && !(node !== heading && node.matches && node.matches("h2"))) {
+          const next = node.nextSibling;
+          copy.appendChild(node);
+          node = next;
+        }
+
+        highlightTerms(copy, highlights[index] || []);
+      });
+
+      panel.classList.add("is-enhanced");
+    })();
+  </script>
   <script src="../assets/site-analytics.js" defer></script>
   <script src="../assets/articles-data.js" defer></script>
   <script src="../assets/related-articles.js" defer></script>
   <script src="../assets/archive-lightbox.js" defer></script>
+  <script src="../assets/archive-status.js" defer></script>
 </body>
 </html>
