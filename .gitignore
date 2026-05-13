@@ -13,6 +13,10 @@ selection/
 vision/sources/
 vision/tools/
 /vision/README.md
+vision/presentation-narrator/
+vision/question-bank/
+vision/qna/
+snq/
 research_award/.git/
 /research_award/
 __pycache__/

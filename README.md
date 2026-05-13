@@ -17,7 +17,7 @@ workspace หลักของงานวิสัยทัศน์
 
 - source อยู่ใน `vision/sources/`
 - public website source อยู่ใน `vision/public-site/`
-- app/workspace อยู่ใน `vision/qna/`, `vision/question-bank/`, `vision/presentation-narrator/`
+- local-only private workspaces are intentionally ignored by Git until they are distilled into public material
 - tool เฉพาะของ vision อยู่ใน `vision/tools/`
 
 อ่านเพิ่ม: `vision/README.md`
